@@ -1,0 +1,34 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    logo: Sylius
+    meta:
+        title: Sylius, modern ecommerce for Symfony2
+        description: Sylius is ecommerce solution for PHP, based on Symfony2 framework.
+        keywords: 'ecommerce, webshop, sylius, symfony2, shop'
+    layout:
+        menu:
+            home: Home
+            administration: Administration
+    homepage:
+        splash:
+            headline: Welcome to Sylius
+            subheadline: Modern ecommerce for Symfony2
+            link: Sylius.org
+    backend:
+        logo: Sylius
+        meta:
+            title: Sylius administration
+        dashboard:
+            header: Administration dashboard
+            subheader: Overview of your store
+        alert:
+            info: Information
+        menu:
+            main:
+                dashboard: Dashboard
+                homepage: Your store
+            sidebar:
+                dashboard: Dashboard
+                homepage: Back to frontend

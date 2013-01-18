@@ -25,8 +25,8 @@ class FrontendController extends Controller
      *
      * @return Response
      */
-    public function indexAction()
+    public function homepageAction()
     {
-        return $this->render('SyliusWebBundle:Frontend:index.html.twig');
+        return $this->render('SyliusWebBundle:Frontend:homepage.html.twig');
     }
 }

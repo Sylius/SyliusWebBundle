@@ -15,12 +15,12 @@ use PHPSpec2\ObjectBehavior;
 
 class SyliusWebBundle extends ObjectBehavior
 {
-    function it_should_be_initializable()
+    public function it_should_be_initializable()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\SyliusWebBundle');
     }
 
-    function it_should_be_a_bundle()
+    public function it_should_be_a_bundle()
     {
         $this->shouldHaveType('Symfony\Component\HttpKernel\Bundle\Bundle');
     }

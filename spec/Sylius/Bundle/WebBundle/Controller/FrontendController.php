@@ -25,27 +25,27 @@ class FrontendController extends ObjectBehavior
      * @param Symfony\Component\Templating\EngineInterface             $templating
      * @param Symfony\Component\HttpFoundation\Response                $response
      */
-    function let($container, $templating, $response)
+    public function let($container, $templating, $response)
     {
         $container->get('templating')->willReturn($templating);
 
         $this->setContainer($container);
     }
 
-    function it_should_be_initializable()
+    public function it_should_be_initializable()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\Controller\FrontendController');
     }
 
-    function it_should_be_a_controller()
+    public function it_should_be_a_controller()
     {
         $this->shouldHaveType('Symfony\Bundle\FrameworkBundle\Controller\Controller');
     }
 
-    function its_indexAction_should_render_frontend_index_page($templating, $response)
+    public function its_homepageAction_should_render_homepage($templating, $response)
     {
-        $templating->renderResponse('SyliusWebBundle:Frontend:index.html.twig', array(), ANY_ARGUMENT)->willReturn($response)->shouldBeCalled();
+        $templating->renderResponse('SyliusWebBundle:Frontend:homepage.html.twig', array(), ANY_ARGUMENT)->willReturn($response)->shouldBeCalled();
 
-        $this->indexAction()->shouldReturn($response);
+        $this->homepageAction()->shouldReturn($response);
     }
 }

@@ -1,6 +1,6 @@
 # This file is part of the Sylius package.
 # (c) Paweł Jędrzejewski
 
-sylius_frontend_index:
+sylius_homepage:
     pattern: /
-    defaults: { _controller: sylius.controller.frontend:indexAction }
+    defaults: { _controller: sylius.controller.frontend:homepageAction }

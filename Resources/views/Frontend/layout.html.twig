@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            {% block title %}
+                {{ 'sylius.meta.title'|trans }}
+            {% endblock %}
+        </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="{{ 'sylius.meta.description'|trans }}">
+        <meta name="keywords" content="{{ 'sylius.meta.keywords'|trans }}">
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {# stylesheets... #}
+        {% block stylesheets %}
+        {% stylesheets output='assets/compiled/frontend.css'
+            '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.no-icons.min.css'
+            '//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+            <style type="text/css">
+                body {
+                    padding-top: 20px;
+                    padding-bottom: 40px;
+                }
+
+                .container-narrow {
+                    margin: 0 auto;
+                    max-width: 700px;
+                }
+                .container-narrow > hr {
+                    margin: 30px 0;
+                }
+
+                .jumbotron {
+                    margin: 60px 0;
+                    text-align: center;
+                }
+                .jumbotron h1 {
+                    font-size: 72px;
+                    line-height: 1;
+                }
+                .jumbotron .btn {
+                    font-size: 21px;
+                    padding: 14px 24px;
+                }
+
+                .marketing {
+                    margin: 60px 0;
+                }
+                .marketing p + h4 {
+                    margin-top: 28px;
+                }
+
+                th {
+                    background-color: #f1f1f1;
+                }
+            </style>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-narrow">
+        {% block header %}
+            <div class="masthead">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="{{ path('sylius_homepage') }}">{{ 'sylius.layout.menu.home'|trans }}</a></li>
+                </ul>
+                <h3 class="muted">{{ 'sylius.logo'|trans }}</h3>
+            </div>
+        {% endblock %}
+
+        {% for name, value in app.session.flashes if name in ['success', 'error'] %}
+        <div class="alert alert-{{ name }}">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            {{ value|trans }}
+        </div>
+        {% endfor %}
+
+        <hr>
+        {% block content %}
+        {% endblock %}
+        <hr>
+
+        {% block footer %}
+            <div class="footer">
+                <p class="muted">
+                    &copy; Sylius, 2011 - {{ 'now'|date('Y') }}.
+                    <a href="{{ path('sylius_backend_dashboard') }}" class="pull-right">
+                        <i class="icon-lock"></i> {{ 'sylius.layout.menu.administration'|trans }}
+                    </a>
+                </p>
+            </div>
+        {% endblock %}
+        </div>
+
+        {# javascripts... #}
+        {% block javascripts %}
+        {% javascripts output='assets/compiled/frontend.js'
+            'http://code.jquery.com/jquery-1.8.0.min.js'
+            'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

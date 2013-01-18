@@ -25,8 +25,8 @@ class BackendController extends Controller
      *
      * @return Response
      */
-    public function indexAction()
+    public function dashboardAction()
     {
-        return $this->render('SyliusWebBundle:Backend:index.html.twig');
+        return $this->render('SyliusWebBundle:Backend:dashboard.html.twig');
     }
 }
