@@ -23,12 +23,46 @@ sylius:
         dashboard:
             header: Administration dashboard
             subheader: Overview of your store
+        yes: yes
+        no: no
+        create: Create
+        edit: Edit
+        show: Details
+        delete: Delete
+        cancel: Cancel
+        save_changes: Save changes
         alert:
             info: Information
         menu:
             main:
                 dashboard: Dashboard
                 homepage: Your store
+                configuration: Configuration
+                tax_categories: Taxation categories
+                tax_rates: Tax rates
             sidebar:
                 dashboard: Dashboard
                 homepage: Back to frontend
+                configuration: Configuration
+                tax_categories: Taxation categories
+                tax_rates: Tax rates
+        tax_category:
+            manage: Manage tax categories
+            create_header: New tax category
+            create: Create tax category
+            update_header: Editing tax category
+            show_header: Tax category details
+            index_header: Taxation categories
+            no_results: There are no tax categories configured
+            no_description: No description
+        tax_rate:
+            manage: Manage tax rates
+            create_header: New tax rate
+            create: Create tax rate
+            update_header: Editing tax rate
+            show_header: Tax rate details
+            index_header: Tax rates
+            no_results: There are no tax rates configured
+    tax_rate:
+        name: Name
+        amount: Amount

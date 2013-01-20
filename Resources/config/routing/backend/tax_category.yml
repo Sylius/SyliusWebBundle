@@ -1,0 +1,45 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_tax_category_index:
+    pattern: /index
+    defaults:
+        _controller: sylius_taxation.controller.category:indexAction
+        _template: SyliusWebBundle:Backend/TaxCategory:index.html.twig
+        _sortable: true
+        _sorting:
+            name: desc
+    requirements:
+        _method: GET
+
+sylius_backend_tax_category_create:
+    pattern: /new
+    defaults:
+        _controller: sylius_taxation.controller.category:createAction
+        _template: SyliusWebBundle:Backend/TaxCategory:create.html.twig
+        _redirect: sylius_backend_tax_category_show
+    requirements:
+        _method: GET|POST
+
+sylius_backend_tax_category_update:
+    pattern: /{id}/edit
+    defaults:
+        _controller: sylius_taxation.controller.category:updateAction
+        _template: SyliusWebBundle:Backend/TaxCategory:update.html.twig
+        _redirect: sylius_backend_tax_category_show
+    requirements:
+        _method: GET|PUT
+
+sylius_backend_tax_category_delete:
+    pattern: /{id}/delete
+    defaults:
+        _controller: sylius_taxation.controller.category:deleteAction
+        _redirect: sylius_backend_tax_category_index
+
+sylius_backend_tax_category_show:
+    pattern: /{id}
+    defaults:
+        _controller: sylius_taxation.controller.category:showAction
+        _template: SyliusWebBundle:Backend/TaxCategory:show.html.twig
+    requirements:
+        _method: GET

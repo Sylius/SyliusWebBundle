@@ -11,6 +11,7 @@
 
 namespace Sylius\Bundle\WebBundle\Menu;
 
+use Knp\Menu\ItemInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -37,9 +38,17 @@ class BackendMenuBuilder extends MenuBuilder
 
         $menu->setCurrent($request->getRequestUri());
 
+        $childOptions = array(
+            'attributes'         => array('class' => 'dropdown'),
+            'childrenAttributes' => array('class' => 'dropdown-menu'),
+            'labelAttributes'    => array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'href' => '#')
+        );
+
         $menu->addChild('dashboard', array(
             'route' => 'sylius_backend_dashboard'
         ))->setLabel($this->translate('sylius.backend.menu.main.dashboard'));
+
+        $this->addConfigurationMenu($menu, $childOptions, 'main');
 
         $menu->addChild('homepage', array(
             'route' => 'sylius_homepage'
@@ -76,10 +85,34 @@ class BackendMenuBuilder extends MenuBuilder
             'route' => 'sylius_backend_dashboard',
         ))->setLabel($this->translate('sylius.backend.menu.sidebar.dashboard'));
 
+        $this->addConfigurationMenu($menu, $childOptions, 'sidebar');
+
         $child->addChild('homepage', array(
             'route' => 'sylius_homepage'
         ))->setLabel($this->translate('sylius.backend.menu.sidebar.homepage'));
 
         return $menu;
+    }
+
+    /**
+     * Add configuration menu.
+     *
+     * @param ItemInterface $menu
+     * @param array         $childOptions
+     */
+    protected function addConfigurationMenu(ItemInterface $menu, array $childOptions, $section)
+    {
+        $child = $menu
+            ->addChild('configuration', $childOptions)
+            ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.configuration', $section)))
+        ;
+
+        $child->addChild('tax_categories', array(
+            'route' => 'sylius_backend_tax_category_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.tax_categories', $section)));
+
+        $child->addChild('tax_rates', array(
+            'route' => 'sylius_backend_tax_rate_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.tax_rates', $section)));
     }
 }
