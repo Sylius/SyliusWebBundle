@@ -118,5 +118,9 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('countries', array(
             'route' => 'sylius_backend_country_index',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.countries', $section)));
+
+        $child->addChild('zones', array(
+            'route' => 'sylius_backend_zone_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.zones', $section)));
     }
 }
