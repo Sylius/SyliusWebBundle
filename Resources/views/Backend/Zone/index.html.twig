@@ -1,0 +1,25 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Backend/Zone:macros.html.twig' as macros %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.zone.index_header'|trans|raw }}</h1>
+</div>
+
+<div class="well">
+    <a href="{{ path('sylius_backend_zone_create') }}" class="btn btn-primary">
+        <i class="icon-plus-sign"></i> {{ 'sylius.backend.zone.create'|trans }}
+    </a>
+</div>
+
+{% if zones.haveToPaginate()|default(false) %}
+    {{ pagerfanta(zones, 'twitter_bootstrap_translated') }}
+{% endif %}
+
+{{ macros.list(zones) }}
+
+{% if zones.haveToPaginate()|default(false) %}
+    {{ pagerfanta(zones, 'twitter_bootstrap_translated') }}
+{% endif %}
+{% endblock %}
