@@ -46,6 +46,7 @@ sylius:
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
+                countries: Countries
         tax_category:
             manage: Manage tax categories
             create_header: New tax category
@@ -63,6 +64,20 @@ sylius:
             show_header: Tax rate details
             index_header: Tax rates
             no_results: There are no tax rates configured
+        country:
+            manage: Manage countries
+            create_header: New country
+            create: Create country
+            update_header: Editing country
+            show_header: Country details
+            index_header: Countries
+            no_results: There are no countries configured
     tax_rate:
         name: Name
         amount: Amount
+    country:
+        name: Name
+        iso_name: ISO name
+        add_province: Add province
+    province:
+        provinces: Provinces

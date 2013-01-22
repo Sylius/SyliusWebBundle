@@ -114,5 +114,9 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('tax_rates', array(
             'route' => 'sylius_backend_tax_rate_index',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.tax_rates', $section)));
+
+        $child->addChild('countries', array(
+            'route' => 'sylius_backend_country_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.countries', $section)));
     }
 }

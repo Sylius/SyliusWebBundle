@@ -12,3 +12,11 @@ sylius_backend_tax_category:
 sylius_backend_tax_rate:
     resource: @SyliusWebBundle/Resources/config/routing/backend/tax_rate.yml
     prefix: /tax-rates
+
+sylius_backend_country:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/country.yml
+    prefix: /countries
+
+sylius_backend_province:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/province.yml
+    prefix: /province

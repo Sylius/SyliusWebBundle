@@ -1,0 +1,25 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Backend/Country:macros.html.twig' as macros %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.country.index_header'|trans|raw }}</h1>
+</div>
+
+<div class="well">
+    <a href="{{ path('sylius_backend_country_create') }}" class="btn btn-primary">
+        <i class="icon-plus-sign"></i> {{ 'sylius.backend.country.create'|trans }}
+    </a>
+</div>
+
+{% if countries.haveToPaginate()|default(false) %}
+    {{ pagerfanta(countries, 'twitter_bootstrap_translated') }}
+{% endif %}
+
+{{ macros.list(countries) }}
+
+{% if countries.haveToPaginate() %}
+    {{ pagerfanta(countries, 'twitter_bootstrap_translated') }}
+{% endif %}
+{% endblock %}

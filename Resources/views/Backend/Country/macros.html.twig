@@ -1,0 +1,43 @@
+{% macro list(countries) %}
+
+{% if countries|length > 0 %}
+    <table id="countries" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>{{ sylius_resource_sort('id', '#id') }}</th>
+                <th>{{ sylius_resource_sort('name') }}</th>
+                <th>{{ sylius_resource_sort('isoName', 'iso name') }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for country in countries %}
+            <tr class="countries-row">
+                <td>{{ country.id }}</td>
+                <td>{{ country.name }}</td>
+                <td>{{ country.isoName }}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <a href="{{ path('sylius_backend_country_show', {'id': country.id}) }}" class="btn">
+                           <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_country_update', {'id': country.id}) }}" class="btn">
+                            <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_country_delete', {'id': country.id}) }}"  class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-info">
+        <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+        {{ 'sylius.backend.country.no_results'|trans }}
+    </div>
+{% endif %}
+
+{% endmacro %}
