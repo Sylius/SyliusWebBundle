@@ -1,8 +1,8 @@
 # This file is part of the Sylius package.
 # (c) Paweł Jędrzejewski
 
-sylius_backend_province_delete:
+sylius_backend_zone_member_delete:
     pattern: /{id}/delete
     defaults:
-        _controller: sylius_addressing.controller.province:deleteAction
+        _controller: sylius_addressing.controller.zone_member:deleteAction
         _redirect: referer
