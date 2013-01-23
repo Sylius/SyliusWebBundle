@@ -46,6 +46,8 @@ sylius:
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
+                shipping_categories: Shipping categories
+                shipping_methods: Shipping methods
                 countries: Countries
                 zones: Zones
         tax_category:
@@ -65,6 +67,23 @@ sylius:
             show_header: Tax rate details
             index_header: Tax rates
             no_results: There are no tax rates configured
+        shipping_category:
+            manage: Manage shipping categories
+            create_header: New shipping category
+            create: Create shipping category
+            update_header: Editing shipping category
+            show_header: Shipping category details
+            index_header: Shipping categories
+            no_results: There are no shipping categories configured
+            no_description: No description
+        shipping_method:
+            manage: Manage shipping methods
+            create_header: New shipping method
+            create: Create shipping method
+            update_header: Editing shipping method
+            show_header: Tax rate details
+            index_header: Tax rates
+            no_results: There are no shipping methods configured
         country:
             manage: Manage countries
             create_header: New country
