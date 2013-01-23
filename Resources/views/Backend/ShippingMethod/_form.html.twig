@@ -1,0 +1,15 @@
+<fieldset>
+    {{ form_row(form.name, {'attr': {'class': 'input-large'}}) }}
+    {{ form_row(form.category, {'attr': {'class': 'select2 input-large'}}) }}
+    {{ form_row(form.categoryRequirement, {'attr': {'class': 'input-large'}}) }}
+    {{ form_row(form.enabled, {'label': ''}) }}
+    {{ form_row(form.calculator) }}
+    {% if form.configuration is defined %}
+        <hr />
+        {% for field in form.configuration %}
+        {{ form_row(field) }}
+        {% endfor %}
+    {% endif %}
+</fieldset>
+
+{{ form_widget(form._token) }}

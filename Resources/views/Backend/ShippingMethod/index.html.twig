@@ -1,0 +1,28 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Backend/ShippingMethod:macros.html.twig' as macros %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.shipping_method.index_header'|trans|raw }}</h1>
+</div>
+
+<div class="well well-small">
+    <a href="{{ path('sylius_backend_shipping_method_create') }}" class="btn btn-primary">
+        <i class="icon-plus-sign"></i> {{ 'sylius.backend.shipping_method.create'|trans }}
+    </a>
+    <a href="{{ path('sylius_backend_shipping_category_index') }}" class="btn btn-success">
+        <i class="icon-adjust"></i> {{ 'sylius.backend.shipping_category.manage'|trans }}
+    </a>
+</div>
+
+{% if methods.haveToPaginate() %}
+    {{ pagerfanta(methods, 'twitter_bootstrap_translated') }}
+{% endif %}
+
+{{ macros.list(methods) }}
+
+{% if methods.haveToPaginate() %}
+    {{ pagerfanta(methods, 'twitter_bootstrap_translated') }}
+{% endif %}
+{% endblock %}

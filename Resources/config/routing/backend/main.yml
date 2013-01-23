@@ -13,18 +13,26 @@ sylius_backend_tax_rate:
     resource: @SyliusWebBundle/Resources/config/routing/backend/tax_rate.yml
     prefix: /tax-rates
 
+sylius_backend_shipping_category:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/shipping_category.yml
+    prefix: /shipping-categories
+
+sylius_backend_shipping_method:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/shipping_method.yml
+    prefix: /shipping-methods
+
 sylius_backend_country:
     resource: @SyliusWebBundle/Resources/config/routing/backend/country.yml
     prefix: /countries
 
 sylius_backend_province:
     resource: @SyliusWebBundle/Resources/config/routing/backend/province.yml
-    prefix: /province
+    prefix: /provinces
 
 sylius_backend_zone:
     resource: @SyliusWebBundle/Resources/config/routing/backend/zone.yml
-    prefix: /zone
+    prefix: /zones
 
 sylius_backend_zone_member:
     resource: @SyliusWebBundle/Resources/config/routing/backend/zone_member.yml
-    prefix: /zone-member
+    prefix: /zone-members
