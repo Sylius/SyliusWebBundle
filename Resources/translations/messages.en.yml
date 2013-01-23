@@ -81,8 +81,8 @@ sylius:
             create_header: New shipping method
             create: Create shipping method
             update_header: Editing shipping method
-            show_header: Tax rate details
-            index_header: Tax rates
+            show_header: Shipping method details
+            index_header: Shipping methods
             no_results: There are no shipping methods configured
         country:
             manage: Manage countries
