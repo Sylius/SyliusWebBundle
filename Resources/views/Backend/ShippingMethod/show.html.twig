@@ -21,6 +21,7 @@
     <thead>
         <tr>
             <th>name</th>
+            <th>zone</th>
             <th>category</th>
             <th>is enabled?</th>
             <th>calculator</th>
@@ -29,7 +30,8 @@
     </thead>
     <tbody>
         <tr>
-             <td>{{ method.name }}</td>
+            <td>{{ method.name }}</td>
+            <td>{{ method.zone }}</td>
             <td>{{ method.category|default('<i>undefined</i>')|raw }}</td>
             <td>
                 <span class="label label-{{ method.enabled ? 'success' : 'important'}}">

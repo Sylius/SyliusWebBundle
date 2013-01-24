@@ -1,7 +1,7 @@
 {% macro list(countries) %}
 
 {% if countries|length > 0 %}
-    <table id="countries" class="table table-bordered">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>{{ sylius_resource_sort('id', '#id') }}</th>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         {% for country in countries %}
-            <tr class="countries-row">
+            <tr>
                 <td>{{ country.id }}</td>
                 <td>{{ country.name }}</td>
                 <td>{{ country.isoName }}</td>

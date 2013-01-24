@@ -1,11 +1,12 @@
 {% macro list(rates) %}
 
 {% if rates|length > 0 %}
-<table class="table" id="tax-rates">
+<table class="table">
     <thead>
         <tr>
             <th>{{ sylius_resource_sort('id', '#id') }}</th>
             <th>{{ sylius_resource_sort('category') }}</th>
+            <th>{{ sylius_resource_sort('zone') }}</th>
             <th>{{ sylius_resource_sort('name') }}</th>
             <th>{{ sylius_resource_sort('amount') }}</th>
             <th>{{ sylius_resource_sort('includedInPrice', 'included in price?') }}</th>
@@ -16,9 +17,10 @@
     </thead>
     <tbody>
     {% for rate in rates %}
-        <tr class="tax-rates-row">
+        <tr> 
             <td>{{ rate.id }}</td>
             <td>{{ rate.category }}</td>
+            <td>{{ rate.zone }}</td>
             <td>{{ rate.name }}</td>
             <td>{{ rate.amountAsPercentage }}%</td>
             <td>

@@ -1,5 +1,6 @@
 <fieldset>
     {{ form_row(form.name, {'attr': {'class': 'input-large'}}) }}
+    {{ form_row(form.zone, {'attr': {'class': 'input-large'}}) }}
     {{ form_row(form.category, {'attr': {'class': 'select2 input-large'}}) }}
     {{ form_row(form.categoryRequirement, {'attr': {'class': 'input-large'}}) }}
     {{ form_row(form.enabled, {'label': ''}) }}
@@ -18,4 +19,4 @@
     </div>
 </fieldset>
 
-{{ form_widget(form._token) }}
+{{ form_rest(form) }}

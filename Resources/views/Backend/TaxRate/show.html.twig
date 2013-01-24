@@ -20,13 +20,17 @@
 <table class="table table-bordered table-consensed">
     <thead>
         <tr>
+            <th>{{ 'sylius.tax_rate.category'|trans }}</th>
             <th>{{ 'sylius.tax_rate.name'|trans }}</th>
+            <th>{{ 'sylius.tax_rate.zone'|trans }}</th>
             <th>{{ 'sylius.tax_rate.amount'|trans }}</th>
         </tr>
     </thead>
     <tbody>
         <tr>
+            <td>{{ rate.category }}</td>
             <td>{{ rate.name }}</td>
+            <td>{{ rate.zone }}</td>
             <td>{{ rate.amountAsPercentage }}%</td>
         </tr>
     </tbody>

@@ -1,7 +1,7 @@
 {% macro list(categories) %}
 
 {% if categories|length > 0 %}
-    <table class="table" id="shipping-categories">
+    <table class="table">
         <thead>
             <tr>
                 <th>{{ sylius_resource_sort('id', '#id') }}</th>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         {% for category in categories %}
-            <tr class="shipping-categories-row">
+            <tr>
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.updatedAt|date }}</td>

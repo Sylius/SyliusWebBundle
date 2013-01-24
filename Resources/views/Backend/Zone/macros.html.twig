@@ -1,7 +1,7 @@
 {% macro list(zones) %}
 
 {% if zones|length > 0 %}
-    <table id="zones" class="table table-bordered">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>{{ sylius_resource_sort('id', '#id') }}</th>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         {% for zone in zones %}
-            <tr class="zones-row">
+            <tr>
                 <td>{{ zone.id }}</td>
                 <td>{{ zone.name }}</td>
                 <td>{{ zone.type }}</td>
