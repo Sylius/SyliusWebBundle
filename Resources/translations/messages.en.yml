@@ -40,6 +40,10 @@ sylius:
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
+                shipping_categories: Shipping categories
+                shipping_methods: Shipping methods
+                countries: Countries
+                zones: Zones
             sidebar:
                 dashboard: Dashboard
                 homepage: Back to frontend
