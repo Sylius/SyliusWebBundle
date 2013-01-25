@@ -1,0 +1,50 @@
+{% macro list(options) %}
+
+{% if options|length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ sylius_resource_sort('id', '#id') }}</th>
+                <th>{{ sylius_resource_sort('name') }}</th>
+                <th>{{ sylius_resource_sort('presentation') }}</th>
+                <th>values</th>
+                <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for option in options %}
+            <tr>
+                <td>{{ option.id }}</td>
+                <td>{{ option.name }}</td>
+                <td>{{ option.presentation }}</td>
+                <td>
+                    <ul>
+                        {% for value in option.values %}
+                        <li>{{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ option.updatedAt|date }}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <a href="{{ path('sylius_backend_option_update', {'id': option.id}) }}" class="btn">
+                           <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_option_delete', {'id': option.id}) }}" class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-info">
+        <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+        {{ 'sylius.backend.option.no_results'|trans }}
+    </div>
+{% endif %}
+
+{% endmacro %}

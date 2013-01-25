@@ -37,6 +37,11 @@ sylius:
             main:
                 dashboard: Dashboard
                 homepage: Your store
+                assortment: Assortment
+                products: Products
+                options: Manage product options
+                properties: Configure properties
+                prototypes: Product prototypes
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -47,6 +52,11 @@ sylius:
             sidebar:
                 dashboard: Dashboard
                 homepage: Back to frontend
+                assortment: Assortment
+                products: Products
+                options: Manage product options
+                properties: Configure properties
+                prototypes: Product prototypes
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -54,6 +64,37 @@ sylius:
                 shipping_methods: Shipping methods
                 countries: Countries
                 zones: Zones
+        product:
+            manage: Manage products
+            create_header: New product
+            create: Create product
+            update_header: Editing product
+            show_header: Product details
+            index_header: Products
+            no_results: There are no products to display
+        option:
+            manage: Manage options
+            create_header: New product option
+            create: Create option
+            update_header: Editing option
+            show_header: Option details
+            index_header: Product options
+            no_results: There are no options configured
+        property:
+            manage: Manage properties
+            create_header: New product property
+            create: Create property
+            update_header: Editing property
+            show_header: Property details
+            index_header: Product properties
+            no_results: There are no properties configured
+        prototype:
+            manage: Manage prototypes
+            create_header: New prototype
+            create: Create prototype
+            update_header: Editing prototype
+            index_header: Product prototypes
+            no_results: There are no prototypes defined
         tax_category:
             manage: Manage tax categories
             create_header: New tax category
@@ -104,6 +145,8 @@ sylius:
             show_header: Zone details
             index_header: Zones
             no_results: There are no zones configured
+    product:
+        add_property: Add property
     tax_rate:
         name: Name
         amount: Amount
@@ -119,3 +162,6 @@ sylius:
         add_member: Add member
     zone_member:
         members: Members
+    label:
+        variant:
+            price: Price

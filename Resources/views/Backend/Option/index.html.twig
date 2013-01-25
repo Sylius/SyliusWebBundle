@@ -1,0 +1,28 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle:Backend/Option:macros.html.twig' as macros %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.option.index_header'|trans|raw }}</h1>
+</div>
+
+<div class="well">
+    <a href="{{ path('sylius_backend_option_create') }}" class="btn btn-primary">
+        <i class="icon-plus-sign"></i> {{ 'sylius.backend.option.create'|trans }}
+    </a>
+    <a href="{{ path('sylius_backend_property_index') }}" class="btn btn-success">
+        <i class="icon-adjust"></i> {{ 'sylius.backend.property.manage'|trans }}
+    </a>
+</div>
+
+{% if options.haveToPaginate() %}
+    {{ pagerfanta(options, 'twitter_bootstrap_translated') }}
+{% endif %}
+
+{{ macros.list(options) }}
+
+{% if options.haveToPaginate() %}
+    {{ pagerfanta(options, 'twitter_bootstrap_translated') }}
+{% endif %}
+{% endblock %}

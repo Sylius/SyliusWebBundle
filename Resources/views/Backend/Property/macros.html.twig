@@ -1,0 +1,42 @@
+{% macro list(properties) %}
+
+{% if properties|length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ sylius_resource_sort('id', '#id') }}</th>
+                <th>{{ sylius_resource_sort('name') }}</th>
+                <th>{{ sylius_resource_sort('presentation') }}</th>
+                <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for property in properties %}
+            <tr>
+                <td>{{ property.id }}</td>
+                <td>{{ property.name }}</td>
+                <td>{{ property.presentation }}</td>
+                <td>{{ property.updatedAt|date }}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <a href="{{ path('sylius_backend_property_update', {'id': property.id}) }}" class="btn">
+                           <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_property_delete', {'id': property.id}) }}" class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-info">
+        <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+        {{ 'sylius.backend.property.no_results'|trans }}
+    </div>
+{% endif %}
+
+{% endmacro %}

@@ -48,6 +48,7 @@ class BackendMenuBuilder extends MenuBuilder
             'route' => 'sylius_backend_dashboard'
         ))->setLabel($this->translate('sylius.backend.menu.main.dashboard'));
 
+        $this->addAssortmentMenu($menu, $childOptions, 'main');
         $this->addConfigurationMenu($menu, $childOptions, 'main');
 
         $menu->addChild('homepage', array(
@@ -85,6 +86,7 @@ class BackendMenuBuilder extends MenuBuilder
             'route' => 'sylius_backend_dashboard',
         ))->setLabel($this->translate('sylius.backend.menu.sidebar.dashboard'));
 
+        $this->addAssortmentMenu($menu, $childOptions, 'sidebar');
         $this->addConfigurationMenu($menu, $childOptions, 'sidebar');
 
         $child->addChild('homepage', array(
@@ -92,6 +94,36 @@ class BackendMenuBuilder extends MenuBuilder
         ))->setLabel($this->translate('sylius.backend.menu.sidebar.homepage'));
 
         return $menu;
+    }
+
+    /**
+     * Add assortment menu.
+     *
+     * @param ItemInterface $menu
+     * @param array         $childOptions
+     */
+    protected function addAssortmentMenu(ItemInterface $menu, array $childOptions, $section)
+    {
+        $child = $menu
+            ->addChild('assortment', $childOptions)
+            ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.assortment', $section)))
+        ;
+
+        $child->addChild('products', array(
+            'route' => 'sylius_backend_product_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.products', $section)));
+
+        $child->addChild('options', array(
+            'route' => 'sylius_backend_option_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.options', $section)));
+
+        $child->addChild('properties', array(
+            'route' => 'sylius_backend_property_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.properties', $section)));
+
+        $child->addChild('prototypes', array(
+            'route' => 'sylius_backend_prototype_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.prototypes', $section)));
     }
 
     /**

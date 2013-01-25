@@ -5,6 +5,22 @@ sylius_backend_dashboard:
     pattern: /dashboard
     defaults: { _controller: sylius.controller.backend:dashboardAction }
 
+sylius_backend_product:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/product.yml
+    prefix: /product
+
+sylius_backend_option:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/option.yml
+    prefix: /options
+
+sylius_backend_property:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/property.yml
+    prefix: /properties
+
+sylius_backend_prototype:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/prototype.yml
+    prefix: /prototypes
+
 sylius_backend_tax_category:
     resource: @SyliusWebBundle/Resources/config/routing/backend/tax_category.yml
     prefix: /tax-categories

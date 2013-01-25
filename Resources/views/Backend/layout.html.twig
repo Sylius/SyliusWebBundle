@@ -78,11 +78,7 @@
                     </a>
                     <a class="brand" href="#">{{ 'sylius.backend.logo'|trans }}</a>
                     <div class="nav-collapse collapse">
-                        <p class="navbar-text pull-right">
-                        </p>
-                    <ul class="nav">
-                        {{ knp_menu_render('sylius.backend.main') }}
-                    </ul>
+                        {{ knp_menu_render('sylius.backend.main', {'template': 'SyliusWebBundle::menu.html.twig', 'currentClass': 'active'}) }}
                     </div>
                 </div>
             </div>
@@ -91,7 +87,7 @@
             <div class="row-fluid">
                 <div class="span2 sidebar">
                     <div class="sidebar-nav">
-                        {{ knp_menu_render('sylius.backend.sidebar') }}
+                        {{ knp_menu_render('sylius.backend.sidebar', {'currentClass': 'active'}) }}
                     </div>
                 </div>
                 <div class="span10" id="content">
