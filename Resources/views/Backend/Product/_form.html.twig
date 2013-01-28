@@ -1,31 +1,27 @@
-<fieldset>
+<div class="form-container">
+<fieldset> 
     {{ form_errors(form)  }}
     <ul class="nav nav-tabs">
         <li class="active"><a href="#main" data-toggle="tab">Product</a></li>
+        {% if not product.hasVariants %}
         <li><a href="#options" data-toggle="tab">Options</a></li>
+        {% endif %}
         <li><a href="#properties" data-toggle="tab">Properties</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="main">
-            {# form_row(form.masterVariant.sku) #}
             {{ form_row(form.name, {'attr': {'class': 'input-xxlarge'}}) }}
             {{ form_row(form.description, {'attr': {'class': 'input-xxlarge', 'rows': 10}}) }}
+            {{ form_row(form.shortDescription, {'attr': {'class': 'input-xxlarge', 'rows': 3}}) }}
             <hr />
-            {{ form_row(form.masterVariant.availableOn, {'attr': {'class': 'input-large'}, 'label': 'Available on'}) }}
-            {# form_row(form.masterVariant.availableOnDemand) #}
+            {{ form_label(form.masterVariant.availableOn) }}
+            {{ form_row(form.masterVariant.availableOn.date, {'label': false}) }}
+            {{ form_row(form.masterVariant.availableOn.time, {'label': false}) }}
             {{ form_row(form.masterVariant.price) }}
-            {% if not product.hasOptions %}
-            {# form_row(form.masterVariant.onHand) #}
-            {% else %}
-            {# form_row(form.masterVariant.onHand, {'label': 'Default inventory'}) #}
-            {% endif %}
-            {# form_row(form.taxCategory, {'attr': {'class': 'input-xlarge', 'placeholder': 'Select taxation category'}}) #}
-            {# form_row(form.masterVariant.shippingCategory, {'attr': {'class': 'input-xlarge', 'placeholder': 'Select shipping category'}}) #}
         </div>
         <div class="tab-pane" id="options">
-            {# form_row(form.variantPickingMode) #}
             {% if form.options is defined %}
-            {{ form_row(form.options, {'attr': {'class': 'input-xlarge', 'placeholder': 'Pick product options'}}) }}
+                {{ form_row(form.options, {'attr': {'class': 'input-xlarge'}}) }}
             {% endif %}
         </div>
         <div class="tab-pane" id="properties">
@@ -36,11 +32,14 @@
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-product-properties" data-collection="sylius-assortment-product-properties">{{ 'sylius.product.add_property'|trans }}</a>
+                    <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-product-properties" data-collection="sylius-assortment-product-properties">
+                        {{ 'sylius.product.add_property'|trans }}
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </fieldset>
+</div>
 
 {{ form_widget(form._token) }}

@@ -1,0 +1,50 @@
+{% macro list(variants) %}
+
+{% if variants|length > 0 %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>{{ 'sylius.variant.availability'|trans }}</th>
+            <th>{{ 'sylius.variant.last_update'|trans }}</th>
+            <th>{{ 'sylius.variant.options'|trans }}</th>
+            <th>{{ 'sylius.variant.price'|trans }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for variant in variants %}
+        {% set product = variant.product %}
+        <tr>
+            <td>{{ variant.id }}</td>
+            <td><span class="label label-{{ variant.available ? 'success' : 'important' }}">{{ variant.availableOn|date }}</span></td>
+            <td><span class="label label-info">{{ product.updatedAt|date }}</span></td>
+            <td>
+                <ul>
+                    {% for option in variant.options %}
+                        <li><strong>{{ option.name }}</strong>: {{ option.value }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>{{ variant.price }} &euro;</td>
+            <td>
+                <div class="btn-group pull-right">
+                    <a href="{{ path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id}) }}" class="btn">
+                       <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                    </a>
+                    <a href="{{ path('sylius_backend_variant_delete', {'productId': product.id, 'id': variant.id}) }}" class="btn btn-danger">
+                        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                    </a>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">
+    <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+    {{ 'sylius.backend.variant.no_results'|trans }}
+</div>
+{% endif %}
+{% endmacro %}

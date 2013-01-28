@@ -1,0 +1,32 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_variant_create:
+    pattern: /new
+    defaults:
+        _controller: sylius.controller.variant:createAction
+        _template: SyliusWebBundle:Backend/Variant:create.html.twig
+        _redirect: 
+            route: sylius_backend_product_show
+            parameters: {'id': '$productId'}
+    requirements:
+        _method: GET|POST
+
+sylius_backend_variant_update:
+    pattern: /{id}/edit
+    defaults:
+        _controller: sylius.controller.variant:updateAction
+        _template: SyliusWebBundle:Backend/Variant:update.html.twig
+        _redirect:
+            route: sylius_backend_product_show
+            parameters: {'id': '$productId'}
+    requirements:
+        _method: GET|PUT
+
+sylius_backend_variant_delete:
+    pattern: /{id}/delete
+    defaults:
+        _controller: sylius.controller.variant:deleteAction
+        _redirect:
+            route: sylius_backend_product_show
+            parameters: {'id': '$productId'}

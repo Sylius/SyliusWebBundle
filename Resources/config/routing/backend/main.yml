@@ -7,7 +7,11 @@ sylius_backend_dashboard:
 
 sylius_backend_product:
     resource: @SyliusWebBundle/Resources/config/routing/backend/product.yml
-    prefix: /product
+    prefix: /products
+
+sylius_backend_variant:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/variant.yml
+    prefix: /products/{productId}/variants
 
 sylius_backend_option:
     resource: @SyliusWebBundle/Resources/config/routing/backend/option.yml

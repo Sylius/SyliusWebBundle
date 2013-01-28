@@ -26,9 +26,9 @@ sylius:
         yes: yes
         no: no
         create: Create
-        edit: Edit
-        show: Details
-        delete: Delete
+        edit: edit
+        show: details
+        delete: delete
         cancel: Cancel
         save_changes: Save changes
         alert:
@@ -66,12 +66,17 @@ sylius:
                 zones: Zones
         product:
             manage: Manage products
-            create_header: New product
             create: Create product
+            index_header: Products <small>Index of all products in your store</small>
+            show_header: Product details <small>Viewing product "<strong>%product%</strong>"</small>
+            create_header: New product
             update_header: Editing product
-            show_header: Product details
-            index_header: Products
             no_results: There are no products to display
+        variant:
+            create: Create variant
+            create_header: New product variant
+            update_header: Editing variant
+            no_results: There are no variants to display
         option:
             manage: Manage options
             create_header: New product option
@@ -146,7 +151,20 @@ sylius:
             index_header: Zones
             no_results: There are no zones configured
     product:
+        name: Name
+        options: Options
+        properties: Properties
+        price: Retail price
+        available_on: Available on
+        no_short_description: <i>No short description</i>
+        no_options: There are no options for this product
+        no_properties: This product has no properties defined
         add_property: Add property
+    variant:
+        price: Price
+        availability: Availability
+        last_update: Last update
+        options: Options
     tax_rate:
         name: Name
         amount: Amount
@@ -165,3 +183,5 @@ sylius:
     label:
         variant:
             price: Price
+        product:
+            short_description: Short description

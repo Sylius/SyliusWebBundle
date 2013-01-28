@@ -1,57 +1,57 @@
-{% macro list(products, sorting = true) %}
+{% macro list(products) %}
+
 {% if products|length > 0 %}
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
-            {% if sorting %}
-            <th>{{ sylius_resource_sort('id', '#id') }}</th>
-            <th>photo</th>
-            <th>{{ sylius_resource_sort('sku', 'SKU') }}</th>
+            <th>{{ sylius_resource_sort('id') }}</th>
+            <th>main image</th>
             <th>{{ sylius_resource_sort('name') }}</th>
+            <th>{{ sylius_resource_sort('price') }}</th>
+            <th>{{ sylius_resource_sort('createdAt', 'created at') }}</th>
             <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
             <th></th>
-            {% else %}
-            <th>#id</th>
-            <th>photo</th>
-            <th>SKU</th>
-            <th>name</th>
-            <th>last updated</th>
-            <th></th>
-            {% endif %}
         </tr>
     </thead>
     <tbody>
     {% for product in products %}
         <tr>
-            <td>{{ product.id }}</td>
+            <td>
+                <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn btn-link">
+                    {{ product.id }}
+                </a>
+            </td>
             <td>
                 <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="thumbnail" style="width: 90px; height: 60px;">
                     <img src="http://placehold.it/90x60" alt="" />
                 </a>
             </td>
-            <td>{# product.sku #}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.updatedAt|date }}</td>
             <td>
-                <div class="btn-toolbar pull-right">
-                    <div class="btn-group">
-                        <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn">
-                            <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
-                        </a>
-                        <a href="#" data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                            <a href="{{ path('sylius_backend_product_update', {'id': product.id}) }}">
-                                <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
-                            </a>
-                            </li>
-                            <li>
-                            <a href="{{ path('sylius_backend_product_delete', {'id': product.id}) }}">
-                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
+                <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}">
+                    <strong>{{ product.name }}</strong>
+                </a>
+                <p>{{ product.shortDescription }}</p>
+            </td>
+            <td>
+                {% if not product.hasOptions %}
+                    <span class="label label-success">{{ product.masterVariant.price }} &euro;</span>
+                {% else %}
+                    ---
+                {% endif %}
+            </td>
+            <td><span class="label label-info">{{ product.createdAt|date }}</span></td>
+            <td><span class="label label-info">{{ product.updatedAt|date }}</span></td>
+            <td>
+                <div class="btn-group pull-right">
+                    <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn">
+                       <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
+                    </a>
+                    <a href="{{ path('sylius_backend_product_update', {'id': product.id}) }}" class="btn">
+                       <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                    </a>
+                    <a href="{{ path('sylius_backend_product_delete', {'id': product.id}) }}" class="btn btn-danger">
+                        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                    </a>
                 </div>
             </td>
         </tr>
@@ -64,4 +64,5 @@
     {{ 'sylius.backend.product.no_results'|trans }}
 </div>
 {% endif %}
+
 {% endmacro %}
