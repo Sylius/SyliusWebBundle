@@ -16,13 +16,13 @@
     </a>
 </div>
 
-{% if rates.haveToPaginate()|default(false) %}
-{{ pagerfanta(rates, 'twitter_bootstrap_translated') }}
+{% if tax_rates.haveToPaginate()|default(false) %}
+{{ pagerfanta(tax_rates, 'twitter_bootstrap_translated') }}
 {% endif %}
 
-{{ macros.list(rates) }}
+{{ macros.list(tax_rates) }}
 
-{% if rates.haveToPaginate()|default(false) %}
-{{ pagerfanta(rates, 'twitter_bootstrap_translated') }}
+{% if tax_rates.haveToPaginate()|default(false) %}
+{{ pagerfanta(tax_rates, 'twitter_bootstrap_translated') }}
 {% endif %}
 {% endblock %}

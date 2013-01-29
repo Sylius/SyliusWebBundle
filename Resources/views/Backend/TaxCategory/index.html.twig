@@ -16,13 +16,13 @@
     </a>
 </div>
 
-{% if categories.haveToPaginate()|default(false) %}
-{{ pagerfanta(categories, 'twitter_bootstrap_translated') }}
+{% if tax_categories.haveToPaginate()|default(false) %}
+{{ pagerfanta(tax_categories, 'twitter_bootstrap_translated') }}
 {% endif %}
 
-{{ macros.list(categories) }}
+{{ macros.list(tax_categories) }}
 
-{% if categories.haveToPaginate()|default(false) %}
-{{ pagerfanta(categories, 'twitter_bootstrap_translated') }}
+{% if tax_categories.haveToPaginate()|default(false) %}
+{{ pagerfanta(tax_categories, 'twitter_bootstrap_translated') }}
 {% endif %}
 {% endblock %}

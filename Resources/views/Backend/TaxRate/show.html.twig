@@ -9,10 +9,10 @@
     <a href="{{ path('sylius_backend_tax_rate_index') }}" class="btn btn-primary">
         <i class="icon-list-alt"></i> {{ 'sylius.backend.tax_rate.manage'|trans }}
     </a>
-    <a href="{{ path('sylius_backend_tax_rate_update', {'id': rate.id}) }}" class="btn">
+    <a href="{{ path('sylius_backend_tax_rate_update', {'id': tax_rate.id}) }}" class="btn">
         <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
     </a>
-    <a href="{{ path('sylius_backend_tax_rate_delete', {'id': rate.id}) }}" class="btn btn-danger">
+    <a href="{{ path('sylius_backend_tax_rate_delete', {'id': tax_rate.id}) }}" class="btn btn-danger">
         <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
     </a>
 </div>
@@ -28,10 +28,10 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ rate.category }}</td>
-            <td>{{ rate.name }}</td>
-            <td>{{ rate.zone }}</td>
-            <td>{{ rate.amountAsPercentage }}%</td>
+            <td>{{ tax_rate.category }}</td>
+            <td>{{ tax_rate.name }}</td>
+            <td>{{ tax_rate.zone }}</td>
+            <td>{{ tax_rate.amountAsPercentage }}%</td>
         </tr>
     </tbody>
 </table>

@@ -4,7 +4,7 @@
 sylius_backend_tax_rate_index:
     pattern: /index
     defaults:
-        _controller: sylius_taxation.controller.rate:indexAction
+        _controller: sylius.controller.tax_rate:indexAction
         _template: SyliusWebBundle:Backend/TaxRate:index.html.twig
         _sortable: true
         _sorting:
@@ -15,7 +15,7 @@ sylius_backend_tax_rate_index:
 sylius_backend_tax_rate_create:
     pattern: /new
     defaults:
-        _controller: sylius_taxation.controller.rate:createAction
+        _controller: sylius.controller.tax_rate:createAction
         _template: SyliusWebBundle:Backend/TaxRate:create.html.twig
         _redirect: sylius_backend_tax_rate_show
     requirements:
@@ -24,7 +24,7 @@ sylius_backend_tax_rate_create:
 sylius_backend_tax_rate_update:
     pattern: /{id}/edit
     defaults:
-        _controller: sylius_taxation.controller.rate:updateAction
+        _controller: sylius.controller.tax_rate:updateAction
         _template: SyliusWebBundle:Backend/TaxRate:update.html.twig
         _redirect: sylius_backend_tax_rate_show
     requirements:
@@ -33,13 +33,13 @@ sylius_backend_tax_rate_update:
 sylius_backend_tax_rate_delete:
     pattern: /{id}/delete
     defaults:
-        _controller: sylius_taxation.controller.rate:deleteAction
+        _controller: sylius.controller.tax_rate:deleteAction
         _redirect: sylius_backend_tax_rate_index
 
 sylius_backend_tax_rate_show:
     pattern: /{id}
     defaults:
-        _controller: sylius_taxation.controller.rate:showAction
+        _controller: sylius.controller.tax_rate:showAction
         _template: SyliusWebBundle:Backend/TaxRate:show.html.twig
     requirements:
         _method: GET

@@ -1,6 +1,6 @@
-{% macro list(rates) %}
+{% macro list(tax_rates) %}
 
-{% if rates|length > 0 %}
+{% if tax_rates|length > 0 %}
 <table class="table">
     <thead>
         <tr>
@@ -16,29 +16,29 @@
         </tr>
     </thead>
     <tbody>
-    {% for rate in rates %}
+    {% for tax_rate in tax_rates %}
         <tr>
-            <td>{{ rate.id }}</td>
-            <td>{{ rate.category }}</td>
-            <td>{{ rate.zone }}</td>
-            <td>{{ rate.name }}</td>
-            <td>{{ rate.amountAsPercentage }}%</td>
+            <td>{{ tax_rate.id }}</td>
+            <td>{{ tax_rate.category }}</td>
+            <td>{{ tax_rate.zone }}</td>
+            <td>{{ tax_rate.name }}</td>
+            <td>{{ tax_rate.amountAsPercentage }}%</td>
             <td>
-                <span class="label label-{{ rate.includedInPrice ? 'success' : 'important'}}">
-                    {{ rate.includedInPrice ? 'sylius.backend.yes'|trans : 'sylius.backend.no'|trans }}
+                <span class="label label-{{ tax_rate.includedInPrice ? 'success' : 'important'}}">
+                    {{ tax_rate.includedInPrice ? 'sylius.backend.yes'|trans : 'sylius.backend.no'|trans }}
                 </span>
             </td>
-            <td><span class="label label info">{{ rate.calculator }}</span></td>
-            <td>{{ rate.updatedAt|date }}</td>
+            <td><span class="label label info">{{ tax_rate.calculator }}</span></td>
+            <td>{{ tax_rate.updatedAt|date }}</td>
             <td>
                 <div class="btn-group pull-right">
-                    <a href="{{ path('sylius_backend_tax_rate_show', {'id': rate.id}) }}" class="btn">
+                    <a href="{{ path('sylius_backend_tax_rate_show', {'id': tax_rate.id}) }}" class="btn">
                        <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
                     </a>
-                    <a href="{{ path('sylius_backend_tax_rate_update', {'id': rate.id}) }}" class="btn">
+                    <a href="{{ path('sylius_backend_tax_rate_update', {'id': tax_rate.id}) }}" class="btn">
                        <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
                     </a>
-                    <a href="{{ path('sylius_backend_tax_rate_delete', {'id': rate.id}) }}" class="btn btn-danger">
+                    <a href="{{ path('sylius_backend_tax_rate_delete', {'id': tax_rate.id}) }}" class="btn btn-danger">
                         <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
                     </a>
                 </div>
