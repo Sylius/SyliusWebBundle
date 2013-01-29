@@ -159,6 +159,8 @@ sylius:
         properties: Properties
         price: Retail price
         available_on: Available on
+        tax_category: Tax category
+        no_tax_category: No tax category
         no_short_description: <i>No short description</i>
         no_options: There are no options for this product
         no_properties: This product has no properties defined
@@ -188,3 +190,4 @@ sylius:
             price: Price
         product:
             short_description: Short description
+            tax_category: Tax category

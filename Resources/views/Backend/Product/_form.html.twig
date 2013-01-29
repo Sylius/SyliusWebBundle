@@ -18,6 +18,8 @@
             {{ form_row(form.masterVariant.availableOn.date, {'label': false}) }}
             {{ form_row(form.masterVariant.availableOn.time, {'label': false}) }}
             {{ form_row(form.masterVariant.price) }}
+            <hr />
+            {{ form_row(form.taxCategory) }}
         </div>
         <div class="tab-pane" id="options">
             {% if form.options is defined %}
