@@ -29,3 +29,10 @@ sylius_backend_prototype_delete:
     defaults:
         _controller: sylius.controller.prototype:deleteAction
         _redirect: sylius_backend_prototype_index
+
+sylius_backend_prototype_build:
+    pattern: /{id}/build
+    defaults:
+        _controller: sylius.controller.prototype:buildAction
+        _template: SyliusWebBundle:Backend/Prototype:build.html.twig
+        _redirect: sylius_backend_product_show

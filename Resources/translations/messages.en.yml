@@ -29,6 +29,7 @@ sylius:
         edit: edit
         show: details
         delete: delete
+        build: build
         cancel: Cancel
         save_changes: Save changes
         alert:
@@ -71,6 +72,7 @@ sylius:
             show_header: Product details <small>Viewing product "<strong>%product%</strong>"</small>
             create_header: New product
             update_header: Editing product
+            generate_variants: Generate variants
             no_results: There are no products to display
         variant:
             create: Create variant
@@ -98,6 +100,7 @@ sylius:
             create_header: New prototype
             create: Create prototype
             update_header: Editing prototype
+            build_header: Building product from prototype
             index_header: Product prototypes
             no_results: There are no prototypes defined
         tax_category:

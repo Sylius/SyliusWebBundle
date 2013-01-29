@@ -74,6 +74,9 @@
     <a href="{{ path('sylius_backend_variant_create', {'productId': product.id}) }}" class="btn btn-primary">
         <i class="icon-plus icon-white"></i> {{ 'sylius.backend.variant.create'|trans }}
     </a>
+    <a href="{{ path('sylius_backend_variant_generate', {'productId': product.id}) }}" class="btn btn-success">
+        <i class="icon-random"></i> {{ 'sylius.backend.product.generate_variants'|trans }}
+    </a>
 </div>
 
 {{ macros.list(product.variants) }}

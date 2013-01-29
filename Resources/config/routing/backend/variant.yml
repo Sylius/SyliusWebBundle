@@ -30,3 +30,13 @@ sylius_backend_variant_delete:
         _redirect:
             route: sylius_backend_product_show
             parameters: {'id': '$productId'}
+
+sylius_backend_variant_generate:
+    pattern: /generate
+    defaults:
+        _controller: sylius.controller.variant:generateAction
+        _redirect:
+            route: sylius_backend_product_show
+            parameters: {'id': '$productId'}
+    requirements:
+        _method: GET
