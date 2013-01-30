@@ -4,7 +4,9 @@
 <div class="page-header">
 <h1>{{ 'sylius.backend.tax_category.update_header'|trans|raw }}</h1>
 </div>
-<form action="{{ path('sylius_backend_tax_rate_update', {'id': tax_rate.id, '_method': 'PUT'}) }}" method="post" class="form-horizontal" novalidate>
+
+<form action="{{ path('sylius_backend_tax_rate_update', {'id': tax_rate.id}) }}" method="post" class="form-horizontal" novalidate>
+    <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/TaxRate:_form.html.twig' %}
     <div class="form-actions">
         <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />

@@ -1,6 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% import 'SyliusWebBundle:Backend/TaxRate:macros.html.twig' as macros %}
+{% import 'SyliusWebBundle::macros.html.twig' as macros %}
+{% import 'SyliusWebBundle:Backend/TaxRate:macros.html.twig' as taxRateMacros %}
 
 {% block content %}
 <div class="page-header">
@@ -16,13 +17,8 @@
     </a>
 </div>
 
-{% if tax_rates.haveToPaginate()|default(false) %}
-{{ pagerfanta(tax_rates, 'twitter_bootstrap_translated') }}
-{% endif %}
+{{ macros.pagination(tax_rates) }}
+{{ taxRateMacros.list(tax_rates) }}
+{{ macros.pagination(tax_rates) }}
 
-{{ macros.list(tax_rates) }}
-
-{% if tax_rates.haveToPaginate()|default(false) %}
-{{ pagerfanta(tax_rates, 'twitter_bootstrap_translated') }}
-{% endif %}
 {% endblock %}

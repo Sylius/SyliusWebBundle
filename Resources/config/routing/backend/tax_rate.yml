@@ -31,10 +31,12 @@ sylius_backend_tax_rate_update:
         _method: GET|PUT
 
 sylius_backend_tax_rate_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
     defaults:
         _controller: sylius.controller.tax_rate:deleteAction
         _redirect: sylius_backend_tax_rate_index
+    requirements:
+        _method: DELETE
 
 sylius_backend_tax_rate_show:
     pattern: /{id}

@@ -17,7 +17,7 @@ sylius_backend_tax_category_create:
     defaults:
         _controller: sylius.controller.tax_category:createAction
         _template: SyliusWebBundle:Backend/TaxCategory:create.html.twig
-        _redirect: sylius_backend_tax_category_show
+        _redirect: sylius_backend_tax_category_index
     requirements:
         _method: GET|POST
 
@@ -26,15 +26,17 @@ sylius_backend_tax_category_update:
     defaults:
         _controller: sylius.controller.tax_category:updateAction
         _template: SyliusWebBundle:Backend/TaxCategory:update.html.twig
-        _redirect: sylius_backend_tax_category_show
+        _redirect: sylius_backend_tax_category_index
     requirements:
         _method: GET|PUT
 
 sylius_backend_tax_category_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
     defaults:
         _controller: sylius.controller.tax_category:deleteAction
         _redirect: sylius_backend_tax_category_index
+    requirements:
+        _method: DELETE
 
 sylius_backend_tax_category_show:
     pattern: /{id}

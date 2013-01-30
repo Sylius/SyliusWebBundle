@@ -38,9 +38,12 @@
                     <a href="{{ path('sylius_backend_tax_rate_update', {'id': tax_rate.id}) }}" class="btn">
                        <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
                     </a>
-                    <a href="{{ path('sylius_backend_tax_rate_delete', {'id': tax_rate.id}) }}" class="btn btn-danger">
-                        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                    </a>
+                    <form action="{{ path('sylius_backend_tax_rate_delete', {'id': tax_rate.id}) }}" method="post" style="display: inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </button>
+                    </form>
                 </div>
             </td>
         </tr>

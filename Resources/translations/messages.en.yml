@@ -105,13 +105,18 @@ sylius:
             no_results: There are no prototypes defined
         tax_category:
             manage: Manage tax categories
-            create_header: New tax category
             create: Create tax category
+            create_header: New tax category
             update_header: Editing tax category
             show_header: Tax category details
             index_header: Taxation categories
             no_results: There are no tax categories configured
             no_description: No description
+            id: ID
+            name: Name
+            description: Description
+            created_at: Creation time
+            updated_at: Last update
         tax_rate:
             manage: Manage tax rates
             create_header: New tax rate
