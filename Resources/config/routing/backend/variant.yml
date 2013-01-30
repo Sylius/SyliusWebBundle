@@ -6,7 +6,7 @@ sylius_backend_variant_create:
     defaults:
         _controller: sylius.controller.variant:createAction
         _template: SyliusWebBundle:Backend/Variant:create.html.twig
-        _redirect: 
+        _redirect:
             route: sylius_backend_product_show
             parameters: {'id': '$productId'}
     requirements:
