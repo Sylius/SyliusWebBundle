@@ -5,7 +5,8 @@
     <h1>{{ 'sylius.backend.shipping_category.update_header'|trans|raw }}</h1>
 </div>
 
-<form action="{{ path('sylius_backend_shipping_category_update', {'id': category.id}) }}" method="post" class="form-horizontal" novalidate>
+<form action="{{ path('sylius_backend_shipping_category_update', {'id': shipping_category.id}) }}" method="post" class="form-horizontal" novalidate>
+    <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/ShippingCategory:_form.html.twig' %}
     <div class="form-actions">
         <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />

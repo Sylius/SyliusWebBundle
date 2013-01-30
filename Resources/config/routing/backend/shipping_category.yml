@@ -4,34 +4,36 @@
 sylius_backend_shipping_category_index:
     pattern: /
     defaults:
-        _controller: sylius_shipping.controller.category:indexAction
+        _controller: sylius.controller.shipping_category:indexAction
         _template: SyliusWebBundle:Backend/ShippingCategory:index.html.twig
         _sortable: true
         _sorting:
             name: desc
+    requirements:
+        _method: GET
 
 sylius_backend_shipping_category_create:
     pattern: /new
     defaults:
-        _controller: sylius_shipping.controller.category:createAction
+        _controller: sylius.controller.shipping_category:createAction
         _template: SyliusWebBundle:Backend/ShippingCategory:create.html.twig
-        _redirect: sylius_backend_shipping_category_show
+        _redirect: sylius_backend_shipping_category_index
+    requirements:
+        _method: GET|POST
 
 sylius_backend_shipping_category_update:
     pattern: /{id}/edit
     defaults:
-        _controller: sylius_shipping.controller.category:updateAction
+        _controller: sylius.controller.shipping_category:updateAction
         _template: SyliusWebBundle:Backend/ShippingCategory:update.html.twig
-        _redirect: sylius_backend_shipping_category_show
+        _redirect: sylius_backend_shipping_category_index
+    requirements:
+        _method: GET|PUT
 
 sylius_backend_shipping_category_delete:
     pattern: /{id}/delete
     defaults:
-        _controller: sylius_shipping.controller.category:deleteAction
+        _controller: sylius.controller.shipping_category:deleteAction
         _redirect: sylius_backend_shipping_category_index
-
-sylius_backend_shipping_category_show:
-    pattern: /{id}
-    defaults:
-        _controller: sylius_shipping.controller.category:showAction
-        _template: SyliusWebBundle:Backend/ShippingCategory:show.html.twig
+    requirements:
+        _method: DELETE

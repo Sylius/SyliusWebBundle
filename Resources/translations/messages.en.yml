@@ -134,6 +134,10 @@ sylius:
             index_header: Shipping categories
             no_results: There are no shipping categories configured
             no_description: No description
+            id: ID
+            name: Name
+            description: Description
+            updated_at: Last update
         shipping_method:
             manage: Manage shipping methods
             create_header: New shipping method
@@ -142,6 +146,13 @@ sylius:
             show_header: Shipping method details
             index_header: Shipping methods
             no_results: There are no shipping methods configured
+            id: ID
+            name: Name
+            zone: Zone
+            category: Category
+            enabled: Is enabled?
+            calculator: Calculator
+            updated_at: Last update
         country:
             manage: Manage countries
             create_header: New country

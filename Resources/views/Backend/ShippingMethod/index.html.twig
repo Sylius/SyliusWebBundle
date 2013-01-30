@@ -1,6 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% import 'SyliusWebBundle:Backend/ShippingMethod:macros.html.twig' as macros %}
+{% import 'SyliusWebBundle::macros.html.twig' as macros %}
+{% import 'SyliusWebBundle:Backend/ShippingMethod:macros.html.twig' as shippingMethodMacros %}
 
 {% block content %}
 <div class="page-header">
@@ -16,13 +17,8 @@
     </a>
 </div>
 
-{% if methods.haveToPaginate() %}
-    {{ pagerfanta(methods, 'twitter_bootstrap_translated') }}
-{% endif %}
+{{ macros.pagination(shipping_methods) }}
+{{ shippingMethodMacros.list(shipping_methods) }}
+{{ macros.pagination(shipping_methods) }}
 
-{{ macros.list(methods) }}
-
-{% if methods.haveToPaginate() %}
-    {{ pagerfanta(methods, 'twitter_bootstrap_translated') }}
-{% endif %}
 {% endblock %}

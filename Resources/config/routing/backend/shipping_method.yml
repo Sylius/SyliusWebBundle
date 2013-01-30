@@ -4,34 +4,44 @@
 sylius_backend_shipping_method_index:
     pattern: /
     defaults:
-        _controller: sylius_shipping.controller.method:indexAction
+        _controller: sylius.controller.shipping_method:indexAction
         _template: SyliusWebBundle:Backend/ShippingMethod:index.html.twig
         _sortable: true
         _sorting:
             name: desc
+    requirements:
+        _method: GET
 
 sylius_backend_shipping_method_create:
     pattern: /new
     defaults:
-        _controller: sylius_shipping.controller.method:createAction
+        _controller: sylius.controller.shipping_method:createAction
         _template: SyliusWebBundle:Backend/ShippingMethod:create.html.twig
         _redirect: sylius_backend_shipping_method_show
+    requirements:
+        _method: GET|POST
 
 sylius_backend_shipping_method_update:
     pattern: /{id}/edit
     defaults:
-        _controller: sylius_shipping.controller.method:updateAction
+        _controller: sylius.controller.shipping_method:updateAction
         _template: SyliusWebBundle:Backend/ShippingMethod:update.html.twig
         _redirect: sylius_backend_shipping_method_show
+    requirements:
+        _method: GET|PUT
 
 sylius_backend_shipping_method_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
     defaults:
-        _controller: sylius_shipping.controller.method:deleteAction
+        _controller: sylius.controller.shipping_method:deleteAction
         _redirect: sylius_backend_shipping_method_index
+    requirements:
+        _method: DELETE
 
 sylius_backend_shipping_method_show:
     pattern: /{id}
     defaults:
-        _controller: sylius_shipping.controller.method:showAction
+        _controller: sylius.controller.shipping_method:showAction
         _template: SyliusWebBundle:Backend/ShippingMethod:show.html.twig
+    requirements:
+        _method: GET

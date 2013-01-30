@@ -1,32 +1,32 @@
-{% macro list(categories) %}
+{% macro list(shipping_categories) %}
 
-{% if categories|length > 0 %}
+{% if shipping_categories|length > 0 %}
     <table class="table">
         <thead>
             <tr>
-                <th>{{ sylius_resource_sort('id', '#id') }}</th>
-                <th>{{ sylius_resource_sort('name') }}</th>
-                <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
+                <th>{{ sylius_resource_sort('id', 'sylius.backend.shipping_category.id'|trans) }}</th>
+                <th>{{ sylius_resource_sort('name', 'sylius.backend.shipping_category.name'|trans) }}</th>
+                <th>{{ sylius_resource_sort('updatedAt', 'sylius.backend.shipping_category.updated_at'|trans) }}</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-        {% for category in categories %}
+        {% for shipping_category in shipping_categories %}
             <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>{{ category.updatedAt|date }}</td>
+                <td>{{ shipping_category.id }}</td>
+                <td>{{ shipping_category.name }}</td>
+                <td>{{ shipping_category.updatedAt|date }}</td>
                 <td>
-                    <div class="btn-group pull-right">
-                        <a href="{{ path('sylius_backend_shipping_category_show', {'id': category.id}) }}" class="btn">
-                           <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
-                        </a>
-                        <a href="{{ path('sylius_backend_shipping_category_update', {'id': category.id}) }}" class="btn">
+                    <div class="pull-right">
+                        <a href="{{ path('sylius_backend_shipping_category_update', {'id': shipping_category.id}) }}" class="btn">
                            <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
                         </a>
-                        <a href="{{ path('sylius_backend_shipping_category_delete', {'id': category.id}) }}" class="btn btn-danger">
-                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                        </a>
+                        <form action="{{ path('sylius_backend_shipping_category_delete', {'id': shipping_category.id}) }}" method="post" style="display: inline;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger">
+                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                            </button>
+                        </form>
                     </div>
                 </td>
             </tr>
