@@ -4,7 +4,7 @@
 sylius_backend_country_index:
     pattern: /index
     defaults:
-        _controller: sylius_addressing.controller.country:indexAction
+        _controller: sylius.controller.country:indexAction
         _template: SyliusWebBundle:Backend/Country:index.html.twig
         _sortable: true
         _paginate: 50
@@ -12,25 +12,25 @@ sylius_backend_country_index:
 sylius_backend_country_create:
     pattern: /new
     defaults:
-        _controller: sylius_addressing.controller.country:createAction
+        _controller: sylius.controller.country:createAction
         _template: SyliusWebBundle:Backend/Country:create.html.twig
         _redirect: sylius_backend_country_show
 
 sylius_backend_country_update:
     pattern: /{id}/edit
     defaults:
-        _controller: sylius_addressing.controller.country:updateAction
+        _controller: sylius.controller.country:updateAction
         _template: SyliusWebBundle:Backend/Country:update.html.twig
         _redirect: sylius_backend_country_show
 
 sylius_backend_country_delete:
     pattern: /{id}/delete
     defaults:
-        _controller: sylius_addressing.controller.country:deleteAction
+        _controller: sylius.controller.country:deleteAction
         _redirect: sylius_backend_country_index
 
 sylius_backend_country_show:
     pattern: /{id}
     defaults:
-        _controller: sylius_addressing.controller.country:showAction
+        _controller: sylius.controller.country:showAction
         _template: SyliusWebBundle:Backend/Country:show.html.twig
