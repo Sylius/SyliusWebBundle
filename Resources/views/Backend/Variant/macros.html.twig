@@ -8,6 +8,8 @@
             <th>{{ 'sylius.variant.availability'|trans }}</th>
             <th>{{ 'sylius.variant.last_update'|trans }}</th>
             <th>{{ 'sylius.variant.options'|trans }}</th>
+            <th>{{ 'sylius.variant.available_on_demand'|trans }}</th>
+            <th>{{ 'sylius.variant.stock'|trans }}</th>
             <th>{{ 'sylius.variant.price'|trans }}</th>
             <th></th>
         </tr>
@@ -26,6 +28,14 @@
                     {% endfor %}
                 </ul>
             </td>
+            <td>
+                {% if variant.availableOnDemand %}
+                    <span class="badge badge-success">{{ 'sylius.backend.yes'|trans }}</span>
+                {% else %}
+                    <span class="badge badge-warning">{{ 'sylius.backend.no'|trans }}</span>
+                {% endif %}
+            </td>
+            <td><span class="badge badge-{{ variant.inStock ? 'success' : 'important' }}">{{ variant.onHand }}</span></td>
             <td>{{ variant.price }} &euro;</td>
             <td>
                 <div class="btn-group pull-right">
