@@ -14,11 +14,11 @@ namespace spec\Sylius\Bundle\WebBundle\Menu;
 use PHPSpec2\ObjectBehavior;
 
 /**
- * Backend menu builder spec.
+ * Frontend menu builder spec.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class BackendMenuBuilder extends ObjectBehavior
+class FrontendMenuBuilder extends ObjectBehavior
 {
     /**
      * @param Knp\Menu\FactoryInterface                                $factory
@@ -32,7 +32,7 @@ class BackendMenuBuilder extends ObjectBehavior
 
     public function it_should_be_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\BackendMenuBuilder');
+        $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\FrontendMenuBuilder');
     }
 
     public function it_should_extend_base_menu_builder()

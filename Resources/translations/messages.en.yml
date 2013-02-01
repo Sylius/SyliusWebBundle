@@ -16,6 +16,13 @@ sylius:
             headline: Welcome to Sylius
             subheadline: Modern ecommerce for Symfony2
             link: Sylius.org
+    frontend:
+        menu:
+            main:
+                login: Login
+                logout: Logout
+                register: Register
+                dashboard: Dashboard
     backend:
         logo: Sylius
         meta:
@@ -56,6 +63,8 @@ sylius:
             sidebar:
                 dashboard: Dashboard
                 homepage: Back to frontend
+                customer: Customers
+                users: Users
                 assortment: Assortment
                 products: Products
                 stockables: Inventory levels
@@ -72,6 +81,10 @@ sylius:
                 shipping_methods: Shipping methods
                 countries: Countries
                 zones: Zones
+        user:
+            index_header: Users <small>List of all users registered in store</small>
+            show_header: User details
+            no_results: There are no users to display
         product:
             manage: Manage products
             id: ID
