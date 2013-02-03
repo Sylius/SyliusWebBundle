@@ -49,6 +49,7 @@ class BackendMenuBuilder extends MenuBuilder
         ))->setLabel($this->translate('sylius.backend.menu.main.dashboard'));
 
         $this->addAssortmentMenu($menu, $childOptions, 'main');
+        $this->addSalesMenu($menu, $childOptions, 'main');
         $this->addConfigurationMenu($menu, $childOptions, 'main');
 
         $menu->addChild('homepage', array(
@@ -87,6 +88,7 @@ class BackendMenuBuilder extends MenuBuilder
         ))->setLabel($this->translate('sylius.backend.menu.sidebar.dashboard'));
 
         $this->addAssortmentMenu($menu, $childOptions, 'sidebar');
+        $this->addSalesMenu($menu, $childOptions, 'sidebar');
         $this->addConfigurationMenu($menu, $childOptions, 'sidebar');
 
         $child->addChild('homepage', array(
@@ -124,6 +126,27 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('prototypes', array(
             'route' => 'sylius_backend_prototype_index',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.prototypes', $section)));
+    }
+
+    /**
+     * Add sales menu.
+     *
+     * @param ItemInterface $menu
+     * @param array         $childOptions
+     */
+    protected function addSalesMenu(ItemInterface $menu, array $childOptions, $section)
+    {
+        $child = $menu
+            ->addChild('sales', $childOptions)
+            ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.sales', $section)))
+        ;
+
+        $child->addChild('orders', array(
+            'route' => 'sylius_backend_order_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.orders', $section)));
+        $child->addChild('new_order', array(
+            'route' => 'sylius_backend_order_create',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_order', $section)));
     }
 
     /**

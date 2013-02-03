@@ -43,6 +43,9 @@ sylius:
                 options: Manage product options
                 properties: Configure properties
                 prototypes: Product prototypes
+                sales: Orders
+                orders: Current orders
+                new_order: Add new order
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -58,6 +61,9 @@ sylius:
                 options: Manage product options
                 properties: Configure properties
                 prototypes: Product prototypes
+                sales: Orders
+                orders: Current orders
+                new_order: Add new order
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -67,6 +73,8 @@ sylius:
                 zones: Zones
         product:
             manage: Manage products
+            id: ID
+            sku: SKU
             create: Create product
             index_header: Products <small>Index of all products in your store</small>
             show_header: Product details <small>Viewing product "<strong>%product%</strong>"</small>
@@ -103,6 +111,51 @@ sylius:
             build_header: Building product from prototype
             index_header: Product prototypes
             no_results: There are no prototypes defined
+        order:
+            manage: Manage orders
+            create: Create order
+            create_header: New order
+            update_header: Editing order
+            show_header: Order details
+            index_header: Current orders
+            no_results: You have no new orders
+            general_info: General info
+            id: ID
+            number: Number
+            user: User
+            total: Total
+            items_total: Items total
+            tax_total: Tax total
+            taxes: Taxes
+            items: Items
+            no_items: This order does not contain any items
+            no_taxes: No taxes applied
+            shipping_total: Shipping total
+            shipping_charges: Shipping charges
+            no_shipping_charges: No shipping charges applied
+            shipments: Shipments
+            no_shipments: There are no shipments for this order
+            shipping_address: Shipping address
+            billing_address: Billing address
+            created_at: Creation time
+            updated_at: Last update
+        order_item:
+            sellable: Product
+            quantity: Qty
+            unit_price: Unit price
+            total: Total
+        address:
+            firstname: First name
+            lastname: Last name
+            country: Country
+            street: Street
+            city: City
+            postcode: Postcode
+        shipment:
+            id: ID
+            method: Method
+            state: State
+            updated_at: Last update
         tax_category:
             manage: Manage tax categories
             create: Create tax category

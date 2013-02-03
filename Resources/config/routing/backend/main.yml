@@ -25,6 +25,10 @@ sylius_backend_prototype:
     resource: @SyliusWebBundle/Resources/config/routing/backend/prototype.yml
     prefix: /prototypes
 
+sylius_backend_order:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/order.yml
+    prefix: /orders
+
 sylius_backend_tax_category:
     resource: @SyliusWebBundle/Resources/config/routing/backend/tax_category.yml
     prefix: /tax-categories

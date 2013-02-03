@@ -1,0 +1,21 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusWebBundle::macros.html.twig' as macros %}
+{% import 'SyliusWebBundle:Backend/Order:macros.html.twig' as orderMacros %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.order.index_header'|trans|raw }}</h1>
+</div>
+
+<div class="well well-small">
+    <a href="{{ path('sylius_backend_order_create') }}" class="btn btn-primary">
+        <i class="icon-plus-sign"></i> {{ 'sylius.backend.order.create'|trans }}
+    </a>
+</div>
+
+{{ macros.pagination(orders) }}
+{{ orderMacros.list(orders) }}
+{{ macros.pagination(orders) }}
+
+{% endblock %}

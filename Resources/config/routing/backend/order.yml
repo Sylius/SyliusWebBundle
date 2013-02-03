@@ -1,0 +1,47 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_order_index:
+    pattern: /index
+    defaults:
+        _controller: sylius.controller.order:indexAction
+        _template: SyliusWebBundle:Backend/Order:index.html.twig
+        _sortable: true
+        _sorting:
+            updatedAt: desc
+    requirements:
+        _method: GET
+
+sylius_backend_order_create:
+    pattern: /new
+    defaults:
+        _controller: sylius.controller.order:createAction
+        _template: SyliusWebBundle:Backend/Order:create.html.twig
+        _redirect: sylius_backend_order_show
+    requirements:
+        _method: GET|POST
+
+sylius_backend_order_update:
+    pattern: /{id}/edit
+    defaults:
+        _controller: sylius.controller.order:updateAction
+        _template: SyliusWebBundle:Backend/Order:update.html.twig
+        _redirect: sylius_backend_order_show
+    requirements:
+        _method: GET|PUT
+
+sylius_backend_order_delete:
+    pattern: /{id}
+    defaults:
+        _controller: sylius.controller.order:deleteAction
+        _redirect: sylius_backend_order_index
+    requirements:
+        _method: DELETE
+
+sylius_backend_order_show:
+    pattern: /{id}
+    defaults:
+        _controller: sylius.controller.order:showAction
+        _template: SyliusWebBundle:Backend/Order:show.html.twig
+    requirements:
+        _method: GET

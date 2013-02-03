@@ -1,0 +1,52 @@
+{% macro list(orders) %}
+
+{% if orders|length > 0 %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>{{ sylius_resource_sort('number', 'sylius.backend.order.number'|trans) }}</th>
+            <th>{{ sylius_resource_sort('user', 'sylius.backend.order.user'|trans) }}</th>
+            <th>{{ sylius_resource_sort('total', 'sylius.backend.order.total'|trans) }}</th>
+            <th>{{ sylius_resource_sort('createdAt', 'sylius.backend.order.created_at'|trans) }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>
+                <a href="{{ path('sylius_backend_order_show', {'id': order.id}) }}" class="btn btn-link">
+                <strong>#{{ order.number }}</strong>
+                </a>
+            </td>
+            <td>{{ order.user|default('username') }}</td>
+            <td>{{ order.total }}</td>
+            <td>{{ order.createdAt|date }}</td>
+            <td>
+                <div class="pull-right">
+                    <a href="{{ path('sylius_backend_order_show', {'id': order.id}) }}" class="btn">
+                       <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
+                    </a>
+                    <a href="{{ path('sylius_backend_order_update', {'id': order.id}) }}" class="btn">
+                       <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                    </a>
+                    <form action="{{ path('sylius_backend_order_delete', {'id': order.id}) }}" method="post" style="display: inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">
+    <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+    {{ 'sylius.backend.order.no_results'|trans }}
+</div>
+{% endif %}
+
+{% endmacro %}
