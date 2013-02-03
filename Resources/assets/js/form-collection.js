@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-;(function ( $ ) {
+(function ( $ ) {
     $(document).ready(function() {
         $('a[data-collection-button="add"]').on('click', function (e) {
             e.preventDefault();
