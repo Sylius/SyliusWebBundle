@@ -9,6 +9,10 @@ sylius_backend_product:
     resource: @SyliusWebBundle/Resources/config/routing/backend/product.yml
     prefix: /products
 
+sylius_backend_stockable:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/stockable.yml
+    prefix: /stockables
+
 sylius_backend_variant:
     resource: @SyliusWebBundle/Resources/config/routing/backend/variant.yml
     prefix: /products/{productId}/variants
