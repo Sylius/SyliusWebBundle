@@ -1,0 +1,11 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_stockable_index:
+    pattern: /index
+    defaults:
+        _controller: sylius.controller.stockable:indexAction
+        _template: SyliusWebBundle:Backend/Stockable:index.html.twig
+        _sortable: true
+        _sorting:
+            updatedAt: asc
