@@ -13,6 +13,7 @@ namespace Sylius\Bundle\WebBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Security\Core\SecurityContextInterface;
 
 /**
  * Abstract menu builder.
@@ -29,6 +30,13 @@ abstract class MenuBuilder
     protected $factory;
 
     /**
+     * Security context.
+     *
+     * @var SecurityContextInterface
+     */
+    protected $securityContext;
+
+    /**
      * Translator instance.
      *
      * @var TranslatorInterface
@@ -38,12 +46,14 @@ abstract class MenuBuilder
     /**
      * Constructor.
      *
-     * @param FactoryInterface    $factory
-     * @param TranslatorInterface $translator
+     * @param FactoryInterface         $factory
+     * @param SecurityContextInterface $securityContext
+     * @param TranslatorInterface      $translator
      */
-    public function __construct(FactoryInterface $factory, TranslatorInterface $translator)
+    public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext, TranslatorInterface $translator)
     {
         $this->factory = $factory;
+        $this->securityContext = $securityContext;
         $this->translator = $translator;
     }
 
