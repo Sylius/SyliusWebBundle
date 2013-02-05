@@ -89,6 +89,7 @@ class BackendMenuBuilder extends MenuBuilder
 
         $this->addAssortmentMenu($menu, $childOptions, 'sidebar');
         $this->addSalesMenu($menu, $childOptions, 'sidebar');
+        $this->addCustomersMenu($menu, $childOptions, 'sidebar');
         $this->addConfigurationMenu($menu, $childOptions, 'sidebar');
 
         $child->addChild('homepage', array(
@@ -151,6 +152,24 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('new_order', array(
             'route' => 'sylius_backend_order_create',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_order', $section)));
+    }
+
+    /**
+     * Add customers menu.
+     *
+     * @param ItemInterface $menu
+     * @param array         $childOptions
+     */
+    protected function addCustomersMenu(ItemInterface $menu, array $childOptions, $section)
+    {
+        $child = $menu
+            ->addChild('customer', $childOptions)
+            ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.customer', $section)))
+        ;
+
+        $child->addChild('users', array(
+            'route' => 'sylius_backend_user_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.users', $section)));
     }
 
     /**

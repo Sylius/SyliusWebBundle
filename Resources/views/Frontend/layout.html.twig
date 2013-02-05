@@ -68,9 +68,7 @@
         <div class="container-narrow">
         {% block header %}
             <div class="masthead">
-                <ul class="nav nav-pills pull-right">
-                    <li><a href="{{ path('sylius_homepage') }}">{{ 'sylius.layout.menu.home'|trans }}</a></li>
-                </ul>
+                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
                 <h3 class="muted">{{ 'sylius.logo'|trans }}</h3>
             </div>
         {% endblock %}
@@ -91,9 +89,6 @@
             <div class="footer">
                 <p class="muted">
                     &copy; Sylius, 2011 - {{ 'now'|date('Y') }}.
-                    <a href="{{ path('sylius_backend_dashboard') }}" class="pull-right">
-                        <i class="icon-lock"></i> {{ 'sylius.layout.menu.administration'|trans }}
-                    </a>
                 </p>
             </div>
         {% endblock %}

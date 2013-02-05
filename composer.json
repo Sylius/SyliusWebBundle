@@ -24,7 +24,8 @@
         "knplabs/knp-menu-bundle":  "2.0.*"
     },
     "require-dev": {
-        "phpspec/phpspec2":         "dev-develop"
+        "phpspec/phpspec2":         "dev-develop",
+        "symfony/security":         "~2.1"
     },
     "config": {
         "bin-dir": "bin"
