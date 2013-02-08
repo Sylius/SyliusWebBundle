@@ -1,0 +1,8 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_promotion_rule_delete:
+    pattern: /{id}/delete
+    defaults:
+        _controller: sylius.controller.promotion_rule:deleteAction
+        _redirect: referer

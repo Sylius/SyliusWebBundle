@@ -1,0 +1,56 @@
+{% macro list(promotions) %}
+
+{% if promotions|length > 0 %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>{{ sylius_resource_sort('id', '#id') }}</th>
+                <th>{{ sylius_resource_sort('name') }}</th>
+                <th>{{ sylius_resource_sort('description') }}</th>
+                <th>{{ sylius_resource_sort('startsAt', 'starts at') }}</th>
+                <th>{{ sylius_resource_sort('endsAt', 'ends at') }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for promotion in promotions %}
+            <tr>
+                <td>{{ promotion.id }}</td>
+                <td>{{ promotion.name }}</td>
+                <td>{{ promotion.description }}</td>
+                <td>{{ promotion.startsAt|date }}</td>
+                <td>{{ promotion.endsAt|date }}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <a href="{{ path('sylius_backend_promotion_show', {'id': promotion.id}) }}" class="btn">
+                           <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_promotion_update', {'id': promotion.id}) }}" class="btn">
+                            <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+                        </a>
+                        <a href="{{ path('sylius_backend_promotion_delete', {'id': promotion.id}) }}"  class="btn btn-danger">
+                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-info">
+        <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
+        {{ 'sylius.backend.promotion.no_results'|trans }}
+    </div>
+{% endif %}
+
+{% endmacro %}
+
+{% macro configuration(configuration) %}
+
+{% for key, value in configuration %}
+    <strong>{{ key }}</strong>: {{ value }}
+    {% if not loop.last %}<hr>{% endif %}
+{% endfor %}
+
+{% endmacro %}
