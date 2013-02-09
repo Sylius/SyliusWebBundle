@@ -4,7 +4,7 @@
 sylius_backend_user_index:
     pattern: /index
     defaults:
-        _controller: sylius_user.controller.user:indexAction
+        _controller: sylius.controller.user:indexAction
         _template: SyliusWebBundle:Backend/User:index.html.twig
         _filterable: true
         _sortable: true
@@ -16,14 +16,14 @@ sylius_backend_user_index:
 sylius_backend_user_delete:
     pattern: /{id}
     defaults:
-        _controller: sylius_user.controller.user:deleteAction
+        _controller: sylius.controller.user:deleteAction
     requirements:
         _method: DELETE
 
 sylius_backend_user_show:
     pattern: /{id}
     defaults:
-        _controller: sylius_user.controller.user:showAction
+        _controller: sylius.controller.user:showAction
         _template: SyliusWebBundle:Backend/User:show.html.twig
     requirements:
         _method: GET

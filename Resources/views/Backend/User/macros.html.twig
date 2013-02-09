@@ -4,9 +4,10 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('id', '#id') }}</th>
-            <th>{{ sylius_resource_sort('username') }}</th>
-            <th>{{ sylius_resource_sort('email') }}</th>
+            <th>{{ sylius_resource_sort('id', 'sylius.backend.user.id'|trans) }}</th>
+            <th>{{ sylius_resource_sort('username', 'sylius.backend.user.username'|trans) }}</th>
+            <th>{{ sylius_resource_sort('email', 'sylius.backend.user.email'|trans) }}</th>
+            <th>{{ sylius_resource_sort('enabled', 'sylius.backend.user.enabled'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -16,6 +17,11 @@
             <td>{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
+            <td>
+                <span class="label label-{{ user.enabled ? 'success' : 'important'}}">
+                    {{ user.enabled ? 'sylius.backend.yes'|trans : 'sylius.backend.no'|trans }}
+                </span>
+            </td>
             <td>
                 <div class="btn-group pull-right">
                     <a href="{{ path('sylius_backend_user_show', {'id': user.id}) }}" class="btn">

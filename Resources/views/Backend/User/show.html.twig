@@ -8,24 +8,24 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th colspan="2">User details for {{ user.username }}</th>
+            <th colspan="2">{{ 'sylius.backend.user.general_info'|trans({'%username%': user.username}) }}</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><strong>#id</strong></td>
+            <td><strong>{{ 'sylius.backend.user.id'|trans }}</strong></td>
             <td>{{ user.id }}</td>
         </tr>
         <tr>
-            <td><strong>username</strong></td>
+            <td><strong>{{ 'sylius.backend.user.username'|trans }}</strong></td>
             <td>{{ user.username }}</td>
         </tr>
         <tr>
-            <td><strong>email</strong></td>
+            <td><strong>{{ 'sylius.backend.user.email'|trans }}</strong></td>
             <td>{{ user.email }}</td>
         </tr>
         <tr>
-            <td><strong>enabled</strong></td>
+            <td><strong>{{ 'sylius.backend.user.enabled'|trans }}</strong></td>
             <td>
             {% if user.enabled %}
                 <span class="label label-success">{{ 'sylius.backend.yes'|trans }}</span>
@@ -36,7 +36,7 @@
         </tr>
         {% if user.lastLogin %}
         <tr>
-            <td><strong>last login</strong></td>
+            <td><strong>{{ 'sylius.backend.user.last_login'|trans }}</strong></td>
             <td>{{ user.lastLogin|date }}</td>
         </tr>
         {% endif %}

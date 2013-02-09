@@ -85,6 +85,15 @@ sylius:
             index_header: Users <small>List of all users registered in store</small>
             show_header: User details
             no_results: There are no users to display
+            general_info: User "%username%" general info
+            id: ID
+            username: Username
+            email: E-Mail
+            enabled: Confirmed?
+            last_login: Last login
+            filter:
+                all: Show all users
+                unconfirmed: Unconfirmed accounts
         product:
             manage: Manage products
             id: ID
