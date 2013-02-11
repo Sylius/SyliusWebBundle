@@ -130,6 +130,7 @@ sylius:
             show_header: Property details
             index_header: Product properties
             no_results: There are no properties configured
+            add_choice: Add choice
         prototype:
             manage: Manage prototypes
             create_header: New prototype

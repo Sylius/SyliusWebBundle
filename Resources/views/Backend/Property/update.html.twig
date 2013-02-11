@@ -1,5 +1,14 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    '@SyliusWebBundle/Resources/assets/js/sylius-property-choices.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
     <h1>{{ 'sylius.backend.property.update_header'|trans|raw }}</h1>
