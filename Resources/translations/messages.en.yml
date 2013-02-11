@@ -139,6 +139,7 @@ sylius:
             build_header: Building product from prototype
             index_header: Product prototypes
             no_results: There are no prototypes defined
+            build: Build
         order:
             manage: Manage orders
             create: Create order
