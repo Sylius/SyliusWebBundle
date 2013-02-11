@@ -2,7 +2,7 @@
 # (c) Paweł Jędrzejewski
 
 sylius_backend_order_index:
-    pattern: /index
+    pattern: /
     methods: [GET]
     defaults:
         _controller: sylius.controller.order:indexAction
