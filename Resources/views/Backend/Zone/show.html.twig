@@ -1,5 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
+
 {% block content %}
 <div class="page-header">
     <h1>{{ 'sylius.backend.zone.show_header'|trans|raw }}</h1>
@@ -38,10 +40,8 @@
                 <tr>
                     <td>{{ member.name }}</td>
                     <td>
-                        <div class="btn-group pull-right">
-                            <a href="{{ path('sylius_backend_zone_member_delete', {'zoneId': zone.id, 'id': member.id}) }}"  class="btn btn-danger">
-                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                            </a>
+                        <div class="pull-right">
+                            {{ buttons.delete(path('sylius_backend_zone_member_delete', {'zoneId': zone.id, 'id': member.id})) }}
                         </div>
                     </td>
                 </tr>
