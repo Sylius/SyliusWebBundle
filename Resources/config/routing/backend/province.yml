@@ -2,7 +2,8 @@
 # (c) Paweł Jędrzejewski
 
 sylius_backend_province_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.province:deleteAction
         _redirect: referer

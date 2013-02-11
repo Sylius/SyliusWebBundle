@@ -3,6 +3,7 @@
 
 sylius_backend_zone_index:
     pattern: /
+    methods: [GET]
     defaults:
         _controller: sylius.controller.zone:indexAction
         _template: SyliusWebBundle:Backend/Zone:index.html.twig
@@ -10,6 +11,7 @@ sylius_backend_zone_index:
 
 sylius_backend_zone_create:
     pattern: /new
+    methods: [GET, POST]
     defaults:
         _controller: sylius.controller.zone:createAction
         _template: SyliusWebBundle:Backend/Zone:create.html.twig
@@ -17,19 +19,22 @@ sylius_backend_zone_create:
 
 sylius_backend_zone_update:
     pattern: /{id}/edit
+    methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.zone:updateAction
         _template: SyliusWebBundle:Backend/Zone:update.html.twig
         _redirect: sylius_backend_zone_show
 
 sylius_backend_zone_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.zone:deleteAction
         _redirect: sylius_backend_zone_index
 
 sylius_backend_zone_show:
     pattern: /{id}
+    methods: [GET]
     defaults:
         _controller: sylius.controller.zone:showAction
         _template: SyliusWebBundle:Backend/Zone:show.html.twig

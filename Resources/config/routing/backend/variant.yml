@@ -3,28 +3,27 @@
 
 sylius_backend_variant_create:
     pattern: /new
+    methods: [GET, POST]
     defaults:
         _controller: sylius.controller.variant:createAction
         _template: SyliusWebBundle:Backend/Variant:create.html.twig
         _redirect:
             route: sylius_backend_product_show
             parameters: {'id': '$productId'}
-    requirements:
-        _method: GET|POST
 
 sylius_backend_variant_update:
     pattern: /{id}/edit
+    methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.variant:updateAction
         _template: SyliusWebBundle:Backend/Variant:update.html.twig
         _redirect:
             route: sylius_backend_product_show
             parameters: {'id': '$productId'}
-    requirements:
-        _method: GET|PUT
 
 sylius_backend_variant_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.variant:deleteAction
         _redirect:
@@ -33,10 +32,7 @@ sylius_backend_variant_delete:
 
 sylius_backend_variant_generate:
     pattern: /generate
+    methods: [GET]
     defaults:
         _controller: sylius.controller.variant:generateAction
-        _redirect:
-            route: sylius_backend_product_show
-            parameters: {'id': '$productId'}
-    requirements:
-        _method: GET
+        _redirect: referer

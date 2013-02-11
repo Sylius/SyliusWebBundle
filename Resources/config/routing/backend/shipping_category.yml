@@ -3,37 +3,33 @@
 
 sylius_backend_shipping_category_index:
     pattern: /
+    methods: [GET]
     defaults:
         _controller: sylius.controller.shipping_category:indexAction
         _template: SyliusWebBundle:Backend/ShippingCategory:index.html.twig
         _sortable: true
         _sorting:
             name: desc
-    requirements:
-        _method: GET
 
 sylius_backend_shipping_category_create:
     pattern: /new
+    methods: [GET, POST]
     defaults:
         _controller: sylius.controller.shipping_category:createAction
         _template: SyliusWebBundle:Backend/ShippingCategory:create.html.twig
         _redirect: sylius_backend_shipping_category_index
-    requirements:
-        _method: GET|POST
 
 sylius_backend_shipping_category_update:
     pattern: /{id}/edit
+    methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.shipping_category:updateAction
         _template: SyliusWebBundle:Backend/ShippingCategory:update.html.twig
         _redirect: sylius_backend_shipping_category_index
-    requirements:
-        _method: GET|PUT
 
 sylius_backend_shipping_category_delete:
     pattern: /{id}/delete
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.shipping_category:deleteAction
         _redirect: sylius_backend_shipping_category_index
-    requirements:
-        _method: DELETE

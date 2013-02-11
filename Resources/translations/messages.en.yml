@@ -241,6 +241,10 @@ sylius:
             show_header: Country details
             index_header: Countries
             no_results: There are no countries configured
+            id: ID
+            name: Name
+            iso_name: Iso Name
+            provinces: Provinces
         zone:
             manage: Manage zones
             create_header: New zone

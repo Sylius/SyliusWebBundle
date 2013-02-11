@@ -1,5 +1,8 @@
 {% macro list(variants) %}
 
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
 {% if variants|length > 0 %}
 <table class="table" id="variants">
     <thead>
@@ -38,13 +41,9 @@
             <td><span class="badge badge-{{ variant.inStock ? 'success' : 'important' }}">{{ variant.onHand }}</span></td>
             <td>{{ variant.price }} &euro;</td>
             <td>
-                <div class="btn-group pull-right">
-                    <a href="{{ path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id}) }}" class="btn">
-                       <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
-                    </a>
-                    <a href="{{ path('sylius_backend_variant_delete', {'productId': product.id, 'id': variant.id}) }}" class="btn btn-danger">
-                        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                    </a>
+                <div class="pull-right">
+                {{ buttons.edit(path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id})) }}
+                {{ buttons.delete(path('sylius_backend_variant_delete', {'productId': product.id, 'id': variant.id})) }}
                 </div>
             </td>
         </tr>
@@ -52,9 +51,6 @@
     </tbody>
 </table>
 {% else %}
-<div class="alert alert-info">
-    <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
-    {{ 'sylius.backend.variant.no_results'|trans }}
-</div>
+{{ alerts.info('sylius.backend.variant.no_results') }}
 {% endif %}
 {% endmacro %}

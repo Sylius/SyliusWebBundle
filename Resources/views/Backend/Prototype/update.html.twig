@@ -6,6 +6,7 @@
 </div>
 
 <form action="{{ path('sylius_backend_prototype_update', {'id': prototype.id}) }}" method="post" class="form-horizontal" novalidate>
+    <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Prototype:_form.html.twig' %}
     <div class="form-actions">
         <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />

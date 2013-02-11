@@ -1,5 +1,8 @@
 {% macro list(orders) %}
 
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
 {% if orders|length > 0 %}
 <table class="table">
     <thead>
@@ -24,18 +27,9 @@
             <td>{{ order.createdAt|date }}</td>
             <td>
                 <div class="pull-right">
-                    <a href="{{ path('sylius_backend_order_show', {'id': order.id}) }}" class="btn">
-                       <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
-                    </a>
-                    <a href="{{ path('sylius_backend_order_update', {'id': order.id}) }}" class="btn">
-                       <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
-                    </a>
-                    <form action="{{ path('sylius_backend_order_delete', {'id': order.id}) }}" method="post" style="display: inline;">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger">
-                            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                        </button>
-                    </form>
+                {{ buttons.show(path('sylius_backend_order_show', {'id': order.id})) }}
+                {{ buttons.edit(path('sylius_backend_order_update', {'id': order.id})) }}
+                {{ buttons.delete(path('sylius_backend_order_delete', {'id': order.id})) }}
                 </div>
             </td>
         </tr>
@@ -43,10 +37,7 @@
     </tbody>
 </table>
 {% else %}
-<div class="alert alert-info">
-    <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
-    {{ 'sylius.backend.order.no_results'|trans }}
-</div>
+{{ alerts.info('sylius.backend.order.no_results') }}
 {% endif %}
 
 {% endmacro %}

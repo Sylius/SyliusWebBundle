@@ -3,6 +3,7 @@
 
 sylius_backend_product_index:
     pattern: /index
+    methods: [GET]
     defaults:
         _controller: sylius.controller.product:indexAction
         _template: SyliusWebBundle:Backend/Product:index.html.twig
@@ -14,32 +15,30 @@ sylius_backend_product_index:
 
 sylius_backend_product_create:
     pattern: /new
+    methods: [GET, POST]
     defaults:
         _controller: sylius.controller.product:createAction
         _template: SyliusWebBundle:Backend/Product:create.html.twig
         _redirect: sylius_backend_product_show
-    requirements:
-        _method: GET|POST
 
 sylius_backend_product_update:
     pattern: /{id}/edit
+    methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.product:updateAction
         _template: SyliusWebBundle:Backend/Product:update.html.twig
         _redirect: sylius_backend_product_show
-    requirements:
-        _method: GET|PUT
 
 sylius_backend_product_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.product:deleteAction
         _redirect: sylius_backend_product_index
 
 sylius_backend_product_show:
     pattern: /{id}
+    methods: [GET]
     defaults:
         _controller: sylius.controller.product:showAction
         _template: SyliusWebBundle:Backend/Product:show.html.twig
-    requirements:
-        _method: GET

@@ -1,25 +1,20 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% import 'SyliusWebBundle:Backend/Zone:macros.html.twig' as macros %}
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Backend/Zone:macros.html.twig' import list %}
 
 {% block content %}
 <div class="page-header">
     <h1>{{ 'sylius.backend.zone.index_header'|trans|raw }}</h1>
 </div>
 
-<div class="well">
-    <a href="{{ path('sylius_backend_zone_create') }}" class="btn btn-primary">
-        <i class="icon-plus-sign"></i> {{ 'sylius.backend.zone.create'|trans }}
-    </a>
+<div class="well well-small">
+    {{ buttons.create(path('sylius_backend_zone_create'), 'sylius.backend.zone.create') }}
 </div>
 
-{% if zones.haveToPaginate()|default(false) %}
-    {{ pagerfanta(zones, 'twitter_bootstrap_translated') }}
-{% endif %}
+{{ pagination(zones) }}
+{{ list(zones) }}
+{{ pagination(zones) }}
 
-{{ macros.list(zones) }}
-
-{% if zones.haveToPaginate()|default(false) %}
-    {{ pagerfanta(zones, 'twitter_bootstrap_translated') }}
-{% endif %}
 {% endblock %}

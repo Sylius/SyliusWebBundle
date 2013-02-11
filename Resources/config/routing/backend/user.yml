@@ -2,7 +2,8 @@
 # (c) Paweł Jędrzejewski
 
 sylius_backend_user_index:
-    pattern: /index
+    pattern: /
+    methods: [GET]
     defaults:
         _controller: sylius.controller.user:indexAction
         _template: SyliusWebBundle:Backend/User:index.html.twig
@@ -10,20 +11,16 @@ sylius_backend_user_index:
         _sortable: true
         _sorting:
             id: desc
-    requirements:
-        _method: GET
 
 sylius_backend_user_delete:
     pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.user:deleteAction
-    requirements:
-        _method: DELETE
 
 sylius_backend_user_show:
     pattern: /{id}
+    methods: [GET]
     defaults:
         _controller: sylius.controller.user:showAction
         _template: SyliusWebBundle:Backend/User:show.html.twig
-    requirements:
-        _method: GET

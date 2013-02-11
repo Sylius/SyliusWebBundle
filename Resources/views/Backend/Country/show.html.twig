@@ -12,9 +12,12 @@
     <a href="{{ path('sylius_backend_country_update', {'id': country.id}) }}" class="btn">
         <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
     </a>
-    <a href="{{ path('sylius_backend_country_delete', {'id': country.id}) }}" class="btn btn-danger">
-        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-    </a>
+    <form action="{{ path('sylius_backend_country_delete', {'id': country.id}) }}" method="post" style="display: inline;">
+        <input type="hidden" name="_method" value="DELETE">
+        <button class="btn btn-danger">
+            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+        </button>
+    </form>
 </div>
 
 <table class="table table-bordered table-consensed">
@@ -44,10 +47,13 @@
                 <tr>
                     <td>{{ province.name }}</td>
                     <td>
-                        <div class="btn-group pull-right">
-                            <a href="{{ path('sylius_backend_province_delete', {'countryId': country.id, 'id': province.id}) }}"  class="btn btn-danger">
-                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                            </a>
+                        <div class="pull-right">
+                            <form action="{{ path('sylius_backend_province_delete', {'countryId': country.id, 'id': province.id}) }}" method="post" style="display: inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger">
+                                    <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>

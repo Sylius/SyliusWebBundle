@@ -1,6 +1,8 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% import 'SyliusWebBundle:Backend/Variant:macros.html.twig' as macros %}
+{% from 'SyliusWebBundle:Backend/Variant:macros.html.twig' import list as list_variants %}
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
 
 {% block content %}
 <div class="page-header">
@@ -8,15 +10,9 @@
 </div>
 
 <div class="well well-small">
-    <a href="{{ path('sylius_backend_product_index') }}" class="btn btn-primary">
-        <i class="icon-list-alt"></i> {{ 'sylius.backend.product.manage'|trans }}
-    </a>
-    <a href="{{ path('sylius_backend_product_update', {'id': product.id}) }}" class="btn">
-        <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
-    </a>
-    <a href="{{ path('sylius_backend_product_delete', {'id': product.id}) }}" class="btn btn-danger">
-        <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-    </a>
+    {{ buttons.manage(path('sylius_backend_product_index'), 'sylius.backend.product.manage') }}
+    {{ buttons.edit(path('sylius_backend_product_update', {'id': product.id})) }}
+    {{ buttons.delete(path('sylius_backend_product_delete', {'id': product.id})) }}
 </div>
 
 <div class="row-fluid">
@@ -83,15 +79,11 @@
 {% if product.hasOptions %}
 <hr>
 <div class="well well-small">
-    <a href="{{ path('sylius_backend_variant_create', {'productId': product.id}) }}" class="btn btn-primary">
-        <i class="icon-plus icon-white"></i> {{ 'sylius.backend.variant.create'|trans }}
-    </a>
-    <a href="{{ path('sylius_backend_variant_generate', {'productId': product.id}) }}" class="btn btn-success">
-        <i class="icon-random"></i> {{ 'sylius.backend.product.generate_variants'|trans }}
-    </a>
+    {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.backend.variant.create') }}
+    {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.backend.product.generate_variants') }}
 </div>
 
-{{ macros.list(product.variants) }}
+{{ list_variants(product.variants) }}
 
 {% endif %}
 

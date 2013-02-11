@@ -2,7 +2,8 @@
 # (c) Paweł Jędrzejewski
 
 sylius_backend_stockable_index:
-    pattern: /index
+    pattern: /
+    methods: [GET]
     defaults:
         _controller: sylius.controller.stockable:indexAction
         _template: SyliusWebBundle:Backend/Stockable:index.html.twig
