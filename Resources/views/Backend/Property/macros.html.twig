@@ -10,6 +10,7 @@
                 <th>{{ sylius_resource_sort('id', '#id') }}</th>
                 <th>{{ sylius_resource_sort('name') }}</th>
                 <th>{{ sylius_resource_sort('presentation') }}</th>
+                <th>{{ sylius_resource_sort('type') }}</th>
                 <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
                 <th></th>
             </tr>
@@ -20,6 +21,7 @@
                 <td>{{ property.id }}</td>
                 <td>{{ property.name }}</td>
                 <td>{{ property.presentation }}</td>
+                <td>{{ property.type }}</td>
                 <td>{{ property.updatedAt|date }}</td>
                 <td>
                     <div class="pull-right">

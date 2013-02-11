@@ -1,5 +1,15 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    '@SyliusShippingBundle/Resources/assets/js/prototype-handler.js'
+    '@SyliusWebBundle/Resources/assets/js/dynamic-property-types.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
 <h1>{{ 'sylius.backend.product.update_header'|trans|raw }}</h1>

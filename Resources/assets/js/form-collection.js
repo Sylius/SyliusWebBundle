@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 
+//; here is caused of twitter bootstrap do not have ; at the end of file
 ;(function ( $ ) {
     $(document).ready(function() {
         $('a[data-collection-button="add"]').on('click', function (e) {
