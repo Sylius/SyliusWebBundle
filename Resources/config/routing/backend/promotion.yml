@@ -3,6 +3,7 @@
 
 sylius_backend_promotion_index:
     pattern: /
+    methods: [GET]
     defaults:
         _controller: sylius.controller.promotion:indexAction
         _template: SyliusWebBundle:Backend/Promotion:index.html.twig
@@ -10,6 +11,7 @@ sylius_backend_promotion_index:
 
 sylius_backend_promotion_create:
     pattern: /new
+    methods: [GET, POST]
     defaults:
         _controller: sylius.controller.promotion:createAction
         _template: SyliusWebBundle:Backend/Promotion:create.html.twig
@@ -17,19 +19,22 @@ sylius_backend_promotion_create:
 
 sylius_backend_promotion_update:
     pattern: /{id}/edit
+    methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.promotion:updateAction
         _template: SyliusWebBundle:Backend/Promotion:update.html.twig
         _redirect: sylius_backend_promotion_show
 
 sylius_backend_promotion_delete:
-    pattern: /{id}/delete
+    pattern: /{id}
+    methods: [DELETE]
     defaults:
         _controller: sylius.controller.promotion:deleteAction
         _redirect: sylius_backend_promotion_index
 
 sylius_backend_promotion_show:
     pattern: /{id}
+    methods: [GET]
     defaults:
         _controller: sylius.controller.promotion:showAction
         _template: SyliusWebBundle:Backend/Promotion:show.html.twig

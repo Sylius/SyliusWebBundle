@@ -1,5 +1,6 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% import 'SyliusWebBundle:Backend/Macros:buttons.html.twig' as buttons %}
 {% from 'SyliusWebBundle:Backend/Promotion:macros.html.twig' import configuration %}
 
 {% block content %}
@@ -65,9 +66,7 @@
                     <td>{{ configuration(rule.configuration) }}</td>
                     <td>
                         <div class="btn-group pull-right">
-                            <a href="{{ path('sylius_backend_promotion_rule_delete', {'id': rule.id}) }}"  class="btn btn-danger">
-                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                            </a>
+                            {{ buttons.delete(path('sylius_backend_promotion_rule_delete', {'id': rule.id})) }}
                         </div>
                     </td>
                 </tr>
@@ -92,9 +91,7 @@
                     <td>{{ configuration(action.configuration) }}</td>
                     <td>
                         <div class="btn-group pull-right">
-                            <a href="{{ path('sylius_backend_promotion_action_delete', {'id': action.id}) }}"  class="btn btn-danger">
-                                <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
-                            </a>
+                            {{ buttons.delete(path('sylius_backend_promotion_action_delete', {'id': action.id})) }}
                         </div>
                     </td>
                 </tr>
