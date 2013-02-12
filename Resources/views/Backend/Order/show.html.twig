@@ -70,7 +70,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for shipment in order.shipments|default({}) %}
+                {% for shipment in order.shipments %}
                 <tr>
                     <td>{{ shipment.id }}</td>
                     <td>{{ shipment.method.name }}</td>

@@ -172,6 +172,12 @@ sylius:
             billing_address: Billing address
             created_at: Creation time
             updated_at: Last update
+            payment_state: Payment state
+            payment_states:
+                balance_due: Balance due
+            shipment_state: Shipment state
+            shipment_states:
+                pending: Pending
         order_item:
             sellable: Product
             quantity: Qty
