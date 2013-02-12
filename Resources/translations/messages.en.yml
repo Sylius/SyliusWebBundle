@@ -53,6 +53,8 @@ sylius:
                 sales: Orders
                 orders: Current orders
                 new_order: Add new order
+                promotions: Promotions
+                new_promotion: Add new promotion
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -74,6 +76,8 @@ sylius:
                 sales: Orders
                 orders: Current orders
                 new_order: Add new order
+                promotions: Promotions
+                new_promotion: Add new promotion
                 configuration: Configuration
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
@@ -173,6 +177,28 @@ sylius:
             quantity: Qty
             unit_price: Unit price
             total: Total
+        promotion:
+            index_header: Current promotions
+            show_header: Promotion details
+            create_header: New promotion
+            update_header: Editing promotion
+            create: Create promotion
+            manage: Manage promotions
+            name: Name
+            description: Description
+            usage_limit: Usage limit
+            used: Used
+            starts_at: Starts at
+            ends_at: Ends at
+            created_at: Created at
+            updated_at: Updated at
+            no_results: There are no promotions configured
+        promotion_action:
+            type: Type
+            configuration: Configuration
+        promotion_rule:
+            type: Type
+            configuration: Configuration
         address:
             firstname: First name
             lastname: Last name
@@ -279,6 +305,11 @@ sylius:
     tax_rate:
         name: Name
         amount: Amount
+    promotion:
+        add_rule: Add rule
+        add_action: Add action
+        rules: Rules
+        actions: Actions
     country:
         name: Name
         iso_name: ISO name

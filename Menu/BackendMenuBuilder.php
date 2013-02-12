@@ -152,6 +152,13 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('new_order', array(
             'route' => 'sylius_backend_order_create',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_order', $section)));
+
+        $child->addChild('promotions', array(
+            'route' => 'sylius_backend_promotion_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.promotions', $section)));
+        $child->addChild('new_promotion', array(
+            'route' => 'sylius_backend_promotion_create',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_promotion', $section)));
     }
 
     /**
