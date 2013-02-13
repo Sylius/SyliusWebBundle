@@ -21,8 +21,8 @@
                 <td>{{ promotion.id }}</td>
                 <td>{{ promotion.name }}</td>
                 <td>{{ promotion.description }}</td>
-                <td>{{ promotion.startsAt|date }}</td>
-                <td>{{ promotion.endsAt|date }}</td>
+                <td>{{ promotion.startsAt is empty ? '' : promotion.startsAt|date }}</td>
+                <td>{{ promotion.endsAt is empty ? '' : promotion.endsAt|date }}</td>
                 <td>
                     <div class="btn-group pull-right">
                         {{ buttons.show(path('sylius_backend_promotion_show', {'id': promotion.id})) }}
