@@ -112,6 +112,10 @@ class BackendMenuBuilder extends MenuBuilder
             ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.assortment', $section)))
         ;
 
+        $child->addChild('taxonomies', array(
+            'route' => 'sylius_backend_taxonomy_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.taxonomies', $section)));
+
         $child->addChild('products', array(
             'route' => 'sylius_backend_product_index',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.products', $section)));
@@ -191,6 +195,10 @@ class BackendMenuBuilder extends MenuBuilder
             ->addChild('configuration', $childOptions)
             ->setLabel($this->translate(sprintf('sylius.backend.menu.%s.configuration', $section)))
         ;
+
+        $child->addChild('general_settings', array(
+            'route' => 'sylius_backend_general_settings',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.general_settings', $section)));
 
         $child->addChild('tax_categories', array(
             'route' => 'sylius_backend_tax_category_index',

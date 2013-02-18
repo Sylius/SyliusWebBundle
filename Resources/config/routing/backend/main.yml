@@ -33,6 +33,14 @@ sylius_backend_prototype:
     resource: @SyliusWebBundle/Resources/config/routing/backend/prototype.yml
     prefix: /prototypes
 
+sylius_backend_taxonomy:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/taxonomy.yml
+    prefix: /taxonomies
+
+sylius_backend_taxon:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/taxon.yml
+    prefix: /taxonomies/{taxonId}/taxons
+
 sylius_backend_order:
     resource: @SyliusWebBundle/Resources/config/routing/backend/order.yml
     prefix: /orders
@@ -80,3 +88,7 @@ sylius_backend_zone:
 sylius_backend_zone_member:
     resource: @SyliusWebBundle/Resources/config/routing/backend/zone_member.yml
     prefix: /zone-members
+
+sylius_backend_settings:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/settings.yml
+    prefix: /settings

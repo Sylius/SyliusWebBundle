@@ -45,6 +45,7 @@ sylius:
             main:
                 dashboard: Dashboard
                 homepage: Your store
+                taxonomies: Categorization
                 assortment: Assortment
                 products: Products
                 options: Manage product options
@@ -56,6 +57,7 @@ sylius:
                 promotions: Promotions
                 new_promotion: Add new promotion
                 configuration: Configuration
+                general_settings: General settings
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
@@ -65,6 +67,7 @@ sylius:
             sidebar:
                 dashboard: Dashboard
                 homepage: Back to frontend
+                taxonomies: Categorization
                 customer: Customers
                 users: Users
                 assortment: Assortment
@@ -79,6 +82,7 @@ sylius:
                 promotions: Promotions
                 new_promotion: Add new promotion
                 configuration: Configuration
+                general_settings: General settings
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
@@ -98,6 +102,16 @@ sylius:
             filter:
                 all: Show all users
                 unconfirmed: Unconfirmed accounts
+        taxonomy:
+            manage: Manage taxonomies
+            id: ID
+            name: Name
+            create: Create taxonomy
+            index_header: Categorization <small>Here you see the defined taxonomies</small>
+            show_header: Taxonomy <small><strong>%name%</strong></small>
+            create_header: New taxonomy
+            update_header: Editing taxonomy
+            no_results: There are no taxonomies defined
         product:
             manage: Manage products
             id: ID
@@ -287,6 +301,8 @@ sylius:
             show_header: Zone details
             index_header: Zones
             no_results: There are no zones configured
+        settings:
+            general_header: General settings
     product:
         name: Name
         options: Options

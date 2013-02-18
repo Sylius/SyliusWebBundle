@@ -1,0 +1,19 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.backend.settings.general_header'|trans|raw }}</h1>
+</div>
+
+<form action="{{ path('sylius_backend_general_settings') }}" method="post" class="form-horizontal" novalidate>
+    {{ form_errors(form) }}
+    {{ form_row(form.title, {'attr': {'class': 'input-xlarge'}}) }}
+    {{ form_row(form.meta_keywords, {'attr': {'class': 'input-xlarge'}}) }}
+    {{ form_row(form.meta_description, {'attr': {'class': 'input-xxlarge'}}) }}
+    {{ form_rest(form) }}
+    <div class="form-actions">
+        <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />
+        <a href="{{ path('sylius_backend_dashboard') }}" class="btn btn-large">{{ 'sylius.backend.cancel'|trans }}</a>
+    </div>
+</form>
+{% endblock %}
