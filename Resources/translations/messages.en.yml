@@ -58,6 +58,7 @@ sylius:
                 new_promotion: Add new promotion
                 configuration: Configuration
                 general_settings: General settings
+                taxation_settings: Taxation settings
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
@@ -83,6 +84,7 @@ sylius:
                 new_promotion: Add new promotion
                 configuration: Configuration
                 general_settings: General settings
+                taxation_settings: Taxation settings
                 tax_categories: Taxation categories
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
@@ -303,6 +305,7 @@ sylius:
             no_results: There are no zones configured
         settings:
             general_header: General settings
+            taxation_header: Configure taxation
     product:
         name: Name
         options: Options

@@ -8,3 +8,9 @@ sylius_backend_general_settings:
         namespace: general
         template: SyliusWebBundle:Backend/Settings:general.html.twig
 
+sylius_backend_taxation_settings:
+    pattern: /taxation
+    defaults:
+        _controller: sylius.controller.settings:updateAction
+        namespace: taxation
+        template: SyliusWebBundle:Backend/Settings:taxation.html.twig
