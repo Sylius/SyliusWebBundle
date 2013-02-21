@@ -63,6 +63,7 @@ sylius:
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
                 shipping_methods: Shipping methods
+                payment_methods: Payment methods
                 countries: Countries
                 zones: Zones
             sidebar:
@@ -89,6 +90,7 @@ sylius:
                 tax_rates: Tax rates
                 shipping_categories: Shipping categories
                 shipping_methods: Shipping methods
+                payment_methods: Payment methods
                 countries: Countries
                 zones: Zones
         user:
@@ -283,6 +285,21 @@ sylius:
             enabled: Is enabled?
             calculator: Calculator
             updated_at: Last update
+        payment_method:
+            manage: Manage payment methods
+            create_header: New payment method
+            create: Create payment method
+            update_header: Editing payment method
+            show_header: Payment method details
+            index_header: Payment methods
+            no_results: There are no payment methods configured
+            id: ID
+            name: Name
+            description: Description
+            enabled: Is enabled?
+            gateway: gateway
+            created_at: Created at
+            updated_at: Last update
         country:
             manage: Manage countries
             create_header: New country
@@ -305,7 +322,7 @@ sylius:
             no_results: There are no zones configured
         settings:
             general_header: General settings
-            taxation_header: Configure taxation
+            taxation_header: Taxation settings
     product:
         name: Name
         options: Options

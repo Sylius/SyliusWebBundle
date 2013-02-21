@@ -73,6 +73,10 @@ sylius_backend_shipping_method:
     resource: @SyliusWebBundle/Resources/config/routing/backend/shipping_method.yml
     prefix: /shipping-methods
 
+sylius_backend_payment_method:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/payment_method.yml
+    prefix: /payment-methods
+
 sylius_backend_country:
     resource: @SyliusWebBundle/Resources/config/routing/backend/country.yml
     prefix: /countries

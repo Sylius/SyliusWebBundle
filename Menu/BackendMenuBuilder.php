@@ -200,6 +200,10 @@ class BackendMenuBuilder extends MenuBuilder
             'route' => 'sylius_backend_general_settings',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.general_settings', $section)));
 
+        $child->addChild('payment_methods', array(
+            'route' => 'sylius_backend_payment_method_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.payment_methods', $section)));
+
         $child->addChild('taxation_settings', array(
             'route' => 'sylius_backend_taxation_settings',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.taxation_settings', $section)));

@@ -7,7 +7,7 @@
 
 <form action="{{ path('sylius_backend_taxation_settings') }}" method="post" class="form-horizontal" novalidate>
     {{ form_errors(form) }}
-    {{ form_row(form.default_tax_zone, {'attr': {'class': 'input-xlarge'}}) }}
+    {{ form_row(form.default_tax_zone, {'attr': {'class': 'input-large'}}) }}
     {{ form_rest(form) }}
     <div class="form-actions">
         <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />
