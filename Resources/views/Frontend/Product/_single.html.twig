@@ -1,0 +1,12 @@
+<div class="row-fluid product">
+    <div class="span3">
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail">
+            <img src="http://placehold.it/200x200" alt="" />
+        </a>
+    </div>
+    <div class="span9">
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
+        <p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-large btn-info pull-right">{{ 'sylius.frontend.product.show'|trans }}</a>
+    </div>
+</div>

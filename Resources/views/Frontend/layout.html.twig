@@ -31,15 +31,6 @@
                     padding-top: 20px;
                     padding-bottom: 40px;
                 }
-
-                .container-narrow {
-                    margin: 0 auto;
-                    max-width: 700px;
-                }
-                .container-narrow > hr {
-                    margin: 30px 0;
-                }
-
                 .jumbotron {
                     margin: 60px 0;
                     text-align: center;
@@ -67,7 +58,7 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container-narrow">
+        <div class="container">
         {% block header %}
             <div class="masthead">
                 {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
@@ -83,8 +74,18 @@
         {% endfor %}
 
         <hr>
-        {% block content %}
-        {% endblock %}
+        <div class="row-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <h4>{{ 'sylius.frontend.shop_by'|trans }}</h4>
+                    {{ knp_menu_render('sylius.frontend.taxonomies') }}
+                </div>
+                <div class="span9">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
         <hr>
 
         {% block footer %}

@@ -1,0 +1,41 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span3">
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail">
+            <img src="http://placehold.it/200x200" alt="" />
+        </a>
+    </div>
+    <div class="span9">
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
+        <p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+    </div>
+</div>
+<hr>
+<div class="row-fluid">
+    <div class="span6">
+        {% if product.properties|length > 0 %}
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th colspan="2">{{ 'sylius.frontend.product.properties'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for property in product.properties %}
+                <tr>
+                    <td>{{ property.presentation }}</td>
+                    <td>{{ property.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    <div class="span6">
+        <h4>{{ 'sylius.frontend.product.description'|trans }}</h4>
+        <p>{{ product.description|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+    </div>
+</div>
+{% endblock %}

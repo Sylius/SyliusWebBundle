@@ -22,7 +22,15 @@ sylius:
                 login: Login
                 logout: Logout
                 register: Register
-                dashboard: Dashboard
+                administration: Administration
+        shop_by: Shop by
+        product:
+            index_by_taxon_header: Products <small>Categorized under "%taxon%" taxon</small>
+            no_description: <i>No description...</i>
+            no_results: Sorry, there are no products to display
+            show: View more
+            properties: Properties
+            description: Description
     backend:
         logo: Sylius
         meta:

@@ -4,3 +4,6 @@
 sylius_homepage:
     pattern: /
     defaults: { _controller: sylius.controller.frontend:homepageAction }
+
+sylius_product:
+    resource: @SyliusWebBundle/Resources/config/routing/frontend/product.yml

@@ -7,6 +7,7 @@
         <li><a href="#options" data-toggle="tab">Options</a></li>
         {% endif %}
         <li><a href="#properties" data-toggle="tab">Properties</a></li>
+        <li><a href="#categorization" data-toggle="tab">Categorization</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="main">
@@ -44,6 +45,11 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="tab-pane" id="categorization">
+            {% for taxonomyForm in form.taxons %}
+                {{ form_row(taxonomyForm, {'attr': {'class': 'input-xlarge'}}) }}
+            {% endfor %}
         </div>
     </div>
 </fieldset>

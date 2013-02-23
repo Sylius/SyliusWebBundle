@@ -24,18 +24,19 @@ class FrontendMenuBuilder extends ObjectBehavior
      * @param Knp\Menu\FactoryInterface                                $factory
      * @param Symfony\Component\Security\Core\SecurityContextInterface $securityContext
      * @param Symfony\Component\Translation\TranslatorInterface        $translator
+     * @param Sylius\Bundle\ResourceBundle\Model\RepositoryInterface   $taxonomyRepository
      */
-    public function let($factory, $securityContext, $translator)
+    public function let($factory, $securityContext, $translator, $taxonomyRepository)
     {
-        $this->beConstructedWith($factory, $securityContext, $translator);
+        $this->beConstructedWith($factory, $securityContext, $translator, $taxonomyRepository);
     }
 
-    public function it_should_be_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\FrontendMenuBuilder');
     }
 
-    public function it_should_extend_base_menu_builder()
+    public function it_extends_base_menu_builder()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\MenuBuilder');
     }

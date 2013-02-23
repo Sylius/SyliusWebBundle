@@ -29,6 +29,7 @@
             <argument type="service" id="knp_menu.factory" />
             <argument type="service" id="security.context" />
             <argument type="service" id="translator" />
+            <argument type="service" id="sylius.repository.taxonomy" />
         </service>
         <service id="sylius.menu_builder.backend" class="%sylius.menu_builder.backend.class%">
             <argument type="service" id="knp_menu.factory" />
@@ -40,6 +41,11 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.main" />
         </service>
+        <service id="sylius.menu.frontend.taxonomies" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createTaxonomiesMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.taxonomies" />
+        </service>
+
         <service id="sylius.menu.backend.main" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createMainMenu" scope="request">
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.backend.main" />

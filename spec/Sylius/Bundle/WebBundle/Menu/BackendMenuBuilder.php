@@ -30,12 +30,12 @@ class BackendMenuBuilder extends ObjectBehavior
         $this->beConstructedWith($factory, $securityContext, $translator);
     }
 
-    public function it_should_be_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\BackendMenuBuilder');
     }
 
-    public function it_should_extend_base_menu_builder()
+    public function it_extends_base_menu_builder()
     {
         $this->shouldHaveType('Sylius\Bundle\WebBundle\Menu\MenuBuilder');
     }
