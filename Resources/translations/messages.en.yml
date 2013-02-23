@@ -116,6 +116,13 @@ sylius:
             create_header: New taxonomy
             update_header: Editing taxonomy
             no_results: There are no taxonomies defined
+        taxon:
+            id: ID
+            name: Name
+            create: Create taxon
+            create_header: New taxon
+            update_header: Editing taxon
+            no_results: There are no taxon defined in this taxonomy
         product:
             manage: Manage products
             id: ID

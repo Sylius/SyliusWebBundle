@@ -39,7 +39,7 @@ sylius_backend_taxonomy:
 
 sylius_backend_taxon:
     resource: @SyliusWebBundle/Resources/config/routing/backend/taxon.yml
-    prefix: /taxonomies/{taxonId}/taxons
+    prefix: /taxonomies/{taxonomyId}/taxons
 
 sylius_backend_order:
     resource: @SyliusWebBundle/Resources/config/routing/backend/order.yml

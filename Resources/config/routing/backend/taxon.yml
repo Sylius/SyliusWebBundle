@@ -1,9 +1,31 @@
 # This file is part of the Sylius package.
 # (c) Paweł Jędrzejewski
+#
+sylius_backend_taxon_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+        _controller: sylius.controller.taxon:createAction
+        _template: SyliusWebBundle:Backend/Taxon:create.html.twig
+        _redirect:
+            route: sylius_backend_taxonomy_show
+            parameters: {'id': $taxonomyId}
+
+sylius_backend_taxon_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT]
+    defaults:
+        _controller: sylius.controller.taxon:updateAction
+        _template: SyliusWebBundle:Backend/Taxon:update.html.twig
+        _redirect:
+            route: sylius_backend_taxonomy_show
+            parameters: {'id': $taxonomyId}
 
 sylius_backend_taxon_delete:
     pattern: /{id}
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.taxon:deleteAction
-        _redirect: referer
+        _redirect:
+            route: sylius_backend_taxonomy_show
+            parameters: {'id': $taxonomyId}
