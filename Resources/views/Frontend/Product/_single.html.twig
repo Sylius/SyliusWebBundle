@@ -7,6 +7,23 @@
     <div class="span9">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
         <p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+
+        <hr>
+        {% if not product.hasOptions %}
+            <div class="pull-left">
+            {% if not sylius_inventory_is_available(product.masterVariant) %}
+                <br />
+                <span class="label label-important">{{ 'sylius.frontend.out_of_stock'|trans }}</span>
+            {% else %}
+                <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix">
+                    {% set form = sylius_cart_form({'product': product}) %}
+                    {{ form_widget(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
+                    {{ form_widget(form._token) }}
+                    <input type="submit" class="btn btn-success" style="margin-bottom: 10px;" value="{{ 'sylius.frontend.add_to_cart'|trans }}">
+                </form>
+            {% endif %}
+            </div>
+        {% endif %}
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-large btn-info pull-right">{{ 'sylius.frontend.product.show'|trans }}</a>
     </div>
 </div>

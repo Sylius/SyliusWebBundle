@@ -31,6 +31,23 @@ sylius:
             show: View more
             properties: Properties
             description: Description
+        cart:
+            header: Cart
+            total_items: 1 item|%count% items
+            summary_header: Cart summary
+            link: View cart
+            empty: Your cart is empty
+            summary:
+                quantity: Qty
+                product: Product
+                unit_price: Price
+                grand_total: Grand total
+                total: Total
+                checkout: Checkout
+                save: Save
+                clear: Clear cart
+        add_to_cart: Add to cart
+        out_of_stock: Out of stock
     backend:
         logo: Sylius
         meta:
@@ -379,11 +396,3 @@ sylius:
         add_member: Add member
     zone_member:
         members: Members
-    label:
-        variant:
-            price: Price
-            available_on_demand: Available on demand
-            on_hand: Current stock
-        product:
-            short_description: Short description
-            tax_category: Tax category

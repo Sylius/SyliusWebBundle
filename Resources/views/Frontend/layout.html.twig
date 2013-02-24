@@ -77,6 +77,8 @@
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="span3">
+                    {% include 'SyliusWebBundle:Frontend/Cart:_widget.html.twig' %}
+
                     <h4>{{ 'sylius.frontend.shop_by'|trans }}</h4>
                     {{ knp_menu_render('sylius.frontend.taxonomies') }}
                 </div>
