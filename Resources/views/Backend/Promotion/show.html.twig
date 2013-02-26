@@ -49,6 +49,33 @@
         </tr>
     </tbody>
 </table>
+{% if promotion.hasCoupons %}
+    <h3>{{ 'sylius.promotion.coupons'|trans }}</h3>
+    <table id="coupons" class="table table-bordered table-consensed">
+        <thead>
+            <tr>
+                <th>{{ 'sylius.backend.promotion_coupon.code'|trans }}</th>
+                <th>{{ 'sylius.backend.promotion_coupon.usage_limit'|trans }}</th>
+                <th>{{ 'sylius.backend.promotion_coupon.used'|trans }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coupon in promotion.coupons %}
+                <tr>
+                    <td><span class="label label-info">{{ coupon.code }}</span></td>
+                    <td>{{ coupon.usageLimit }}</td>
+                    <td>{{ coupon.used }}</td>
+                    <td>
+                        <div class="btn-group pull-right">
+                            {{ buttons.delete(path('sylius_backend_promotion_coupon_delete', {'id': coupon.id})) }}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
 {% if promotion.hasRules %}
     <h3>{{ 'sylius.promotion.rules'|trans }}</h3>
     <table id="rules" class="table table-bordered table-consensed">
