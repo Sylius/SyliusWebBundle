@@ -249,10 +249,14 @@ sylius:
             created_at: Created at
             updated_at: Updated at
             no_results: There are no promotions configured
-        promotion_action:
+        promotion_coupon:
+            code: Code
+            usage_limit: Usage limit
+            used: Used
+        promotion_rule:
             type: Type
             configuration: Configuration
-        promotion_rule:
+        promotion_action:
             type: Type
             configuration: Configuration
         address:
@@ -380,8 +384,10 @@ sylius:
         name: Name
         amount: Amount
     promotion:
+        add_coupon: Add coupon
         add_rule: Add rule
         add_action: Add action
+        coupons: Coupons
         rules: Rules
         actions: Actions
     country:
