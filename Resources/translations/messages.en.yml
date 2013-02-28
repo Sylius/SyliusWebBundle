@@ -11,6 +11,8 @@ sylius:
         menu:
             home: Home
             administration: Administration
+    form:
+        choose_file: Choose file
     homepage:
         splash:
             headline: Welcome to Sylius
@@ -215,6 +217,7 @@ sylius:
             create_header: New product variant
             update_header: Editing variant
             no_results: There are no variants to display
+            add_image: Add image
         option:
             manage: Manage options
             create_header: New product option

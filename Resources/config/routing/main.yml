@@ -7,3 +7,7 @@ sylius_frontend:
 sylius_backend:
     resource: @SyliusWebBundle/Resources/config/routing/backend/main.yml
     prefix: /administration
+
+_imagine:
+    resource: .
+    type:     imagine
