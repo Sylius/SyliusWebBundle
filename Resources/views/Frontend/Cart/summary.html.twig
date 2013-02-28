@@ -43,9 +43,9 @@
                 <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}">
                 <p><strong>{{ product.name }}<strong></p>
                 </a>
-                <ul class="unstyled">
+                <ul>
                     {% for option in item.variant.options %}
-                    <li><strong>{{ option.presentation }}</strong>: {{ option.value }}</li>
+                    <li>{{ option.presentation }}: {{ option.value }}</li>
                     {% endfor %}
                 </ul>
             </td>
@@ -63,13 +63,15 @@
             </td>
         </tr>
     {% endfor %}
+    </tbody>
+    <tfoot>
         <tr>
             <td colspan="6"></td>
             <td style="text-align: right;">
                 <strong>{{ 'sylius.frontend.cart.summary.grand_total'|trans }}</strong>: {{ sylius_money_convert(cart.total)|sylius_money }}
             </td>
         </tr>
-    </tbody>
+    </tfoot>
 </table>
 {{ form_rest(form) }}
 <div class="well">

@@ -95,6 +95,9 @@
 <div class="well well-small">
     {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.backend.variant.create') }}
     {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.backend.product.generate_variants') }}
+    <div class="pull-right">
+    <strong>{{ 'sylius.backend.product.variant_selection_method'|trans }}</strong>: {{ product.variantSelectionMethodLabel }}
+    </div>
 </div>
 
 {{ list_variants(product.variants) }}

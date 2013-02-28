@@ -31,6 +31,8 @@ sylius:
             show: View more
             properties: Properties
             description: Description
+        variant:
+            price: Price
         cart:
             header: Cart
             total_items: 1 item|%count% items
@@ -159,6 +161,7 @@ sylius:
             update_header: Editing product
             generate_variants: Generate variants
             no_results: There are no products to display
+            variant_selection_method: Variant selection method
         stockable:
             manage: Manage stock levels
             index_header: Inventory <small>Here you can see current stock levels</small>

@@ -1,5 +1,7 @@
 {% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
 
+{% set form = sylius_cart_form({'product': product}) %}
+
 {% block content %}
 <div class="row-fluid">
     <div class="span3">
@@ -37,5 +39,65 @@
         <h4>{{ 'sylius.frontend.product.description'|trans }}</h4>
         <p>{{ product.description|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
     </div>
+</div>
+<hr>
+<div class="row-fluid">
+    <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix">
+    <div class="span6">
+        {% if product.hasOptions %}
+            {% if product.isVariantSelectionMethodChoice %}
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>{{ 'sylius.frontend.variant.price'|trans }}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for variant in product.variants if variant.available %}
+                    <tr>
+                        <td>
+                            {% if variant.presentation is empty %}
+                            <ul class="unstyled">
+                                {% for option in variant.options %}
+                                <li><strong>{{ option.presentation }}</strong>: {{ option.value }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                                {{ variant.presentation }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span class="label label-success">{{ sylius_money_convert(variant.price)|sylius_money }}</span>
+                        </td>
+                        <td>
+                        {% if sylius_inventory_is_available(variant) %}
+                            {{ form_widget(form.variant[loop.index0]) }}
+                        {% else %}
+                            <span class="label label-important">{{ 'sylius.frontend.out_of_stock'|trans }}</span>
+                        {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <div class="well">
+                {{ form_widget(form.variant) }}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="span6">
+        {% if not product.hasOptions and not sylius_inventory_is_available(product.masterVariant) %}
+            <span class="label label-important">{{ 'sylius.frontend.out_of_stock'|trans }}</span>
+        {% else %}
+            {{ form_row(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
+            {{ form_widget(form._token) }}
+            <input type="submit" class="btn btn-success btn-large span12" value="{{ 'sylius.frontend.add_to_cart'|trans }}">
+        {% endif %}
+    </div>
+</form>
 </div>
 {% endblock %}
