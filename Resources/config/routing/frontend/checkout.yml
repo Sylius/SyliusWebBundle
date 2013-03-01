@@ -1,0 +1,14 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_checkout_start:
+    pattern: /
+    defaults: { _controller: sylius.controller.process:startAction, scenarioAlias: 'sylius_checkout' }
+
+sylius_checkout_display:
+    pattern: /{stepName}
+    defaults: { _controller: sylius.controller.process:displayAction, scenarioAlias: 'sylius_checkout' }
+
+sylius_checkout_forward:
+    pattern: /{stepName}/forward
+    defaults: { _controller: sylius.controller.process:forwardAction, scenarioAlias: 'sylius_checkout' }
