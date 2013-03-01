@@ -77,7 +77,7 @@
 <div class="well">
     <button type="submit" class="btn btn-primary btn-large">{{ 'sylius.frontend.cart.summary.save'|trans }}</button>
     <div class="pull-right">
-    <a href="{# path('sylius_checkout_start') #}" class="btn btn-success btn-large"><i class="icon-shopping-cart"></i> {{ 'sylius.frontend.cart.summary.checkout'|trans }}</a>
+    <a href="{{ path('sylius_checkout_start') }}" class="btn btn-success btn-large"><i class="icon-shopping-cart"></i> {{ 'sylius.frontend.cart.summary.checkout'|trans }}</a>
     <a href="{{ path('sylius_cart_clear') }}" class="btn btn-danger btn-large"><i class="icon-remove"></i> {{ 'sylius.frontend.cart.summary.clear'|trans }}</a>
     </div>
 </div>

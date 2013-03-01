@@ -48,6 +48,50 @@ sylius:
                 checkout: Checkout
                 save: Save
                 clear: Clear cart
+        checkout:
+            security:
+                header: Sign in to the store <small>or create new account</small>
+                existing_customer: Existing Customer
+                new_customer: New Customer
+                login: Login
+                register: Register
+            addressing:
+                header: Addressing step
+            shipping:
+                header: Shipping method
+            payment:
+                header: Payment method
+            finalize:
+                header: Order summary
+                product:
+                    name: Name
+                order:
+                    total: Total
+                    items_total: Items total
+                    tax_total: Tax total
+                    taxes: Taxes
+                    items: Items
+                    no_items: This order does not contain any items
+                    no_taxes: No taxes applied
+                    shipping_total: Shipping total
+                    shipping_charges: Shipping charges
+                    no_shipping_charges: No shipping charges applied
+                    shipping_address: Shipping address
+                    billing_address: Billing address
+                order_item:
+                    quantity: Qty
+                    unit_price: Unit Price
+                    total: Total
+                place_order: Place order
+                address:
+                    firstname: First name
+                    lastname: Last name
+                    country: Country
+                    street: Street
+                    city: City
+                    postcode: Postcode
+            back: Back
+            forward: Continue
         add_to_cart: Add to cart
         out_of_stock: Out of stock
     backend:
@@ -405,3 +449,10 @@ sylius:
         add_member: Add member
     zone_member:
         members: Members
+    form:
+        login:
+            username: Username
+            password: Password
+        checkout:
+            addressing:
+                different_billing_address: Use different address for billing?

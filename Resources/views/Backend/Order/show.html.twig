@@ -19,20 +19,24 @@
                 <td>{{ order.id }}</td>
             </tr>
             <tr>
+                <td><strong>{{ 'sylius.backend.order.number'|trans }}</strong></td>
+                <td>#{{ order.number }}</td>
+            </tr>
+            <tr>
                 <td><strong>{{ 'sylius.backend.order.total'|trans }}</strong></td>
-                <td>{{ order.total }}</td>
+                <td>{{ sylius_money_convert(order.total)|sylius_money }}</td>
             </tr>
             <tr>
                 <td><strong>{{ 'sylius.backend.order.items_total'|trans }}</strong></td>
-                <td>{{ order.itemsTotal }}</td>
+                <td>{{ sylius_money_convert(order.itemsTotal)|sylius_money }}</td>
             </tr>
             <tr>
                 <td><strong>{{ 'sylius.backend.order.items_total'|trans }}</strong></td>
-                <td>{{ order.taxTotal|default('0.00') }}</td>
+                <td>{{ sylius_money_convert(order.taxTotal)|sylius_money }}</td>
             </tr>
             <tr>
                 <td><strong>{{ 'sylius.backend.order.shipping_total'|trans }}</strong></td>
-                <td>{{ order.shippingTotal|default('0.00') }}</td>
+                <td>{{ sylius_money_convert(order.shippingTotal)|sylius_money }}</td>
             </tr>
             <tr>
                 <td><strong>{{ 'sylius.backend.order.user'|trans }}</strong></td>
@@ -78,7 +82,7 @@
                     <td>{{ shipment.updatedAt|date }}</td>
                     <td>
                         <div class="pull-right">
-                            <a href="{{ path('sylius_backend_shipment_show', {'id': shipment.id}) }}" class="btn">
+                            <a href="{# path('sylius_backend_shipment_show', {'id': shipment.id}) #}" class="btn">
                                 <i class="icon-book"></i> {{ 'sylius.backend.show'|trans }}
                             </a>
                         </div>
@@ -232,12 +236,12 @@
             <td>{{ item.quantity }}</td>
             <td>
                 <span class="pull-right">
-                {{ item.unitPrice }}
+                {{ sylius_money_convert(item.unitPrice)|sylius_money }}
                 </span>
             </td>
             <td>
                 <span class="pull-right">
-                {{ item.total }}
+                {{ sylius_money_convert(item.total)|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -254,7 +258,7 @@
         <tr>
             <td colspan="6">
                 <span class="pull-right">
-                <strong>{{ 'sylius.backend.order.items_total'|trans }}</strong>: {{ order.itemsTotal }}
+                <strong>{{ 'sylius.backend.order.items_total'|trans }}</strong>: {{ sylius_money_convert(order.itemsTotal)|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -262,8 +266,8 @@
             <td colspan="4">
             <p><strong>{{ 'sylius.backend.order.taxes'|trans }}</strong></p>
             <ul>
-            {% for taxAdjustment in order.taxAdjustments|default({}) %}
-                <li>{{ taxAdjustment.description }} {{ taxAdjustment.amount }} </li>
+            {% for taxAdjustment in order.taxAdjustments %}
+                <li>{{ taxAdjustment.description }} {{ sylius_money_convert(taxAdjustment.amount)|sylius_money }} </li>
             {% else %}
                 <li><span class="label label-info">{{ 'sylius.backend.order.no_taxes'|trans }}</span></li>
             {% endfor %}
@@ -271,7 +275,7 @@
             </td>
             <td colspan="2">
                 <span class="pull-right">
-                <strong>{{ 'sylius.backend.order.tax_total'|trans }}</strong>: {{ order.taxTotal|default('0.00') }}
+                <strong>{{ 'sylius.backend.order.tax_total'|trans }}</strong>: {{ sylius_money_convert(order.taxTotal)|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -279,8 +283,8 @@
             <td colspan="4">
             <p><strong>{{ 'sylius.backend.order.shipping_charges'|trans }}</strong></p>
             <ul>
-            {% for adjustment in order.shippingAdjustments|default({}) %}
-                <li>{{ adjustment.description }} {{ adjustment.amount }} </li>
+            {% for adjustment in order.shippingAdjustments %}
+                <li>{{ adjustment.description }} {{ sylius_money_convert(adjustment.amount)|sylius_money }} </li>
             {% else %}
                 <li><span class="label label-info">{{ 'sylius.backend.order.no_shipping_charges'|trans }}</span></li>
             {% endfor %}
@@ -288,14 +292,14 @@
             </td>
             <td colspan="2">
                 <span class="pull-right">
-                <strong>{{ 'sylius.backend.order.shipping_total'|trans }}</strong>: {{ order.shippingTotal|default('0.00') }}
+                <strong>{{ 'sylius.backend.order.shipping_total'|trans }}</strong>: {{ sylius_money_convert(order.shippingTotal)|sylius_money }}
                 </span>
             </td>
         </tr>
-        <tr>
+        <tr style="background-color: #f1f1f1;">
             <td colspan="6">
                 <span class="pull-right">
-                <strong>{{ 'sylius.backend.order.total'|trans }}</strong>: {{ order.total }}
+                <strong>{{ 'sylius.backend.order.total'|trans }}</strong>: {{ sylius_money_convert(order.total)|sylius_money }}
                 </span>
             </td>
         </tr>

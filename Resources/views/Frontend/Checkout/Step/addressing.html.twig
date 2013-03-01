@@ -1,0 +1,35 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.frontend.checkout.addressing.header'|trans|raw }}</h1>
+</div>
+
+{% include 'SyliusWebBundle:Frontend/Checkout:_progressBar.html.twig' %}
+
+<form method="post" action="{{ path('sylius_checkout_forward', {'stepName': context.currentStep.name}) }}" class="form-vertical" novalidate>
+
+{{ form_errors(form) }}
+
+<fieldset>
+    <div class="fluid-row">
+        <div class="span6 well">
+        {% include 'SyliusWebBundle:Frontend/Form:_address.html.twig' with {'form': form.shippingAddress} %}
+        {{ form_row(form.differentBillingAddress, {'attr': {'class': 'sylius-different-billing-address-trigger'}}) }}
+        </div>
+        <div class="span6 well hide" id="sylius-billing-address-container">
+        <br />
+        {% include 'SyliusWebBundle:Frontend/Form:_address.html.twig' with {'form': form.billingAddress} %}
+        </div>
+    </div>
+</fieldset>
+
+{{ form_widget(form._token) }}
+
+<div class="form-actions">
+    <a href="{{ path('sylius_cart_summary') }}" class="btn btn-large">{{ 'sylius.frontend.checkout.back'|trans }}</a> &nbsp;
+    <input type="submit" class="btn btn-primary btn-large" value="{{ 'sylius.frontend.checkout.forward'|trans }}" />
+</div>
+
+</form>
+{% endblock %}
