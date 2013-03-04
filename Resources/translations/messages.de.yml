@@ -49,7 +49,7 @@ sylius:
                     save: Speichern
                     clear: Warenkorb löschen
             add_to_cart: In den Warenkorb
-            out_of_stock: Auzsverkauft
+            out_of_stock: Ausverkauft
     backend:
         logo: Sylius
         meta:
