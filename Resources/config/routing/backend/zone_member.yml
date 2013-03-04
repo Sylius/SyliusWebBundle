@@ -6,4 +6,5 @@ sylius_backend_zone_member_delete:
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.zone_member:deleteAction
-        _redirect: referer
+        _sylius:
+            redirect: referer

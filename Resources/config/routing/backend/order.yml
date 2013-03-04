@@ -6,37 +6,42 @@ sylius_backend_order_index:
     methods: [GET]
     defaults:
         _controller: sylius.controller.order:indexAction
-        _template: SyliusWebBundle:Backend/Order:index.html.twig
-        _sortable: true
-        _sorting:
-            updatedAt: desc
+        _sylius:
+            template: SyliusWebBundle:Backend/Order:index.html.twig
+            sortable: true
+            sorting:
+                updatedAt: desc
 
 sylius_backend_order_create:
     pattern: /new
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.order:createAction
-        _template: SyliusWebBundle:Backend/Order:create.html.twig
-        _redirect: sylius_backend_order_show
+        _sylius:
+            template: SyliusWebBundle:Backend/Order:create.html.twig
+            redirect: sylius_backend_order_show
 
 sylius_backend_order_update:
     pattern: /{id}/edit
     methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.order:updateAction
-        _template: SyliusWebBundle:Backend/Order:update.html.twig
-        _redirect: sylius_backend_order_show
+        _sylius:
+            template: SyliusWebBundle:Backend/Order:update.html.twig
+            redirect: sylius_backend_order_show
 
 sylius_backend_order_delete:
     pattern: /{id}
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.order:deleteAction
-        _redirect: sylius_backend_order_index
+        _sylius:
+            redirect: sylius_backend_order_index
 
 sylius_backend_order_show:
     pattern: /{id}
     methods: [GET]
     defaults:
         _controller: sylius.controller.order:showAction
-        _template: SyliusWebBundle:Backend/Order:show.html.twig
+        _sylius:
+            template: SyliusWebBundle:Backend/Order:show.html.twig
