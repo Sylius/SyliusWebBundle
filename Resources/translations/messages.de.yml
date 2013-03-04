@@ -23,6 +23,33 @@ sylius:
                 logout: Logout
                 register: Registrieren
                 dashboard: Dashboard
+        shop_by: Shop von
+            product:
+                index_by_taxon_header: Produkte <small>eingeordnet in "%taxon%" Taxon</small>
+                no_description: <i>Keine Beschreibung</i>
+                no_results: Entschuldigung, keine Produkte zur Anzeige
+                show: Mehr
+                properties: Eigenschaften
+                description: Beschreibung
+            variant:
+                price: Preis
+            cart:
+                header: Warenkorb
+                total_items: 1 Position|%count% Positionen
+                summary_header: Warenkorb Zusammenfassung
+                link: Warenkorb
+                empty: Der Warenkorb ist leer.
+                summary:
+                    quantity: Menge
+                    product: Produkt
+                    unit_price: Preis
+                    grand_total: Gesamtsumme
+                    total: Summe
+                    checkout: Checkout
+                    save: Speichern
+                    clear: Warenkorb löschen
+            add_to_cart: In den Warenkorb
+            out_of_stock: Auzsverkauft
     backend:
         logo: Sylius
         meta:
