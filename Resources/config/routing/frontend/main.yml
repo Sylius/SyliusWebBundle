@@ -16,10 +16,12 @@ sylius_cart_summary:
     pattern: /cart
     defaults:
         _controller: sylius.controller.cart:summaryAction
-        _template: SyliusWebBundle:Frontend/Cart:summary.html.twig
+        _sylius:
+            template: SyliusWebBundle:Frontend/Cart:summary.html.twig
 
 sylius_cart_save:
     pattern: /cart/save
     defaults:
         _controller: sylius.controller.cart:saveAction
-        _template: SyliusWebBundle:Frontend/Cart:summary.html.twig
+        _sylius:
+            template: SyliusWebBundle:Frontend/Cart:summary.html.twig

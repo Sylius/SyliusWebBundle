@@ -6,4 +6,5 @@ sylius_backend_promotion_rule_delete:
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.promotion_rule:deleteAction
-        _redirect: referer
+        _sylius:
+            redirect: referer

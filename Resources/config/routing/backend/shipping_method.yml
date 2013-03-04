@@ -6,37 +6,42 @@ sylius_backend_shipping_method_index:
     methods: [GET]
     defaults:
         _controller: sylius.controller.shipping_method:indexAction
-        _template: SyliusWebBundle:Backend/ShippingMethod:index.html.twig
-        _sortable: true
-        _sorting:
-            name: desc
+        _sylius:
+            template: SyliusWebBundle:Backend/ShippingMethod:index.html.twig
+            sortable: true
+            sorting:
+                name: desc
 
 sylius_backend_shipping_method_create:
     pattern: /new
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.shipping_method:createAction
-        _template: SyliusWebBundle:Backend/ShippingMethod:create.html.twig
-        _redirect: sylius_backend_shipping_method_show
+        _sylius:
+            template: SyliusWebBundle:Backend/ShippingMethod:create.html.twig
+            redirect: sylius_backend_shipping_method_show
 
 sylius_backend_shipping_method_update:
     pattern: /{id}/edit
     methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.shipping_method:updateAction
-        _template: SyliusWebBundle:Backend/ShippingMethod:update.html.twig
-        _redirect: sylius_backend_shipping_method_show
+        _sylius:
+            template: SyliusWebBundle:Backend/ShippingMethod:update.html.twig
+            redirect: sylius_backend_shipping_method_show
 
 sylius_backend_shipping_method_delete:
     pattern: /{id}
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.shipping_method:deleteAction
-        _redirect: sylius_backend_shipping_method_index
+        _sylius:
+            redirect: sylius_backend_shipping_method_index
 
 sylius_backend_shipping_method_show:
     pattern: /{id}
     methods: [GET]
     defaults:
         _controller: sylius.controller.shipping_method:showAction
-        _template: SyliusWebBundle:Backend/ShippingMethod:show.html.twig
+        _sylius:
+            template: SyliusWebBundle:Backend/ShippingMethod:show.html.twig

@@ -6,38 +6,43 @@ sylius_backend_prototype_index:
     methods: [GET]
     defaults:
         _controller: sylius.controller.prototype:indexAction
-        _template: SyliusWebBundle:Backend/Prototype:index.html.twig
-        _sortable: true
-        _sorting:
-            name: desc
+        _sylius:
+            template: SyliusWebBundle:Backend/Prototype:index.html.twig
+            sortable: true
+            sorting:
+                name: desc
 
 sylius_backend_prototype_create:
     pattern: /new
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.prototype:createAction
-        _template: SyliusWebBundle:Backend/Prototype:create.html.twig
-        _redirect: sylius_backend_prototype_index
+        _sylius:
+            template: SyliusWebBundle:Backend/Prototype:create.html.twig
+            redirect: sylius_backend_prototype_index
 
 sylius_backend_prototype_update:
     pattern: /{id}/edit
     methods: [GET, PUT]
     defaults:
         _controller: sylius.controller.prototype:updateAction
-        _template: SyliusWebBundle:Backend/Prototype:update.html.twig
-        _redirect: sylius_backend_prototype_index
+        _sylius:
+            template: SyliusWebBundle:Backend/Prototype:update.html.twig
+            redirect: sylius_backend_prototype_index
 
 sylius_backend_prototype_delete:
     pattern: /{id}
     methods: [DELETE]
     defaults:
         _controller: sylius.controller.prototype:deleteAction
-        _redirect: sylius_backend_prototype_index
+        _sylius:
+            redirect: sylius_backend_prototype_index
 
 sylius_backend_prototype_build:
     pattern: /{id}/build
     methods: [GET, POST]
     defaults:
         _controller: sylius.controller.prototype:buildAction
-        _template: SyliusWebBundle:Backend/Prototype:build.html.twig
-        _redirect: sylius_backend_product_show
+        _sylius:
+            template: SyliusWebBundle:Backend/Prototype:build.html.twig
+            redirect: sylius_backend_product_show
