@@ -23,7 +23,7 @@ sylius:
                 logout: Logout
                 register: Registrieren
                 dashboard: Dashboard
-        shop_by: Shop von
+            shop_by: Shop von
             product:
                 index_by_taxon_header: Produkte <small>eingeordnet in "%taxon%" Taxon</small>
                 no_description: <i>Keine Beschreibung</i>
