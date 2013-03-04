@@ -6,11 +6,12 @@ sylius_backend_user_index:
     methods: [GET]
     defaults:
         _controller: sylius.controller.user:indexAction
-        _template: SyliusWebBundle:Backend/User:index.html.twig
-        _filterable: true
-        _sortable: true
-        _sorting:
-            id: desc
+        _sylius:
+            template: SyliusWebBundle:Backend/User:index.html.twig
+            filterable: true
+            sortable: true
+            sorting:
+                id: desc
 
 sylius_backend_user_delete:
     pattern: /{id}
@@ -23,4 +24,5 @@ sylius_backend_user_show:
     methods: [GET]
     defaults:
         _controller: sylius.controller.user:showAction
-        _template: SyliusWebBundle:Backend/User:show.html.twig
+        _sylius:
+            template: SyliusWebBundle:Backend/User:show.html.twig

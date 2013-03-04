@@ -6,7 +6,8 @@ sylius_backend_stockable_index:
     methods: [GET]
     defaults:
         _controller: sylius.controller.stockable:indexAction
-        _template: SyliusWebBundle:Backend/Stockable:index.html.twig
-        _sortable: true
-        _sorting:
-            updatedAt: asc
+        _sylius:
+            template: SyliusWebBundle:Backend/Stockable:index.html.twig
+            sortable: true
+            sorting:
+                updatedAt: asc
