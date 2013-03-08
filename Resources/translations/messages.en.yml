@@ -275,11 +275,20 @@ sylius:
             shipment_state: Shipment state
             shipment_states:
                 pending: Pending
+            inventory_tracking: Inventory tracking
         order_item:
             sellable: Product
             quantity: Qty
             unit_price: Unit price
             total: Total
+        inventory_unit:
+            sku: SKU
+            name: Name
+            inventory_state: Inventory state
+            shipping_state: Shipping state
+            created_at: Created
+            updated_at: Modified
+            no_results: There are no inventory units to display
         promotion:
             index_header: Current promotions
             show_header: Promotion details
