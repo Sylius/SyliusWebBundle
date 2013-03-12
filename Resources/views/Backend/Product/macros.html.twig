@@ -37,7 +37,7 @@
             </td>
             <td>
                 {% if not product.hasOptions %}
-                    <span class="label label-success">{{ product.masterVariant.price }} &euro;</span>
+                    <span class="label label-success">{{ product.masterVariant.price|sylius_money }}</span>
                 {% else %}
                     ---
                 {% endif %}

@@ -3,7 +3,7 @@
 <h4>{{ 'sylius.frontend.cart.header'|trans }}</h4>
 
 <div class="well well-small">
-{{ sylius_money_convert(cart.total)|sylius_money }}, {{ 'sylius.frontend.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
+{{ cart.total|sylius_money }}, {{ 'sylius.frontend.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
 <hr>
 <a href="{{ path('sylius_cart_summary') }}" class="btn btn-large btn-success">
 <i class="icon-shopping-cart"></i> {{ 'sylius.frontend.cart.link'|trans }}

@@ -11,7 +11,7 @@
 
 {% if not cart.empty %}
 <div class="alert alert-info">
-<strong>{{ sylius_money_convert(cart.total)|sylius_money }}</strong>, {{ 'sylius.frontend.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
+<strong>{{ cart.total|sylius_money }}</strong>, {{ 'sylius.frontend.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
 </div>
 
 {{ form_errors(form) }}
@@ -56,10 +56,10 @@
                 <a href="{{ path('sylius_cart_item_remove', {'id': item.id}) }}" class="btn btn-danger"><i class="icon-trash icon-white"></i></a>
             </td>
             <td>
-                {{ sylius_money_convert(item.unitPrice)|sylius_money }}
+                {{ item.unitPrice|sylius_money }}
             </td>
             <td style="text-align: right">
-                {{ sylius_money_convert(item.total)|sylius_money }}
+                {{ item.total|sylius_money }}
             </td>
         </tr>
     {% endfor %}
@@ -68,7 +68,7 @@
         <tr>
             <td colspan="6"></td>
             <td style="text-align: right;">
-                <strong>{{ 'sylius.frontend.cart.summary.grand_total'|trans }}</strong>: {{ sylius_money_convert(cart.total)|sylius_money }}
+                <strong>{{ 'sylius.frontend.cart.summary.grand_total'|trans }}</strong>: {{ cart.total|sylius_money }}
             </td>
         </tr>
     </tfoot>

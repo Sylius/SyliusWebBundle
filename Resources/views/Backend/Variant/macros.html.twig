@@ -39,7 +39,7 @@
                 {% endif %}
             </td>
             <td><span class="badge badge-{{ variant.inStock ? 'success' : 'important' }}">{{ variant.onHand }}</span></td>
-            <td>{{ variant.price }} &euro;</td>
+            <td>{{ variant.price|sylius_money }}</td>
             <td>
                 <div class="pull-right">
                 {{ buttons.edit(path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id})) }}

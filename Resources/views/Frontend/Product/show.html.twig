@@ -11,7 +11,7 @@
     </div>
     <div class="span9">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
-        <p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+        <p>{{ product.shortDescription|default('sylius.frontend.product.no_description')|trans|raw }}</p>
     </div>
 </div>
 <hr>
@@ -37,7 +37,7 @@
     </div>
     <div class="span6">
         <h4>{{ 'sylius.frontend.product.description'|trans }}</h4>
-        <p>{{ product.description|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+        <p>{{ product.description|default('sylius.frontend.product.no_description')|trans|raw }}</p>
     </div>
 </div>
 <hr>
@@ -69,7 +69,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            <span class="label label-success">{{ sylius_money_convert(variant.price)|sylius_money }}</span>
+                            <span class="label label-success">{{ variant.price|sylius_money }}</span>
                         </td>
                         <td>
                         {% if sylius_inventory_is_available(variant) %}

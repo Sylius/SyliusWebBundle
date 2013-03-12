@@ -123,12 +123,12 @@
             <td>{{ item.quantity }}</td>
             <td>
                 <span class="pull-right">
-                {{ sylius_money_convert(item.unitPrice)|sylius_money }}
+                {{ item.unitPrice|sylius_money }}
                 </span>
             </td>
             <td>
                 <span class="pull-right">
-                {{ sylius_money_convert(item.total)|sylius_money }}
+                {{ item.total|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -145,7 +145,7 @@
         <tr>
             <td colspan="6">
                 <span class="pull-right">
-                <strong>{{ 'sylius.frontend.checkout.finalize.order.items_total'|trans }}</strong>: {{ sylius_money_convert(order.itemsTotal)|sylius_money }}
+                <strong>{{ 'sylius.frontend.checkout.finalize.order.items_total'|trans }}</strong>: {{ order.itemsTotal|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -154,7 +154,7 @@
             <p><strong>{{ 'sylius.frontend.checkout.finalize.order.taxes'|trans }}</strong></p>
             <ul>
             {% for taxAdjustment in order.taxAdjustments %}
-                <li>{{ taxAdjustment.description }} {{ sylius_money_convert(taxAdjustment.amount)|sylius_money }} </li>
+                <li>{{ taxAdjustment.description }} {{ taxAdjustment.amount|sylius_money }} </li>
             {% else %}
                 <li><span class="label label-info">{{ 'sylius.frontend.checkout.finalize.order.no_taxes'|trans }}</span></li>
             {% endfor %}
@@ -162,7 +162,7 @@
             </td>
             <td colspan="2">
                 <span class="pull-right">
-                <strong>{{ 'sylius.frontend.checkout.finalize.order.tax_total'|trans }}</strong>: {{ sylius_money_convert(order.taxTotal)|sylius_money }}
+                <strong>{{ 'sylius.frontend.checkout.finalize.order.tax_total'|trans }}</strong>: {{ order.taxTotal|sylius_money }}
                 </span>
             </td>
         </tr>
@@ -171,7 +171,7 @@
             <p><strong>{{ 'sylius.frontend.checkout.finalize.order.shipping_charges'|trans }}</strong></p>
             <ul>
             {% for adjustment in order.shippingAdjustments %}
-                <li>{{ adjustment.description }} {{ sylius_money_convert(adjustment.amount)|sylius_money }} </li>
+                <li>{{ adjustment.description }} {{ adjustment.amount|sylius_money }} </li>
             {% else %}
                 <li><span class="label label-info">{{ 'sylius.frontend.checkout.finalize.order.no_shipping_charges'|trans }}</span></li>
             {% endfor %}
@@ -179,14 +179,14 @@
             </td>
             <td colspan="2">
                 <span class="pull-right">
-                <strong>{{ 'sylius.frontend.checkout.finalize.order.shipping_total'|trans }}</strong>: {{ sylius_money_convert(order.shippingTotal)|sylius_money }}
+                <strong>{{ 'sylius.frontend.checkout.finalize.order.shipping_total'|trans }}</strong>: {{ order.shippingTotal|sylius_money }}
                 </span>
             </td>
         </tr>
         <tr>
             <td colspan="6">
                 <span class="pull-right">
-                <strong>{{ 'sylius.frontend.checkout.finalize.order.total'|trans }}</strong>: {{ sylius_money_convert(order.total)|sylius_money }}
+                <strong>{{ 'sylius.frontend.checkout.finalize.order.total'|trans }}</strong>: {{ order.total|sylius_money }}
                 </span>
             </td>
         </tr>
