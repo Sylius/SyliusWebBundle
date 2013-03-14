@@ -15,21 +15,15 @@
     {{ buttons.delete(path('sylius_backend_product_delete', {'id': product.id})) }}
 </div>
 
-<div class="row-fluid">
-    <div class="span2">
-        <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="thumbnail" style="height: 210px;">
-            <img src="http://placehold.it/200x210" alt="" />
-        </a>
-    </div>
-    <div class="span10">
-        <div class="well">
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.shortDescription|default('sylius.product.no_short_description'|trans)|raw }}</p>
-        </div>
-        <div class="well">
-        <p>{{ product.description }}</p>
-        </div>
-    </div>
+<div class="well">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.shortDescription|default('sylius.product.no_short_description'|trans)|raw }}</p>
+</div>
+<div class="well">
+    <p>{{ product.description }}</p>
+    {% for image in product.masterVariant.images %}
+        <a href="{{ image.path|imagine_filter('variant_xl') }}" target="_blank"><img class="img-polaroid" src="{{ image.path|imagine_filter('variant_m') }}" alt="" /></a>
+    {% endfor %}
 </div>
 <hr>
 <table class="table table-bordered">

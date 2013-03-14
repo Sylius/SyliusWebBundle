@@ -21,9 +21,20 @@
             {{ form_row(form.masterVariant.availableOnDemand) }}
             {{ form_row(form.masterVariant.price) }}
             {{ form_row(form.masterVariant.onHand) }}
+            <div id="sylius-assortment-variant-images" class="collection-container" data-prototype="{{ form_widget(form.masterVariant.images.vars.prototype)|e }}">
+                {% for imageForm in form.masterVariant.images %}
+                    {{ form_widget(imageForm) }}
+                {% endfor %}
+            </div>
             <hr />
             {{ form_row(form.taxCategory) }}
             {{ form_row(form.variantSelectionMethod) }}
+
+            <div class="control-group">
+                <div class="controls">
+                    <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.add_image'|trans }}</a>
+                </div>
+            </div>
         </div>
         <div class="tab-pane" id="options">
             {% if form.options is defined %}
