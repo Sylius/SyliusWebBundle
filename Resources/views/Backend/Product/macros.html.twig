@@ -25,8 +25,8 @@
                 </a>
             </td>
             <td>
-                <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="thumbnail" style="width: 90px; height: 60px;">
-                    <img src="http://placehold.it/90x60" alt="" />
+                <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="thumbnail">
+                    <img src="{{ product.masterVariant.images.count ? product.masterVariant.images.first.path|imagine_filter('variant_m') : 'http://placehold.it/90x60' }}" alt="" />
                 </a>
             </td>
             <td>
