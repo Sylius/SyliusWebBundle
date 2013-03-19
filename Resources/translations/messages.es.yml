@@ -1,0 +1,473 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    logo: Sylius
+    meta:
+        title: Sylius, moderno ecommerce para Symfony2
+        description: Sylius es una solución ecommerce para PHP, basado en el framework Symfony2.
+        keywords: 'ecommerce, tienda online, sylius, symfony2, tienda'
+    layout:
+        menu:
+            home: Inicio
+            administration: Administración
+    form:
+        choose_file: Escoger archivo
+    homepage:
+        splash:
+            headline: Bienvenido a Sylius
+            subheadline: ecommerce para Symfony2
+            link: Sylius.org
+    frontend:
+        menu:
+            main:
+                login: Login
+                logout: Logout
+                register: Registro
+                administration: Administración
+        shop_by: Tienda realizada por
+        # note: not sure of context of shop_by: realizada por = made by
+        product:
+            index_by_taxon_header: Productos <small>Categorizados bajo taxón "%taxon%"</small>
+            no_description: <i>Sin descripción...</i>
+            no_results: Disculpe, no hay productos para mostrar
+            show: Ver más
+            properties: Propiedades
+            description: Descripción
+        variant:
+            price: Precio
+        cart:
+            header: Carro
+            total_items: 1 item|%count% items
+            summary_header: Resumen del carro
+            link: Ver carro
+            empty: Su carro está vacío
+            summary:
+                quantity: Cant.
+                product: Producto
+                unit_price: Precio
+                grand_total: Gran total
+                total: Total
+                checkout: Checkout
+                save: Guardar
+                clear: Vaciar carro
+        checkout:
+            security:
+                header: Inicie sesión en la tienda <small>o abra una nueva cuenta</small>
+                existing_customer: Cliente Registrado
+                new_customer: Nuevo Cliente
+                login: Acceso
+                register: Registro
+            addressing:
+                header: Direcciones
+            shipping:
+                header: Método de envío
+            payment:
+                header: Modo de pago
+            finalize:
+                header: Resumen del pedido
+                product:
+                    name: Nombre
+                order:
+                    total: Total
+                    items_total: Items total
+                    tax_total: Total impuestos
+                    taxes: Impuestos
+                    items: Items
+                    no_items: Este pedido no contiene ningún producto
+                    no_taxes: Impuestos no incluidos
+                    shipping_total: Total envío
+                    shipping_charges: Costes envío
+                    no_shipping_charges: Costes de envío no aplicados
+                    shipping_address: Dirección de envío
+                    billing_address: Dirección de facturación
+                order_item:
+                    quantity: Cant.
+                    unit_price: Precio Unidad
+                    total: Total
+                place_order: Confirmar pedido
+                address:
+                    firstname: Nombre
+                    lastname: Apellidos
+                    country: País
+                    street: Calle
+                    city: Ciudad
+                    postcode: Código Postal
+            back: Voler
+            forward: Continuar
+        add_to_cart: Añadir al carro
+        out_of_stock: Sin stock
+    backend:
+        logo: Sylius
+        meta:
+            title: Administración Sylius
+        dashboard:
+            header: Panel de Administración
+            subheader: Vista general de su tienda
+        yes: sí
+        no: no
+        create: Crear
+        edit: editar
+        show: detalles
+        delete: borrar
+        build: costruir
+        cancel: Cancelar
+        save_changes: Guardar cambios
+        alert:
+            info: Información
+        menu:
+            main:
+                dashboard: Panel general
+                homepage: Su tienda
+                taxonomies: Categorización
+                assortment: Surtido
+                # don't like 'surtido' too much in spanish (though it is accepted translation), 'Catálogo' might be better
+                products: Productos
+                options: Administrar opciones de producto
+                properties: Configurar propiedades
+                prototypes: Prototipos de producto
+                sales: Pedidos
+                orders: Pedidos en curso
+                new_order: Añadir nuevo pedido
+                promotions: Promociones
+                new_promotion: Añadir nueva promoción
+                configuration: Configuración
+                general_settings: Configuración general
+                taxation_settings: Configuración de impuestos
+                tax_categories: Categorías de impuestos
+                tax_rates: Tasas de impuestos
+                shipping_categories: Categoriás de envío
+                shipping_methods: Métodos de envío
+                payment_methods: Modos de pago
+                countries: Países
+                zones: Zonas
+            sidebar:
+                dashboard: Panel general
+                homepage: Volver a la tienda
+                taxonomies: Categorización
+                customer: Clientes
+                users: Usuarios
+                assortment: Surtido
+                products: Productos
+                stockables: Niveles de inventario
+                options: Administrar opciones de producto
+                properties: Configurar propiedades
+                prototypes: Prototipos de producto
+                sales: Pedidos
+                orders: Pedidos en curso
+                new_order: Añadir nuevo pedido
+                promotions: Promociones
+                new_promotion: Añadir nueva promoción
+                configuration: Configuración
+                general_settings: Configuración general
+                taxation_settings: Configuración de impuestos
+                tax_categories: Categorías de impuestos
+                tax_rates: Tasas de impuestos
+                shipping_categories: Categoriás de envío
+                shipping_methods: Métodos de envío
+                payment_methods: Modos de pago
+                countries: Países
+                zones: Zonas
+        user:
+            index_header: Usuarios <small>Lista de los usuarios registrados en la tienda</small>
+            show_header: Detalles de usuairo
+            no_results: No hay usuarios que mostrar
+            general_info: Información general del usuairo "%username%"
+            id: ID
+            username: Nombre de usuario
+            email: E-Mail
+            enabled: Confirmado?
+            last_login: Último acceso
+            filter:
+                all: Ver todos los usuarios
+                unconfirmed: Cuentas no confirmadas
+        taxonomy:
+            manage: Administrar taxonomías
+            id: ID
+            name: Nombre
+            create: Crear taxonomía
+            index_header: Categorización <small>Aquí puede ver las taxonomías definidas</small>
+            show_header: Taxonomía <small><strong>%name%</strong></small>
+            create_header: Nueva taxonomía
+            update_header: Edición de taxonomía
+            no_results: No hay taxonomías definidas
+        taxon:
+            id: ID
+            name: Nombre
+            create: Crear taxón
+            create_header: Nuevo taxón
+            update_header: Edión de taxón
+            no_results: No hay taxones definidos para esta taxonomía
+        product:
+            manage: Administrar productos
+            id: ID
+            sku: SKU
+            create: Crear producto
+            index_header: Productos <small>Índice de productos en su tienda</small>
+            show_header: Detalles de producto <small>Viendo producto "<strong>%product%</strong>"</small>
+            create_header: Nuevo producto
+            update_header: Edición de producto
+            generate_variants: Generar variantes
+            no_results: No hay productos para mostrar
+            variant_selection_method: Método de selección de variantes
+        stockable:
+            manage: Administrar niveles de stock
+            index_header: Inventario <small>Aquí puede ver sus niveles actuales de stock</small>
+            no_results: No hay elementos en el inventario para mostrar
+        variant:
+            create: Crear variante
+            create_header: Nueva variante de producto
+            update_header: Editar variante
+            no_results: No hay variantes para mostrar
+            add_image: Añadir imagen
+        option:
+            manage: Administrar opciones
+            create_header: Nueva opción de producto
+            create: Crear opción
+            update_header: Editar opción
+            show_header: Detalles de la opción
+            index_header: Opciones de producto
+            no_results: No hay opciones configuradas
+        property:
+            manage: Administrar propiedades
+            create_header: Nueva propiedad de producto
+            create: Crear propiedad
+            update_header: Edición de propiedad
+            show_header: Detalles de la propiedad
+            index_header: Propiedades de producto
+            no_results: No hay propiedades de producto
+            add_choice: Añadir opción
+        prototype:
+            manage: Administrar prototipos
+            create_header: Nuevo prototipo
+            create: Crear prototipo
+            update_header: Edición de prototipo
+            build_header: Creación de un producto en base a un prototipo
+            index_header: Prototipos de producto
+            no_results: No hay prototipos definidos
+            build: Crear producto
+            # note: I think 'build' in spanish ('construir') doesn't work out well for this. So, I suggest 'create product'
+        order:
+            manage: Administrar pedidos
+            create: Crear pedido
+            create_header: Nuevo pedido
+            update_header: Edición de pedido
+            show_header: Detalles de pedido
+            index_header: Pedidos en curso
+            no_results: No tiene nuevos pedidos
+            general_info: Información general
+            id: ID
+            number: Número
+            user: Usuario
+            total: Total
+            items_total: Total items
+            tax_total: Total impuestos
+            taxes: Impuestos
+            items: Items
+            no_items: Este pedido no contien nigún elemento
+            no_taxes: Impuestos no incluidos
+            shipping_total: Total envío
+            shipping_charges: Costes de envío
+            no_shipping_charges: Costes de envío no aplicados
+            shipments: Envíos
+            no_shipments: No hay envíos para este pedido
+            shipping_address: Dirección de envío
+            billing_address: Dirección de facturación
+            created_at: Fecha creación
+            updated_at: Útima actualización
+            payment_state: Estado de pago
+            payment_states:
+                balance_due: Saldo pendiente
+            shipment_state: Estado de envío
+            shipment_states:
+                pending: Pendiente
+            inventory_tracking: Seguimiento de inventario
+        order_item:
+            sellable: Producto
+            quantity: Cant.
+            unit_price: Precio unidad
+            total: Total
+        inventory_unit:
+            sku: SKU
+            name: Nombre
+            inventory_state: Estado de inventario
+            shipping_state: Estado de envío
+            created_at: Creado
+            updated_at: Modificado
+            no_results: No hay elementos de inventario para mostrar
+        promotion:
+            index_header: Promociones vigentes
+            show_header: Detalles de promoción
+            create_header: Nueva promoción
+            update_header: Edición de promoción
+            create: Crear promoción
+            manage: Administrar promociones
+            name: Nombre
+            description: Descripción
+            usage_limit: Límite de uso
+            used: Usada
+            starts_at: Empieza en
+            ends_at: Termina en
+            created_at: Creado en
+            updated_at: Actualizado en
+            no_results: No hay promociones configuradas
+        promotion_coupon:
+            code: Código
+            usage_limit: Límite de uso
+            used: Usado
+        promotion_rule:
+            type: Tipo
+            configuration: Configuración
+        promotion_action:
+            type: Tipo
+            configuration: Configuración
+        address:
+            firstname: Nombre
+            lastname: Apellidos
+            country: País
+            street: Calle
+            city: Ciudad
+            postcode: Código Postal
+        shipment:
+            id: ID
+            method: Método
+            state: Estado
+            updated_at: Última actualización
+        tax_category:
+            manage: Administrar categorías de impuestos
+            create: Crear categorías de impuestos
+            create_header: Nueva categoría de impuestos
+            update_header: Edición de categoría de impuestos
+            show_header: Detalles de categoría de impuestos
+            index_header: Categorías de impuestos
+            no_results: No hay categorías de impuestos configuradas
+            no_description: Sin descripción
+            id: ID
+            name: Nombre
+            description: Descripción
+            created_at: Creada en
+            updated_at: Última actualización
+        tax_rate:
+            manage: Administrar tasas de impuestos
+            create_header: Nueva tasa de impuestos
+            create: Crear tasa de impuestos
+            update_header: Edición de tasa de impuestos
+            show_header: Detalles de tasa de impuestos
+            index_header: Tasas de impuestos
+            no_results: No hay tasas de impuestos configuradas
+        shipping_category:
+            manage: Administrar categorías de envío
+            create_header: Nueva categoría de envío
+            create: Crear categoría de envío
+            update_header: Edición de categoría de envío
+            show_header: Detalles de categoría de envío
+            index_header: Categorías de envío
+            no_results: No hay categorías de envío configuradas
+            no_description: Sin descripción
+            id: ID
+            name: Nombre
+            description: Descripción
+            updated_at: Última actualización
+        shipping_method:
+            manage: Administrar métodos de envío
+            create_header: Nuevo método de envío
+            create: Crear método de envío
+            update_header: Edición de método de envío
+            show_header: Detalles de método de envío
+            index_header: Métodos de envío
+            no_results: No hay métodos de envío configurados
+            id: ID
+            name: Nombre
+            zone: Zona
+            category: Categoría
+            enabled: Está activado?
+            calculator: Calculadora
+            updated_at: Última actualización
+        payment_method:
+            manage: Administrar modos de pago
+            create_header: Nuevo modo de pago
+            create: Crear modo de pago
+            update_header: Edición de modo de pago
+            show_header: Detalles de modo de pago
+            index_header: Modos de pago
+            no_results: No hay modos de pago configurados
+            id: ID
+            name: Nombre
+            description: Descripción
+            enabled: Está activado?
+            gateway: gateway
+            created_at: Creado en
+            updated_at: Última actulización
+        country:
+            manage: Administrar países
+            create_header: Nuevo país
+            create: Crear país
+            update_header: Edición de país
+            show_header: Detalles de país
+            index_header: Países
+            no_results: No hay países configurados
+            id: ID
+            name: Nombre
+            iso_name: Nombre ISO
+            provinces: Provincias
+        zone:
+            manage: Administrar zonas
+            create_header: Nueva zona
+            create: Crear zona
+            update_header: Edición de zona
+            show_header: Detalles de zona
+            index_header: Zonas
+            no_results: No hay zonas configuradas
+        settings:
+            general_header: Configuración general
+            taxation_header: Configuración de impuestos
+    product:
+        name: Nombre
+        options: Opciones
+        properties: Propiedades
+        price: Precio en tienda
+        available_on: Disponible en
+        tax_category: Categoría de impuestos
+        no_tax_category: Sin categoría de impuestos
+        no_short_description: <i>Sin descripción corta</i>
+        no_options: No hay opciones para este producto
+        no_properties: Este producto no tiene propiedades configuradas
+        add_property: Añadir propiedad
+        available_on_demand: Disponible bajo demanda
+        stock: Stock actual
+    variant:
+        price: Precio
+        availability: Disponibilidad
+        last_update: Última actualización
+        options: Opciones
+        available_on_demand: Disponible bajo demanda
+        stock: Stock actual
+    tax_rate:
+        name: Nombre
+        amount: Cantidad
+    promotion:
+        add_coupon: Añadir cupón
+        add_rule: Añadir regla
+        add_action: Añadir acción
+        coupons: Cupones
+        rules: Reglas
+        actions: Acciones
+    country:
+        name: Nombre
+        iso_name: Nombre ISO
+        add_province: Añadir provincia
+    province:
+        provinces: Provincias
+    zone:
+        name: Nombre
+        type: Tipo
+        add_member: Añadir miembro
+    zone_member:
+        members: Miembros
+    form:
+        login:
+            username: Usuario
+            password: Password
+        checkout:
+            addressing:
+                different_billing_address: ¿Usar una dirección de facturación diferente?
