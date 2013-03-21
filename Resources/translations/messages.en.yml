@@ -91,6 +91,7 @@ sylius:
                 shipping_categories: Shipping categories
                 shipping_methods: Shipping methods
                 payment_methods: Payment methods
+                payments: Payments
                 countries: Countries
                 zones: Zones
             sidebar:
@@ -118,6 +119,7 @@ sylius:
                 shipping_categories: Shipping categories
                 shipping_methods: Shipping methods
                 payment_methods: Payment methods
+                payments: Payments
                 countries: Countries
                 zones: Zones
         user:
@@ -337,6 +339,19 @@ sylius:
             description: Description
             enabled: Is enabled?
             gateway: gateway
+            created_at: Created at
+            updated_at: Last update
+        payment:
+            manage: Manage payments
+            create_header: New payment
+            create: Create payment
+            update_header: Editing payment
+            show_header: Payment details
+            index_header: Payments
+            no_results: There are no payments to display
+            id: ID
+            method: Method
+            amount: Amount
             created_at: Created at
             updated_at: Last update
         country:
