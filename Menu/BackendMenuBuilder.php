@@ -156,6 +156,9 @@ class BackendMenuBuilder extends MenuBuilder
         $child->addChild('new_order', array(
             'route' => 'sylius_backend_order_create',
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_order', $section)));
+        $child->addChild('payments', array(
+            'route' => 'sylius_backend_payment_index',
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.payments', $section)));
 
         $child->addChild('promotions', array(
             'route' => 'sylius_backend_promotion_index',
