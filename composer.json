@@ -21,7 +21,8 @@
 
         "symfony/framework-bundle": "~2.1",
         "sylius/core-bundle":       "0.1.*",
-        "knplabs/knp-menu-bundle":  "2.0.*"
+        "knplabs/knp-menu-bundle":  "2.0.*",
+        "liip/imagine-bundle":      "0.9.*"
     },
     "require-dev": {
         "phpspec/phpspec2":         "dev-develop",

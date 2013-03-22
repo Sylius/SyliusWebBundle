@@ -15,7 +15,7 @@
 <h1>{{ 'sylius.backend.product.update_header'|trans|raw }}</h1>
 </div>
 
-<form action="{{ path('sylius_backend_product_update', {'id': product.id}) }}" method="post" class="form-horizontal" novalidate>
+<form action="{{ path('sylius_backend_product_update', {'id': product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Product:_form.html.twig' %}
     <div class="form-actions">
