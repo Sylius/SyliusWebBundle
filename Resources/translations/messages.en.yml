@@ -26,6 +26,7 @@ sylius:
                 register: Register
                 administration: Administration
         shop_by: Shop by
+        newest: Newest products
         product:
             index_by_taxon_header: Products <small>Categorized under "%taxon%" taxon</small>
             no_description: <i>No description...</i>

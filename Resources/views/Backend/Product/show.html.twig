@@ -19,12 +19,26 @@
     <h3>{{ product.name }}</h3>
     <p>{{ product.shortDescription|default('sylius.product.no_short_description'|trans)|raw }}</p>
 </div>
-<div class="well">
-    <p>{{ product.description }}</p>
-    {% for image in product.masterVariant.images %}
-        <a href="{{ image.path|imagine_filter('variant_xl') }}" target="_blank"><img class="img-polaroid" src="{{ image.path|imagine_filter('variant_m') }}" alt="" /></a>
-    {% endfor %}
+
+<div class="fluid-row">
+    <div class="span6">
+        <div class="well">
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
+    <div class="span6">
+        {% if product.images|length > 0 %}
+        <div class="well">
+            {% for image in product.images %}
+                <a href="{{ image.path|imagine_filter('sylius_90x60') }}" target="_blank"><img class="img-polaroid" src="{{ image.path|default('http://placehold.it/90x60')|imagine_filter('sylius_90x60') }}" alt="" /></a>
+            {% endfor %}
+        </div>
+        {% else %}
+            {{ alerts.info('sylius.backend.product.no_images') }}
+        {% endif %}
+    </div>
 </div>
+
 <hr>
 <table class="table table-bordered">
     <thead>

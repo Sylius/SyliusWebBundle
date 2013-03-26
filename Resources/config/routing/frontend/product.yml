@@ -15,3 +15,15 @@ sylius_product_show:
         _sylius:
             template: SyliusWebBundle:Frontend/Product:show.html.twig
             criteria: {slug: $slug}
+
+sylius_product_latest:
+    pattern: /_internal/latest
+    defaults:
+        _controller: sylius.controller.product:indexAction
+        _sylius:
+            paginate: false
+            method: findLatest
+            arguments: [$limit]
+            template: $template
+        limit: 10
+        template: SyliusWebBundle:Frontend/Product:latest.html.twig

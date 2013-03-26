@@ -1,68 +1,13 @@
 <div class="form-container">
 <fieldset>
     {{ form_errors(form)  }}
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#main" data-toggle="tab">Product</a></li>
-        {% if not product.hasVariants %}
-        <li><a href="#options" data-toggle="tab">Options</a></li>
-        {% endif %}
-        <li><a href="#properties" data-toggle="tab">Properties</a></li>
-        <li><a href="#categorization" data-toggle="tab">Categorization</a></li>
-    </ul>
+    {% include 'SyliusWebBundle:Backend/Product/Form:_tabs.html.twig' %}
     <div class="tab-content">
-        <div class="tab-pane active" id="main">
-            {{ form_row(form.name, {'attr': {'class': 'input-xxlarge'}}) }}
-            {{ form_row(form.description, {'attr': {'class': 'input-xxlarge', 'rows': 10}}) }}
-            {{ form_row(form.shortDescription, {'attr': {'class': 'input-xxlarge', 'rows': 3}}) }}
-            <hr />
-            {{ form_label(form.masterVariant.availableOn) }}
-            {{ form_row(form.masterVariant.availableOn.date, {'label': false}) }}
-            {{ form_row(form.masterVariant.availableOn.time, {'label': false}) }}
-            {{ form_row(form.masterVariant.availableOnDemand) }}
-            {{ form_row(form.masterVariant.price) }}
-            {{ form_row(form.masterVariant.onHand) }}
-            <div id="sylius-assortment-variant-images" class="collection-container" data-prototype="{{ form_widget(form.masterVariant.images.vars.prototype)|e }}">
-                {% for imageForm in form.masterVariant.images %}
-                    {{ form_widget(imageForm) }}
-                {% endfor %}
-            </div>
-            <hr />
-            {{ form_row(form.taxCategory) }}
-            {{ form_row(form.variantSelectionMethod) }}
-
-            <div class="control-group">
-                <div class="controls">
-                    <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.add_image'|trans }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane" id="options">
-            {% if form.options is defined %}
-                {{ form_row(form.options, {'attr': {'class': 'input-xlarge'}}) }}
-            {% endif %}
-        </div>
-        <div class="tab-pane" id="properties">
-            <div id="sylius-assortment-product-properties" class="collection-container" data-prototype="{{ ('<div id="sylius_product_properties___name__">' ~ form_row(form.properties.vars.prototype.property, {'attr': {'class': 'input-xlarge property-chooser'}}))|e }}{{ (form_row(form.properties.vars.prototype.value, {'attr': {'class': 'input-xlarge'}}) ~ '</div>')|e }}">
-                {% for propertyForm in form.properties %}
-                    {{ form_widget(propertyForm, {'attr': {'class': 'input-xlarge'}}) }}
-                {% endfor %}
-                {% for key, prototype in form.properties.vars.prototype.vars.prototypes %}
-                    <div id="property-prototype_{{ key }}" class="property-prototypes" data-prototype="{{ form_widget(prototype, {'attr': {'class': 'input-xlarge'}})|e }}"></div>
-                {% endfor %}
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-product-properties" data-collection="sylius-assortment-product-properties">
-                        {{ 'sylius.product.add_property'|trans }}
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane" id="categorization">
-            {% for taxonomyForm in form.taxons %}
-                {{ form_row(taxonomyForm, {'attr': {'class': 'input-xlarge'}}) }}
-            {% endfor %}
-        </div>
+        {% include 'SyliusWebBundle:Backend/Product/Form:_main.html.twig' %}
+        {% include 'SyliusWebBundle:Backend/Product/Form:_options.html.twig' %}
+        {% include 'SyliusWebBundle:Backend/Product/Form:_properties.html.twig' %}
+        {% include 'SyliusWebBundle:Backend/Product/Form:_categorization.html.twig' %}
+        {% include 'SyliusWebBundle:Backend/Product/Form:_images.html.twig' %}
     </div>
 </fieldset>
 </div>

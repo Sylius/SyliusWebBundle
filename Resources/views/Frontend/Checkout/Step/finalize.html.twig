@@ -104,34 +104,7 @@
     </thead>
     <tbody>
         {% for item in order.items %}
-        {% set variant = item.sellable %}
-        {% set product = variant.product %}
-        <tr>
-            <td>{{ loop.index }}</td>
-            <td>
-                <p>
-                    <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}">{{ product.name }}</a>
-                </p>
-                {% if product.hasOptions %}
-                <ul class="unstyled">
-                    {% for option in variant.options %}
-                    <li><strong>{{ option.presentation }}</strong>: {{ option.value }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </td>
-            <td>{{ item.quantity }}</td>
-            <td>
-                <span class="pull-right">
-                {{ item.unitPrice|sylius_money }}
-                </span>
-            </td>
-            <td>
-                <span class="pull-right">
-                {{ item.total|sylius_money }}
-                </span>
-            </td>
-        </tr>
+            {% include 'SyliusWebBundle:Frontend/Checkout/Step/Finalize:_item.html.twig' %}
         {% else %}
         <tr>
             <td colspan="6">
@@ -183,7 +156,7 @@
                 </span>
             </td>
         </tr>
-        <tr>
+        <tr style="background-color: #f1f1f1;">
             <td colspan="6">
                 <span class="pull-right">
                 <strong>{{ 'sylius.frontend.checkout.finalize.order.total'|trans }}</strong>: {{ order.total|sylius_money }}

@@ -1,0 +1,8 @@
+<h4>{{ 'sylius.frontend.newest'|trans }}</h4>
+
+<ul>
+    {% for product in products %}
+    <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">{{ product.name }}</a>
+    <p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+    {% endfor %}
+</ul>

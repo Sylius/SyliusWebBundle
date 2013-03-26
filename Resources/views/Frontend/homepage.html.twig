@@ -6,4 +6,7 @@
     <p class="lead">{{ 'sylius.homepage.splash.subheadline'|trans }}</p>
     <a class="btn btn-large btn-success" href="http://sylius.org">{{ 'sylius.homepage.splash.link'|trans }}</a>
 </div>
+
+{{ render(url('sylius_product_latest', {'limit': 9})) }}
+
 {% endblock %}

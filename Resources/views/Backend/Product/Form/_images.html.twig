@@ -1,0 +1,21 @@
+<div class="tab-pane" id="images">
+    <div id="sylius-assortment-product-images" class="collection-container" data-prototype="{{ form_widget(form.masterVariant.images.vars.prototype)|e }}">
+        {% set images = product.images %}
+
+        {% for image in product.images %}
+            <div class="control-group">
+                <div class="controls">
+                    <a href="{{ image.path|imagine_filter('sylius_90x60') }}" target="_blank"><img class="img-polaroid" src="{{ image.path|imagine_filter('sylius_90x60') }}" alt="" /></a>
+                    &nbsp;
+                    {{ form_widget(form.masterVariant.images[loop.index0].file) }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-product-images" data-collection="sylius-assortment-product-images">{{ 'sylius.backend.variant.add_image'|trans }}</a>
+        </div>
+    </div>
+</div>

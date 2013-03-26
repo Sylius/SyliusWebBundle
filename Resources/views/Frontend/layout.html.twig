@@ -23,38 +23,10 @@
         {% stylesheets output='assets/compiled/frontend.css'
             '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.no-icons.min.css'
             '//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css'
+            '@SyliusWebBundle/Resources/assets/css/frontend.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
-            <style type="text/css">
-                body {
-                    padding-top: 20px;
-                    padding-bottom: 40px;
-                }
-                .jumbotron {
-                    margin: 60px 0;
-                    text-align: center;
-                }
-                .jumbotron h1 {
-                    font-size: 72px;
-                    line-height: 1;
-                }
-                .jumbotron .btn {
-                    font-size: 21px;
-                    padding: 14px 24px;
-                }
-
-                .marketing {
-                    margin: 60px 0;
-                }
-                .marketing p + h4 {
-                    margin-top: 28px;
-                }
-
-                th {
-                    background-color: #f1f1f1;
-                }
-            </style>
         {% endblock %}
     </head>
     <body>
@@ -81,6 +53,8 @@
 
                     <h4>{{ 'sylius.frontend.shop_by'|trans }}</h4>
                     {{ knp_menu_render('sylius.frontend.taxonomies') }}
+
+                    {{ render(url('sylius_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
                 </div>
                 <div class="span9">
                 {% block content %}

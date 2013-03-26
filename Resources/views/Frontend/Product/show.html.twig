@@ -6,7 +6,7 @@
 <div class="row-fluid">
     <div class="span3">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail">
-            <img src="http://placehold.it/200x200" alt="" />
+            <img src="{{ product.image.path|default('http://placehold.it/200x200')|imagine_filter('sylius_200x200') }}" alt="" />
         </a>
     </div>
     <div class="span9">
@@ -14,6 +14,14 @@
         <p>{{ product.shortDescription|default('sylius.frontend.product.no_description')|trans|raw }}</p>
     </div>
 </div>
+{% if product.images|length > 0 %}
+<hr>
+<div class="well well-small">
+    {% for image in product.images %}
+        <a href="#" target="_blank"><img class="img-polaroid" src="{{ image.path|default('http://placehold.it/90x60')|imagine_filter('sylius_90x60') }}" alt="" /></a>
+    {% endfor %}
+</div>
+{% endif %}
 <hr>
 <div class="row-fluid">
     <div class="span6">
