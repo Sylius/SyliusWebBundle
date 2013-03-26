@@ -23,14 +23,25 @@
             {{ form_row(form.masterVariant.onHand) }}
             <div id="sylius-assortment-variant-images" class="collection-container" data-prototype="{{ form_widget(form.masterVariant.images.vars.prototype)|e }}">
                 {% for imageForm in form.masterVariant.images %}
-                    {{ form_widget(imageForm) }}
+                    <div class="sylius-assortment-variant-images-image row-fluid">
+                        <div class="span8">
+                            {{ form_widget(imageForm) }}
+                        </div>
+                        <div class="span4">
+                            {% if imageForm.vars.value.path %}
+                            {# migth not have path if form not validated #}
+                            <a href="{{ imageForm.vars.value.path|imagine_filter('variant_xl') }}" target="_blank"><img class="img-polaroid" src="{{ imageForm.vars.value.path|imagine_filter('variant_m') }}" alt="" /></a>
+                            <a href="#" class="btn btn-danger" data-collection-button="delete" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.delete_image'|trans }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
             <hr />
             {{ form_row(form.taxCategory) }}
             {{ form_row(form.variantSelectionMethod) }}
 
-            <div class="control-group">
+            <div class="control-group">{# move behind sylius-assortment-variant-images? #}
                 <div class="controls">
                     <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.add_image'|trans }}</a>
                 </div>

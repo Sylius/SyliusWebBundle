@@ -218,6 +218,7 @@ sylius:
             update_header: Editing variant
             no_results: There are no variants to display
             add_image: Add image
+            delete_image: Delete image
         option:
             manage: Manage options
             create_header: New product option
@@ -432,6 +433,7 @@ sylius:
         add_property: Add property
         available_on_demand: Available on demand
         stock: Current stock
+        categorization: Categorization
     variant:
         price: Price
         availability: Availability

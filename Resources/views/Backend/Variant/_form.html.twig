@@ -14,5 +14,24 @@
     {{ form_row(form.availableOnDemand) }}
     {{ form_row(form.onHand) }}
 </fieldset>
-{{ form_rest(form) }}
+<div id="sylius-assortment-variant-images" class="collection-container" data-prototype="{{ form_widget(form.images.vars.prototype)|e }}">
+    {% for imageForm in form.images %}
+    <div class="sylius-assortment-variant-images-image row-fluid">
+        <div class="span8">
+            {{ form_widget(imageForm) }}
+        </div>
+        <div class="span4">
+            <a href="{{ imageForm.vars.value.path|imagine_filter('variant_xl') }}" target="_blank"><img class="img-polaroid" src="{{ imageForm.vars.value.path|imagine_filter('variant_m') }}" alt="" /></a>
+            <a href="#" class="" data-collection-button="delete" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.delete_image'|trans }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+ 
+<div class="control-group">
+    <div class="controls">
+        <a href="#" class="btn btn-success" data-collection-button="add" data-prototype="sylius-assortment-variant-images" data-collection="sylius-assortment-variant-images">{{ 'sylius.backend.variant.add_image'|trans }}</a>
+    </div>
+</div>
+{{ form_widget(form._token) }}
 </div>
