@@ -16,7 +16,7 @@
 </fieldset>
 <div id="sylius-assortment-variant-images" class="collection-container" data-prototype="{{ form_widget(form.images.vars.prototype)|e }}">
     {% for imageForm in form.images %}
-    <div class="sylius-assortment-variant-images-image row-fluid">
+    <div class="sylius-assortment-variant-images-image">
         <div class="control-group">
             <div class="controls">
                 <a href="{{ imageForm.vars.value.path|imagine_filter('sylius_90x60') }}" target="_blank"><img class="img-polaroid" src="{{ imageForm.vars.value.path|imagine_filter('sylius_90x60') }}" alt="" /></a>
