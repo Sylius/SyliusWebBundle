@@ -17,5 +17,11 @@
             var item = prototype.replace(/__name__/g, collectionContainer.children().length);
             collectionContainer.append(item);
         });
+        $('a[data-collection-button="delete"]').on('click', function (e) {
+            e.preventDefault();
+            var collectionContainer = $('#' + $(this).data('collection'));
+            var item = $(this).closest('.sylius-assortment-variant-images-image');
+            item.remove();
+        });
     });
 })( jQuery );
