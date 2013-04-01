@@ -9,9 +9,9 @@
         <tr>
             <th>{{ sylius_resource_sort('id') }}</th>
             <th></th>
+            <th>{{ sylius_resource_sort('sku') }}</th>
             <th>{{ sylius_resource_sort('name') }}</th>
             <th>{{ sylius_resource_sort('price') }}</th>
-            <th>{{ sylius_resource_sort('createdAt', 'created at') }}</th>
             <th>{{ sylius_resource_sort('updatedAt', 'last updated') }}</th>
             <th></th>
         </tr>
@@ -30,6 +30,11 @@
                 </a>
             </td>
             <td>
+                <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn btn-link">
+                    {{ product.sku|default('sylius.backend.product.no_sku'|trans)|raw }}
+                </a>
+            </td>
+            <td>
                 <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}">
                     <strong>{{ product.name }}</strong>
                 </a>
@@ -42,7 +47,6 @@
                     ---
                 {% endif %}
             </td>
-            <td><span class="label label-info">{{ product.createdAt|date }}</span></td>
             <td><span class="label label-info">{{ product.updatedAt|date }}</span></td>
             <td>
                 <div class="pull-right">

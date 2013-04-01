@@ -8,11 +8,10 @@ sylius_backend_product_index:
         _controller: sylius.controller.product:indexAction
         _sylius:
             template: SyliusWebBundle:Backend/Product:index.html.twig
-            sortable: true
-            sorting:
-              name: desc
-    requirements:
-        _method: GET
+            method: createFilterPaginator
+            arguments: [$criteria, $sorting]
+        criteria: {}
+        sorting: { createdAt: desc }
 
 sylius_backend_product_create:
     pattern: /new
@@ -39,6 +38,14 @@ sylius_backend_product_delete:
         _controller: sylius.controller.product:deleteAction
         _sylius:
             redirect: sylius_backend_product_index
+
+sylius_backend_product_filter_form:
+    pattern: /filter-form
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product:filterFormAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Product:filterForm.html.twig
 
 sylius_backend_product_show:
     pattern: /{id}

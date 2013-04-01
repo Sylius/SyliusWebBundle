@@ -7,6 +7,6 @@
     <a class="btn btn-large btn-success" href="http://sylius.org">{{ 'sylius.homepage.splash.link'|trans }}</a>
 </div>
 
-{{ render(url('sylius_product_latest', {'limit': 9})) }}
+{{ render(url('sylius_partial_product_latest', {'limit': 9, 'template': 'SyliusWebBundle:Frontend/Product:latest.html.twig'})) }}
 
 {% endblock %}

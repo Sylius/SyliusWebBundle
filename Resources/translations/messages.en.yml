@@ -113,6 +113,7 @@ sylius:
         build: build
         cancel: Cancel
         save_changes: Save changes
+        filter: Filter
         alert:
             info: Information
         menu:
@@ -210,6 +211,7 @@ sylius:
             update_header: Editing product
             generate_variants: Generate variants
             no_results: There are no products to display
+            no_sku: <i>No SKU</i>
             variant_selection_method: Variant selection method
         stockable:
             manage: Manage stock levels

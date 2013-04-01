@@ -15,7 +15,15 @@
     {{ buttons.manage(path('sylius_backend_property_index'), 'sylius.backend.property.manage') }}
 </div>
 
-{{ pagination(products) }}
+<div class="row-fluid">
+    <div class="span6">
+        {{ pagination(products) }}
+    </div>
+    <div class="span6">
+        {% render(url('sylius_backend_product_filter_form')) %}
+    </div>
+</div>
+
 {{ list(products) }}
 {{ pagination(products) }}
 

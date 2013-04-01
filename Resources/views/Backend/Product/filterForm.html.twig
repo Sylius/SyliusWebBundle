@@ -1,0 +1,8 @@
+<form method="get" action="{{ path('sylius_backend_product_index') }}" class="form-inline well well-small">
+{{ form_label(form.name) }}
+{{ form_widget(form.name) }}
+&nbsp;
+{{ form_label(form.sku) }}
+{{ form_widget(form.sku) }}
+<input type="submit" class="btn btn-primary" value="{{ 'sylius.backend.filter'|trans }}">
+</form>
