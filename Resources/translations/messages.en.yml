@@ -90,6 +90,7 @@ sylius:
                     firstname: First name
                     lastname: Last name
                     country: Country
+                    province: Province
                     street: Street
                     city: City
                     postcode: Postcode
