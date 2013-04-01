@@ -3,7 +3,7 @@
 
 sylius_backend_dashboard:
     pattern: /dashboard
-    defaults: { _controller: sylius.controller.backend:dashboardAction }
+    defaults: { _controller: sylius.controller.backend.dashboard:mainAction }
 
 sylius_backend_user:
     resource: @SyliusWebBundle/Resources/config/routing/backend/user.yml
@@ -104,3 +104,6 @@ sylius_backend_zone_member:
 sylius_backend_settings:
     resource: @SyliusWebBundle/Resources/config/routing/backend/settings.yml
     prefix: /settings
+
+sylius_backend_security:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/security.yml

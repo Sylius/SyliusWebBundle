@@ -9,24 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\WebBundle\Controller;
+namespace Sylius\Bundle\WebBundle\Controller\Backend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Backend main controller.
+ * Backend dashboard controller.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class BackendController extends Controller
+class DashboardController extends Controller
 {
     /**
-     * Store front page.
+     * Backend dashboard display action.
      *
      * @return Response
      */
-    public function dashboardAction()
+    public function mainAction()
     {
-        return $this->render('SyliusWebBundle:Backend:dashboard.html.twig');
+        return $this->render('SyliusWebBundle:Backend/Dashboard:main.html.twig');
     }
 }

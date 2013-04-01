@@ -99,6 +99,11 @@ sylius:
         add_to_cart: Add to cart
         out_of_stock: Out of stock
     backend:
+        login_header: Administration
+        email: E-Mail
+        password: Password
+        remember_me: Remember me?
+        login: Login
         logo: Sylius
         meta:
             title: Sylius administration

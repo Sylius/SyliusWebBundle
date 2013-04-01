@@ -9,24 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\WebBundle\Controller;
+namespace Sylius\Bundle\WebBundle\Controller\Frontend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Frontend main controller.
+ * Frontend homepage controller.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class FrontendController extends Controller
+class HomepageController extends Controller
 {
     /**
      * Store front page.
      *
      * @return Response
      */
-    public function homepageAction()
+    public function mainAction()
     {
-        return $this->render('SyliusWebBundle:Frontend:homepage.html.twig');
+        return $this->render('SyliusWebBundle:Frontend/Homepage:main.html.twig');
     }
 }
