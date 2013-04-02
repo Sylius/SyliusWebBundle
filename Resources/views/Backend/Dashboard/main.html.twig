@@ -1,12 +1,37 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    'https://raw.github.com/nnnick/Chart.js/master/Chart.min.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            {% for id, chart in charts %}
+                new Chart($('#{{ id }}').get(0).getContext('2d')).{{ chart.type }}({{ chart.data|json_encode()|raw }});
+            {% endfor %}
+        });
+    </script>
+{% endjavascripts %}
+{% endblock %}
+
 {% block content %}
 <div class="page-header">
-<h1>{{ 'sylius.backend.dashboard.header'|trans }}<small> {{ 'sylius.backend.dashboard.subheader'|trans }}</small></h1>
+    <h1>{{ 'sylius.backend.dashboard.header'|trans }}<small> {{ 'sylius.backend.dashboard.subheader'|trans }}</small></h1>
 </div>
 
 <div class="alert alert-info">
     <h4 class="alert-heading">{{ 'sylius.backend.alert.info'|trans }}</h4>
     There are no new notifications.
+</div>
+
+<div class="row-fluid">
+    {% for id, chart in charts %}
+        <div class="span6">
+            <h3>{{ chart.label|trans }}</h3>
+            <canvas id="{{ id }}" width="600" height="400"></canvas>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

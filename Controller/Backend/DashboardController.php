@@ -27,6 +27,44 @@ class DashboardController extends Controller
      */
     public function mainAction()
     {
-        return $this->render('SyliusWebBundle:Backend/Dashboard:main.html.twig');
+        $months = array_map(
+            function($m) {
+                return date('F', mktime(0, 0, 0, $m, 10));
+            },
+            range(1, 12)
+        );
+
+        return $this->render('SyliusWebBundle:Backend/Dashboard:main.html.twig', array(
+            'charts' => array(
+                'chart_order_total' => array(
+                    'label' => 'Order value (€)',
+                    'type' => 'Line',
+                    'data' => array(
+                        'labels' => $months,
+                        'datasets' => array(
+                            array(
+                                'fillColor' => "rgba(151,187,205,0.5)",
+                                'strokeColor' => "rgba(151,187,205,1)",
+                                'data' => $this->get('sylius.repository.order')->getTotalStatistics()
+                            )
+                        )
+                    )
+                ),
+                'chart_order_count' => array(
+                    'label' => 'Number of orders',
+                    'type' => 'Line',
+                    'data' => array(
+                        'labels' => $months,
+                        'datasets' => array(
+                            array(
+                                'fillColor' => "rgba(151,187,205,0.5)",
+                                'strokeColor' => "rgba(151,187,205,1)",
+                                'data' => $this->get('sylius.repository.order')->getCountStatistics()
+                            )
+                        )
+                    )
+                )
+            )
+        ));
     }
 }
