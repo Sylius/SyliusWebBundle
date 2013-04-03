@@ -90,3 +90,6 @@ body.signin {
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+input[type="date"] {
+    width: 120px;
+}
