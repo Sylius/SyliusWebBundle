@@ -2,7 +2,7 @@
 {{ form_row(form.lastName, {'attr': {'class': 'input-large'}}) }}
 {{ form_row(form.country, {'attr': {'class': 'select2 input-large country-select'}}) }}
 
-<div class="province-container" data-url="{# path('sylius_ajax_render_province_choice_form') #}">
+<div class="province-container" data-url="{{ path('sylius_province_choice_form') }}">
     {% if form.province is defined %}
         {{ form_row(form.province, {'attr': {'class': 'select2 input-medium'}}) }}
     {% endif %}
