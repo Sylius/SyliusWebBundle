@@ -34,7 +34,7 @@
         {% block header %}
             <div class="masthead">
                 {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
-                <h3 class="muted">{{ 'sylius.logo'|trans }}</h3>
+                <h3><a href="{{ path('sylius_homepage') }}" class="muted">{{ 'sylius.logo'|trans }}</a></h3>
             </div>
         {% endblock %}
 
