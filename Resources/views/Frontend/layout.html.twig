@@ -32,10 +32,10 @@
     <body>
         <div class="container">
         {% block header %}
-            <div class="masthead">
+            <div class="masthead pull-right">
                 {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
-                <h3><a href="{{ path('sylius_homepage') }}" class="muted">{{ 'sylius.logo'|trans }}</a></h3>
             </div>
+            <h3><a href="{{ path('sylius_homepage') }}" class="muted">{{ 'sylius.logo'|trans }}</a></h3>
         {% endblock %}
 
         {% for name, value in app.session.flashes if name in ['success', 'error'] %}
@@ -49,8 +49,6 @@
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="span3">
-                    {% include 'SyliusWebBundle:Frontend/Cart:_widget.html.twig' %}
-
                     <h4>{{ 'sylius.shop_by'|trans }}</h4>
                     {{ knp_menu_render('sylius.frontend.taxonomies') }}
 

@@ -17,6 +17,8 @@ use Sylius\Bundle\ResourceBundle\Model\RepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+use Sylius\Bundle\CartBundle\Provider\CartProviderInterface;
+use Sylius\Bundle\MoneyBundle\Twig\SyliusMoneyExtension;
 
 /**
  * Frontend menu builder.
@@ -33,23 +35,42 @@ class FrontendMenuBuilder extends MenuBuilder
     protected $taxonomyRepository;
 
     /**
+     * Cart provider.
+     *
+     * @var CartProviderInterface
+     */
+    private $cartProvider;
+
+    /**
+     * Money extension.
+     *
+     * @var SyliusMoneyExtension
+     */
+    private $moneyExtension;
+
+    /**
      * Constructor.
      *
      * @param FactoryInterface         $factory
      * @param SecurityContextInterface $securityContext
      * @param TranslatorInterface      $translator
      * @param RepositoryInterface      $taxonomyRepository
+     * @param CartProviderInterface    $cartProvider
      */
     public function __construct(
         FactoryInterface         $factory,
         SecurityContextInterface $securityContext,
         TranslatorInterface      $translator,
-        RepositoryInterface      $taxonomyRepository
+        RepositoryInterface      $taxonomyRepository,
+        CartProviderInterface    $cartProvider,
+        SyliusMoneyExtension     $moneyExtension
     )
     {
         parent::__construct($factory, $securityContext, $translator);
 
         $this->taxonomyRepository = $taxonomyRepository;
+        $this->cartProvider = $cartProvider;
+        $this->moneyExtension = $moneyExtension;
     }
 
     /**
@@ -69,23 +90,40 @@ class FrontendMenuBuilder extends MenuBuilder
 
         $menu->setCurrent($request->getRequestUri());
 
+        // if ($this->cartProvider->hasCart()) {
+            $cart = $this->cartProvider->getCart();
+            $menu->addChild('cart', array(
+                'route' => 'sylius_cart_summary',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.cart')),
+                'labelAttributes' => array('icon' => 'icon-shopping-cart')
+            ))->setLabel(sprintf('(%s) %s', $cart->getTotalItems(), $this->moneyExtension->formatMoney($cart->getTotal())));
+        // }
+
         if ($this->securityContext->isGranted('ROLE_USER')) {
             $menu->addChild('logout', array(
-                'route' => 'fos_user_security_logout'
-            ))->setLabel($this->translate('sylius.frontend.menu.main.logout'));
+                'route' => 'fos_user_security_logout',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.logout')),
+                'labelAttributes' => array('icon' => 'icon-off', 'iconOnly' => true)
+            ));
         } else {
-            $menu->addChild('register', array(
-                'route' => 'fos_user_registration_register'
-            ))->setLabel($this->translate('sylius.frontend.menu.main.register'));
             $menu->addChild('login', array(
-                'route' => 'fos_user_security_login'
-            ))->setLabel($this->translate('sylius.frontend.menu.main.login'));
+                'route' => 'fos_user_security_login',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.login')),
+                'labelAttributes' => array('icon' => 'icon-lock', 'iconOnly' => true)
+            ));
+            $menu->addChild('register', array(
+                'route' => 'fos_user_registration_register',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.register')),
+                'labelAttributes' => array('icon' => 'icon-user', 'iconOnly' => true)
+            ));
         }
 
         if ($this->securityContext->isGranted('ROLE_SYLIUS_ADMIN')) {
             $menu->addChild('administration', array(
-                'route' => 'sylius_backend_dashboard'
-            ))->setLabel($this->translate('sylius.frontend.menu.main.administration'));
+                'route' => 'sylius_backend_dashboard',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.administration')),
+                'labelAttributes' => array('icon' => 'icon-briefcase', 'iconOnly' => true)
+            ));
         }
 
         return $menu;

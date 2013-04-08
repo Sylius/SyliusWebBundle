@@ -37,6 +37,8 @@
             <argument type="service" id="security.context" />
             <argument type="service" id="translator" />
             <argument type="service" id="sylius.repository.taxonomy" />
+            <argument type="service" id="sylius.cart_provider" />
+            <argument type="service" id="sylius.twig.money" />
         </service>
         <service id="sylius.menu_builder.backend" class="%sylius.menu_builder.backend.class%">
             <argument type="service" id="knp_menu.factory" />
