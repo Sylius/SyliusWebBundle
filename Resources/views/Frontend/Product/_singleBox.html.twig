@@ -1,10 +1,9 @@
 <div class="well" style="height: 375px;">
 <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail" style="width: 200px; height: 200px; margin: auto;">
-    <img src="{{ product.image.path|default('http://placehold.it/200x200')|imagine_filter('sylius_200x200') }}" alt="" />
+    <img src="{{ product.image.path|default('http://placehold.it/200x200')|imagine_filter('sylius_200x200') }}" alt="{{ product.name }}" />
 </a>
 
 <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">{{ product.name }}</a>
-<p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
-
+<p>{{ product.shortDescription|truncate(160)|default('sylius.product.no_description'|trans)|raw }}</p>
 <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-info">{{ 'sylius.product.show'|trans }}</a>
 </div>

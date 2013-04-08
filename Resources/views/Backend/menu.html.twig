@@ -1,0 +1,3 @@
+{% extends 'SyliusWebBundle::menu.html.twig' %}
+
+{% block spanElement %}<a{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}{% if item.hasChildren %} <b class="caret">{% endif %}</b></a>{% endblock %}

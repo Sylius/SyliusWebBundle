@@ -33,7 +33,7 @@
         <div class="container">
         {% block header %}
             <div class="masthead pull-right">
-                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
+                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
             </div>
             <h3><a href="{{ path('sylius_homepage') }}" class="muted">{{ 'sylius.logo'|trans }}</a></h3>
         {% endblock %}
@@ -46,12 +46,11 @@
         {% endfor %}
 
         <hr>
-        <div class="row-fluid">
+        <div id="sidebar_left" class="row-fluid">
             <div class="row-fluid">
                 <div class="span3">
                     <h4>{{ 'sylius.shop_by'|trans }}</h4>
-                    {{ knp_menu_render('sylius.frontend.taxonomies') }}
-
+                    {{ knp_menu_render('sylius.frontend.taxonomies', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
                     {{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
                 </div>
                 <div class="span9">

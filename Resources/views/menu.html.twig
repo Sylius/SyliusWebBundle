@@ -8,8 +8,6 @@
     {%- endfor -%}
 {% endmacro %}
 
-{% block spanElement %}<a{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}{% if item.hasChildren %} <b class="caret">{% endif %}</b></a>{% endblock %}
-
 {% block label %}
     {% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }} %s"></i>{% endif %}
     {% if not item.labelAttribute('iconOnly') %}{{ item.label|trans }}{% endif %}

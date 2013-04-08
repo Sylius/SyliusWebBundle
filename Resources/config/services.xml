@@ -63,6 +63,10 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.backend.sidebar" />
         </service>
+
+        <service id="sylius.twig.text_extension" class="Twig_Extensions_Extension_Text">
+            <tag name="twig.extension" />
+        </service>
     </services>
 
 </container>

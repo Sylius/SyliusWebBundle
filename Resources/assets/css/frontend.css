@@ -29,3 +29,35 @@ a.muted:hover {
 th {
     background-color: #f1f1f1;
 }
+
+#sidebar_left ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+#sidebar_left ul span.nav-header {
+    padding-left: 0;
+}
+
+#sidebar_left ul.nav-list li {
+
+}
+
+#sidebar_left ul li a {
+    display: block;
+    padding-left: 0;
+}
+
+#sidebar_left ul li a:hover {
+    text-decoration: none;
+}
+
+#sidebar_left ul li img {
+    float: left;
+    margin-right: 10px;
+}
+
+#sidebar_left ul li h4 {
+    font-size: 15px;
+    text-align: left;
+}

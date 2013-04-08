@@ -148,10 +148,10 @@ class FrontendMenuBuilder extends MenuBuilder
 
         $childOptions = array(
             'childrenAttributes' => array('class' => 'nav nav-list'),
-            'labelAttributes'    => array('class' => 'nav-header')
+            'labelAttributes'    => array('class' => 'nav-header'),
         );
 
-        $taxonomies = $this->getTaxonomies();
+        $taxonomies = $this->taxonomyRepository->findAll();
 
         foreach ($taxonomies as $taxonomy) {
             $child = $menu->addChild($taxonomy->getName(), $childOptions);
@@ -172,15 +172,5 @@ class FrontendMenuBuilder extends MenuBuilder
         }
 
         return $menu;
-    }
-
-    /**
-     * Get all taxonomies.
-     *
-     * @return TaxonomyInterface[]
-     */
-    protected function getTaxonomies()
-    {
-        return $this->taxonomyRepository->findAll();
     }
 }
