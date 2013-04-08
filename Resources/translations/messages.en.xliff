@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-04-08T14:52:31Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2013-04-08T15:21:41Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -121,7 +121,7 @@
         <jms:reference-file line="12">Backend/Prototype/build.html.twig</jms:reference-file>
         <jms:reference-file line="13">Backend/Prototype/update.html.twig</jms:reference-file>
         <source>sylius.cancel</source>
-        <target state="new">Cancel</target>
+        <target>Cancel</target>
       </trans-unit>
       <trans-unit id="7d1919becc3590481613446f0d414077d904e247" resname="sylius.cart.header">
         <jms:reference-file line="3">Frontend/Cart/_widget.html.twig</jms:reference-file>
@@ -445,6 +445,11 @@
         <jms:reference-file line="5">Backend/Dashboard/main.html.twig</jms:reference-file>
         <source>sylius.dashboard.header</source>
         <target>Administration dashboard</target>
+      </trans-unit>
+      <trans-unit id="f9f0f94c652b07dbffca35917072db5c73a270cc" resname="sylius.dashboard.no_notifications">
+        <jms:reference-file line="10">Backend/Dashboard/main.html.twig</jms:reference-file>
+        <source>sylius.dashboard.no_notifications</source>
+        <target>There are no new notifications.</target>
       </trans-unit>
       <trans-unit id="953ba730e56dea166ee6dc252edfc26f76b8c1f0" resname="sylius.dashboard.subheader">
         <jms:reference-file line="5">Backend/Dashboard/main.html.twig</jms:reference-file>
