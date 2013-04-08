@@ -6,7 +6,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>{{ 'sylius.backend.taxon.name'|trans }}</th>
+            <th>{{ 'sylius.taxon.name'|trans }}</th>
             <th></th>
         </tr>
     </thead>
@@ -15,7 +15,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.taxon.no_results') }}
+{{ alerts.info('sylius.taxon.no_results') }}
 {% endif %}
 
 {% endmacro %}

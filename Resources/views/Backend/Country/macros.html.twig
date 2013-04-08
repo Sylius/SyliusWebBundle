@@ -7,9 +7,9 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('id', 'sylius.backend.country.id'|trans) }}</th>
-            <th>{{ sylius_resource_sort('name', 'sylius.backend.country.name'|trans) }}</th>
-            <th>{{ sylius_resource_sort('isName', 'sylius.backend.country.iso_name'|trans) }}</th>
+            <th>{{ sylius_resource_sort('id', 'sylius.country.id'|trans) }}</th>
+            <th>{{ sylius_resource_sort('name', 'sylius.country.name'|trans) }}</th>
+            <th>{{ sylius_resource_sort('isName', 'sylius.country.iso_name'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -31,7 +31,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.country.no_results') }}
+{{ alerts.info('sylius.country.no_results') }}
 {% endif %}
 
 {% endmacro %}

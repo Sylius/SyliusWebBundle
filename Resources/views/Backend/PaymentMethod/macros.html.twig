@@ -7,11 +7,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('id', 'sylius.backend.payment_method.id'|trans) }}</th>
-            <th>{{ sylius_resource_sort('name', 'sylius.backend.payment_method.name'|trans) }}</th>
-            <th>{{ sylius_resource_sort('gateway', 'sylius.backend.payment_method.gateway'|trans) }}</th>
-            <th>{{ sylius_resource_sort('enabled', 'sylius.backend.payment_method.enabled'|trans) }}</th>
-            <th>{{ sylius_resource_sort('updatedAt', 'sylius.backend.payment_method.updated_at'|trans) }}</th>
+            <th>{{ sylius_resource_sort('id', 'sylius.payment_method.id'|trans) }}</th>
+            <th>{{ sylius_resource_sort('name', 'sylius.payment_method.name'|trans) }}</th>
+            <th>{{ sylius_resource_sort('gateway', 'sylius.payment_method.gateway'|trans) }}</th>
+            <th>{{ sylius_resource_sort('enabled', 'sylius.payment_method.enabled'|trans) }}</th>
+            <th>{{ sylius_resource_sort('updatedAt', 'sylius.payment_method.updated_at'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -26,7 +26,7 @@
             <td><span class="label label-info">{{ payment_method.gateway }}</span></td>
             <td>
                 <span class="label label-{{ payment_method.enabled ? 'success' : 'important'}}">
-                    {{ payment_method.enabled ? 'sylius.backend.yes'|trans : 'sylius.backend.no'|trans }}
+                    {{ payment_method.enabled ? 'sylius.yes'|trans : 'sylius.no'|trans }}
                 </span>
             </td>
             <td>{{ payment_method.updatedAt|date }}</td>
@@ -41,7 +41,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.payment_method.no_results') }}
+{{ alerts.info('sylius.payment_method.no_results') }}
 {% endif %}
 
 {% endmacro %}

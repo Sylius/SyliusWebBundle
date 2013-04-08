@@ -4,7 +4,7 @@
 </a>
 
 <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">{{ product.name }}</a>
-<p>{{ product.shortDescription|default('sylius.frontend.product.no_description'|trans)|raw }}</p>
+<p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
 
-<a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-info">{{ 'sylius.frontend.product.show'|trans }}</a>
+<a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-info">{{ 'sylius.product.show'|trans }}</a>
 </div>

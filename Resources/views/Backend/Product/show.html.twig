@@ -6,11 +6,11 @@
 
 {% block content %}
 <div class="page-header">
-<h1>{{ 'sylius.backend.product.show_header'|trans({'%product%': product.name})|raw }}</h1>
+<h1>{{ 'sylius.product.show_header'|trans({'%product%': product.name})|raw }}</h1>
 </div>
 
 <div class="well well-small">
-    {{ buttons.manage(path('sylius_backend_product_index'), 'sylius.backend.product.manage') }}
+    {{ buttons.manage(path('sylius_backend_product_index'), 'sylius.product.manage') }}
     {{ buttons.edit(path('sylius_backend_product_update', {'id': product.id})) }}
     {{ buttons.delete(path('sylius_backend_product_delete', {'id': product.id})) }}
 </div>
@@ -34,7 +34,7 @@
             {% endfor %}
         </div>
         {% else %}
-            {{ alerts.info('sylius.backend.product.no_images') }}
+            {{ alerts.info('sylius.product.no_images') }}
         {% endif %}
     </div>
 </div>
@@ -88,9 +88,9 @@
             <td>{{ product.taxCategory|default('sylius.product.no_tax_category'|trans) }}</td>
             <td>
                 {% if product.masterVariant.availableOnDemand %}
-                    <span class="badge badge-success">{{ 'sylius.backend.yes'|trans }}</span>
+                    <span class="badge badge-success">{{ 'sylius.yes'|trans }}</span>
                 {% else %}
-                    <span class="badge badge-warning">{{ 'sylius.backend.no'|trans }}</span>
+                    <span class="badge badge-warning">{{ 'sylius.no'|trans }}</span>
                 {% endif %}
             </td>
             <td><span class="badge badge-{{ product.masterVariant.inStock ? 'success' : 'important' }}">{{ product.masterVariant.onHand }}</span></td>
@@ -101,10 +101,10 @@
 {% if product.hasOptions %}
 <hr>
 <div class="well well-small">
-    {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.backend.variant.create') }}
-    {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.backend.product.generate_variants') }}
+    {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.variant.create') }}
+    {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.product.generate_variants') }}
     <div class="pull-right">
-    <strong>{{ 'sylius.backend.product.variant_selection_method'|trans }}</strong>: {{ product.variantSelectionMethodLabel }}
+    <strong>{{ 'sylius.product.variant_selection_method'|trans }}</strong>: {{ product.variantSelectionMethodLabel }}
     </div>
 </div>
 

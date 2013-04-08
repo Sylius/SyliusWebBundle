@@ -6,7 +6,7 @@
 {% include 'SyliusWebBundle:Frontend/Product:_single.html.twig' %}
 {% if not loop.last %}<hr>{% endif %}
 {% else %}
-{{ alerts.info('sylius.frontend.product.no_results') }}
+{{ alerts.info('sylius.product.no_results') }}
 {% endfor %}
 
 {% endmacro %}
@@ -28,7 +28,7 @@
 {% endif %}
 
 {% else %}
-{{ alerts.info('sylius.frontend.product.no_results') }}
+{{ alerts.info('sylius.product.no_results') }}
 {% endfor %}
 </div>
 

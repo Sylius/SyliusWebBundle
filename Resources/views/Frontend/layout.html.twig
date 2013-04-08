@@ -51,7 +51,7 @@
                 <div class="span3">
                     {% include 'SyliusWebBundle:Frontend/Cart:_widget.html.twig' %}
 
-                    <h4>{{ 'sylius.frontend.shop_by'|trans }}</h4>
+                    <h4>{{ 'sylius.shop_by'|trans }}</h4>
                     {{ knp_menu_render('sylius.frontend.taxonomies') }}
 
                     {{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}

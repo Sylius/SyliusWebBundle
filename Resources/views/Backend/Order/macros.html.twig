@@ -7,12 +7,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('createdAt', 'sylius.backend.order.created_at'|trans) }}</th>
-            <th>{{ sylius_resource_sort('number', 'sylius.backend.order.number'|trans) }}</th>
-            <th>{{ sylius_resource_sort('paymentState', 'sylius.backend.order.payment_state'|trans) }}</th>
-            <th>{{ sylius_resource_sort('shipmentState', 'sylius.backend.order.shipment_state'|trans) }}</th>
-            <th>{{ sylius_resource_sort('user', 'sylius.backend.order.user'|trans) }}</th>
-            <th>{{ sylius_resource_sort('total', 'sylius.backend.order.total'|trans) }}</th>
+            <th>{{ sylius_resource_sort('createdAt', 'sylius.order.created_at'|trans) }}</th>
+            <th>{{ sylius_resource_sort('number', 'sylius.order.number'|trans) }}</th>
+            <th>{{ sylius_resource_sort('paymentState', 'sylius.order.payment_state'|trans) }}</th>
+            <th>{{ sylius_resource_sort('shipmentState', 'sylius.order.shipment_state'|trans) }}</th>
+            <th>{{ sylius_resource_sort('user', 'sylius.order.user'|trans) }}</th>
+            <th>{{ sylius_resource_sort('total', 'sylius.order.total'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -25,8 +25,8 @@
                 <strong>#{{ order.number }}</strong>
                 </a>
             </td>
-            <td><span class="label label-important">{{ 'sylius.backend.order.payment_states.balance_due'|trans }}</span></td>
-            <td><span class="label label-warning">{{ 'sylius.backend.order.shipment_states.pending'|trans }}</span></td>
+            <td><span class="label label-important">{{ 'sylius.order.payment_states.balance_due'|trans }}</span></td>
+            <td><span class="label label-warning">{{ 'sylius.order.shipment_states.pending'|trans }}</span></td>
             <td><a href="mailto:{{ order.user.email|default('john@example.com') }}" class="btn btn-link">{{ order.user.email|default('john@example.com') }}</a></td>
             <td>{{ order.total|sylius_money }}</td>
             <td>
@@ -41,7 +41,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.order.no_results') }}
+{{ alerts.info('sylius.order.no_results') }}
 {% endif %}
 
 {% endmacro %}

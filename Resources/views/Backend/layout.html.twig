@@ -4,7 +4,7 @@
     <head>
         <title>
             {% block title %}
-                {{ 'sylius.backend.meta.title'|trans }}
+                {{ 'sylius.meta.title'|trans }}
             {% endblock %}
         </title>
         <meta charset="UTF-8">
@@ -35,7 +35,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">{{ 'sylius.backend.logo'|trans }}</a>
+                    <a class="brand" href="#">{{ 'sylius.logo'|trans }}</a>
                     <div class="nav-collapse collapse">
                         {{ knp_menu_render('sylius.backend.main', {'template': 'SyliusWebBundle::menu.html.twig', 'currentClass': 'active'}) }}
                     </div>

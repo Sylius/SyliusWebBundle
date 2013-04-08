@@ -7,7 +7,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('name', 'sylius.backend.taxonomy.name'|trans) }}</th>
+            <th>{{ sylius_resource_sort('name', 'sylius.taxonomy.name'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -17,7 +17,7 @@
             <td>{{ taxonomy.name }}</td>
             <td>
                 <div class="pull-right">
-                {{ buttons.create(path('sylius_backend_taxon_create', {'taxonomyId': taxonomy.id}), 'sylius.backend.taxon.create')|lower|raw }}
+                {{ buttons.create(path('sylius_backend_taxon_create', {'taxonomyId': taxonomy.id}), 'sylius.taxon.create')|lower|raw }}
                 {{ buttons.show(path('sylius_backend_taxonomy_show', {'id': taxonomy.id})) }}
                 {{ buttons.edit(path('sylius_backend_taxonomy_update', {'id': taxonomy.id})) }}
                 {{ buttons.delete(path('sylius_backend_taxonomy_delete', {'id': taxonomy.id})) }}
@@ -28,7 +28,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.taxonomy.no_results') }}
+{{ alerts.info('sylius.taxonomy.no_results') }}
 {% endif %}
 
 {% endmacro %}
