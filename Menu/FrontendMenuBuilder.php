@@ -95,7 +95,7 @@ class FrontendMenuBuilder extends MenuBuilder
             $menu->addChild('cart', array(
                 'route' => 'sylius_cart_summary',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.cart')),
-                'labelAttributes' => array('icon' => 'icon-shopping-cart')
+                'labelAttributes' => array('icon' => 'icon-shopping-cart icon-large')
             ))->setLabel(sprintf('(%s) %s', $cart->getTotalItems(), $this->moneyExtension->formatMoney($cart->getTotal())));
         // }
 
@@ -103,18 +103,18 @@ class FrontendMenuBuilder extends MenuBuilder
             $menu->addChild('logout', array(
                 'route' => 'fos_user_security_logout',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.logout')),
-                'labelAttributes' => array('icon' => 'icon-off', 'iconOnly' => true)
+                'labelAttributes' => array('icon' => 'icon-off icon-large', 'iconOnly' => true)
             ));
         } else {
             $menu->addChild('login', array(
                 'route' => 'fos_user_security_login',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.login')),
-                'labelAttributes' => array('icon' => 'icon-lock', 'iconOnly' => true)
+                'labelAttributes' => array('icon' => 'icon-lock icon-large', 'iconOnly' => true)
             ));
             $menu->addChild('register', array(
                 'route' => 'fos_user_registration_register',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.register')),
-                'labelAttributes' => array('icon' => 'icon-user', 'iconOnly' => true)
+                'labelAttributes' => array('icon' => 'icon-user icon-large', 'iconOnly' => true)
             ));
         }
 
@@ -122,7 +122,7 @@ class FrontendMenuBuilder extends MenuBuilder
             $menu->addChild('administration', array(
                 'route' => 'sylius_backend_dashboard',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.administration')),
-                'labelAttributes' => array('icon' => 'icon-briefcase', 'iconOnly' => true)
+                'labelAttributes' => array('icon' => 'icon-briefcase icon-large', 'iconOnly' => true)
             ));
         }
 

@@ -9,6 +9,6 @@
 {% endmacro %}
 
 {% block label %}
-    {% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }} %s"></i>{% endif %}
+    {% if item.labelAttribute('icon') %}<i class="{{ item.labelAttribute('icon') }}"></i>{% endif %}
     {% if not item.labelAttribute('iconOnly') %}{{ item.label|trans }}{% endif %}
 {% endblock %}
