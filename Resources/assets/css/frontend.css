@@ -2,6 +2,10 @@ body {
     padding-top: 20px;
     padding-bottom: 40px;
 }
+a.muted:hover {
+    color:#999999;
+    text-decoration: none;
+}
 .jumbotron {
     margin: 60px 0;
     text-align: center;
