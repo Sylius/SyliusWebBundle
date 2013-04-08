@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="page-header">
-    <h1>{{ 'sylius.frontend.checkout.security.header'|trans|raw }}</h1>
+    <h1>{{ 'sylius.checkout.security.header'|trans|raw }}</h1>
 </div>
 
 {% include 'SyliusWebBundle:Frontend/Checkout:_progressBar.html.twig' %}
@@ -10,7 +10,7 @@
 <div class="row-fluid form-vertical">
     <div class="span6">
         <div class="well">
-            <h3>{{ 'sylius.frontend.checkout.security.existing_customer'|trans }}</h3>
+            <h3>{{ 'sylius.checkout.security.existing_customer'|trans }}</h3>
                 <form action="{{ path('fos_user_security_login') }}" method="post">
                 <fieldset>
                     <div class="control-group">
@@ -27,20 +27,20 @@
                     </div>
                 </fieldset>
                 <div class="form-actions">
-                    <input type="submit" class="btn btn-primary btn-block" name="login" value="{{ 'sylius.frontend.checkout.security.login'|trans }}" />
+                    <input type="submit" class="btn btn-primary btn-block" name="login" value="{{ 'sylius.checkout.security.login'|trans }}" />
                 </div>
                 </form>
         </div>
     </div>
     <div class="span6">
         <div class="well">
-            <h3>{{ 'sylius.frontend.checkout.security.new_customer'|trans }}</h3>
+            <h3>{{ 'sylius.checkout.security.new_customer'|trans }}</h3>
                 <form action="{{ path('sylius_checkout_forward', {'stepName': context.currentStep.name}) }}" method="post" novalidate>
                 <fieldset>
                     {{ form_widget(registration_form) }}
                 </fieldset>
                 <div class="form-actions">
-                    <input type="submit" class="btn btn-success btn-block" value="{{ 'sylius.frontend.checkout.security.register'|trans }}" />
+                    <input type="submit" class="btn btn-success btn-block" value="{{ 'sylius.checkout.security.register'|trans }}" />
                 </div>
                 </form>
         </div>

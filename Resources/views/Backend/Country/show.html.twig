@@ -2,20 +2,20 @@
 
 {% block content %}
 <div class="page-header">
-    <h1>{{ 'sylius.backend.country.show_header'|trans|raw }}</h1>
+    <h1>{{ 'sylius.country.show_header'|trans|raw }}</h1>
 </div>
 
 <div class="well">
     <a href="{{ path('sylius_backend_country_index') }}" class="btn btn-primary">
-        <i class="icon-list-alt"></i> {{ 'sylius.backend.country.manage'|trans }}
+        <i class="icon-list-alt"></i> {{ 'sylius.country.manage'|trans }}
     </a>
     <a href="{{ path('sylius_backend_country_update', {'id': country.id}) }}" class="btn">
-        <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+        <i class="icon-pencil"></i> {{ 'sylius.edit'|trans }}
     </a>
     <form action="{{ path('sylius_backend_country_delete', {'id': country.id}) }}" method="post" style="display: inline;">
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn btn-danger">
-            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+            <i class="icon-trash"></i> {{ 'sylius.delete'|trans }}
         </button>
     </form>
 </div>
@@ -51,7 +51,7 @@
                             <form action="{{ path('sylius_backend_province_delete', {'countryId': country.id, 'id': province.id}) }}" method="post" style="display: inline;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button class="btn btn-danger">
-                                    <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+                                    <i class="icon-trash"></i> {{ 'sylius.delete'|trans }}
                                 </button>
                             </form>
                         </div>

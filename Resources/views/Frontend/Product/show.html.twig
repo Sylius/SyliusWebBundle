@@ -11,7 +11,7 @@
     </div>
     <div class="span9">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
-        <p>{{ product.shortDescription|default('sylius.frontend.product.no_description')|trans|raw }}</p>
+        <p>{{ product.shortDescription|default('sylius.product.no_description')|trans|raw }}</p>
     </div>
 </div>
 {% if product.images|length > 0 %}
@@ -29,7 +29,7 @@
         <table class="table table-condensed">
             <thead>
                 <tr>
-                    <th colspan="2">{{ 'sylius.frontend.product.properties'|trans }}</th>
+                    <th colspan="2">{{ 'sylius.product.properties'|trans }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,8 +44,8 @@
         {% endif %}
     </div>
     <div class="span6">
-        <h4>{{ 'sylius.frontend.product.description'|trans }}</h4>
-        <p>{{ product.description|default('sylius.frontend.product.no_description')|trans|raw }}</p>
+        <h4>{{ 'sylius.product.description'|trans }}</h4>
+        <p>{{ product.description|default('sylius.product.no_description')|trans|raw }}</p>
     </div>
 </div>
 <hr>
@@ -58,7 +58,7 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>{{ 'sylius.frontend.variant.price'|trans }}</th>
+                        <th>{{ 'sylius.variant.price'|trans }}</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -83,7 +83,7 @@
                         {% if sylius_inventory_is_available(variant) %}
                             {{ form_widget(form.variant[loop.index0]) }}
                         {% else %}
-                            <span class="label label-important">{{ 'sylius.frontend.out_of_stock'|trans }}</span>
+                            <span class="label label-important">{{ 'sylius.out_of_stock'|trans }}</span>
                         {% endif %}
                         </td>
                     </tr>
@@ -99,11 +99,11 @@
     </div>
     <div class="span6">
         {% if not product.hasOptions and not sylius_inventory_is_available(product.masterVariant) %}
-            <span class="label label-important">{{ 'sylius.frontend.out_of_stock'|trans }}</span>
+            <span class="label label-important">{{ 'sylius.out_of_stock'|trans }}</span>
         {% else %}
             {{ form_row(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
             {{ form_widget(form._token) }}
-            <input type="submit" class="btn btn-success btn-large span12" value="{{ 'sylius.frontend.add_to_cart'|trans }}">
+            <input type="submit" class="btn btn-success btn-large span12" value="{{ 'sylius.add_to_cart'|trans }}">
         {% endif %}
     </div>
 </form>

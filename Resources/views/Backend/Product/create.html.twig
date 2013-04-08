@@ -12,14 +12,14 @@
 
 {% block content %}
 <div class="page-header">
-<h1>{{ 'sylius.backend.product.create_header'|trans|raw }}</h1>
+<h1>{{ 'sylius.product.create_header'|trans|raw }}</h1>
 </div>
 
 <form action="{{ path('sylius_backend_product_create') }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
     {% include 'SyliusWebBundle:Backend/Product:_form.html.twig' %}
     <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.backend.create'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_product_index') }}" class="btn btn-large">{{ 'sylius.backend.cancel'|trans }}</a>
+        <input type="submit" value="{{ 'sylius.create'|trans }}" class="btn btn-primary btn-large" />
+        <a href="{{ path('sylius_backend_product_index') }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
     </div>
 </form>
 {% endblock %}

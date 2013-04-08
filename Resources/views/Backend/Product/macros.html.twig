@@ -31,7 +31,7 @@
             </td>
             <td>
                 <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn btn-link">
-                    {{ product.sku|default('sylius.backend.product.no_sku'|trans)|raw }}
+                    {{ product.sku|default('sylius.product.no_sku'|trans)|raw }}
                 </a>
             </td>
             <td>
@@ -60,7 +60,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.product.no_results') }}
+{{ alerts.info('sylius.product.no_results') }}
 {% endif %}
 
 {% endmacro %}

@@ -6,12 +6,12 @@
 
 {% block content %}
 <div class="page-header">
-<h1>{{ 'sylius.frontend.cart.summary_header'|trans|raw }}</h1>
+<h1>{{ 'sylius.cart.summary_header'|trans|raw }}</h1>
 </div>
 
 {% if not cart.empty %}
 <div class="alert alert-info">
-<strong>{{ cart.total|sylius_money }}</strong>, {{ 'sylius.frontend.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
+<strong>{{ cart.total|sylius_money }}</strong>, {{ 'sylius.cart.total_items'|transchoice(cart.totalItems, {'%count%': cart.totalItems}) }}
 </div>
 
 {{ form_errors(form) }}
@@ -22,11 +22,11 @@
         <tr>
             <th>#</th>
             <th></th>
-            <th>{{ 'sylius.frontend.cart.summary.product'|trans }}</th>
-            <th>{{ 'sylius.frontend.cart.summary.quantity'|trans }}</th>
+            <th>{{ 'sylius.cart.summary.product'|trans }}</th>
+            <th>{{ 'sylius.cart.summary.quantity'|trans }}</th>
             <th></th>
-            <th>{{ 'sylius.frontend.cart.summary.unit_price'|trans }}</th>
-            <th style="text-align: right;">{{ 'sylius.frontend.cart.summary.total'|trans }}</th>
+            <th>{{ 'sylius.cart.summary.unit_price'|trans }}</th>
+            <th style="text-align: right;">{{ 'sylius.cart.summary.total'|trans }}</th>
         </tr>
     </thead>
     <tbody>
@@ -38,22 +38,22 @@
         <tr>
             <td colspan="6"></td>
             <td style="text-align: right;">
-                <strong>{{ 'sylius.frontend.cart.summary.grand_total'|trans }}</strong>: {{ cart.total|sylius_money }}
+                <strong>{{ 'sylius.cart.summary.grand_total'|trans }}</strong>: {{ cart.total|sylius_money }}
             </td>
         </tr>
     </tfoot>
 </table>
 {{ form_rest(form) }}
 <div class="well">
-    <button type="submit" class="btn btn-primary btn-large">{{ 'sylius.frontend.cart.summary.save'|trans }}</button>
+    <button type="submit" class="btn btn-primary btn-large">{{ 'sylius.cart.summary.save'|trans }}</button>
     <div class="pull-right">
-    <a href="{{ path('sylius_checkout_start') }}" class="btn btn-success btn-large"><i class="icon-shopping-cart"></i> {{ 'sylius.frontend.cart.summary.checkout'|trans }}</a>
-    <a href="{{ path('sylius_cart_clear') }}" class="btn btn-danger btn-large"><i class="icon-remove"></i> {{ 'sylius.frontend.cart.summary.clear'|trans }}</a>
+    <a href="{{ path('sylius_checkout_start') }}" class="btn btn-success btn-large"><i class="icon-shopping-cart"></i> {{ 'sylius.cart.summary.checkout'|trans }}</a>
+    <a href="{{ path('sylius_cart_clear') }}" class="btn btn-danger btn-large"><i class="icon-remove"></i> {{ 'sylius.cart.summary.clear'|trans }}</a>
     </div>
 </div>
 </form>
 {% else %}
-    {{ alerts.info('sylius.frontend.cart.empty') }}
+    {{ alerts.info('sylius.cart.empty') }}
 {% endif %}
 
 {% endblock %}

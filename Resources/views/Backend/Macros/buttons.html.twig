@@ -1,21 +1,21 @@
 {% macro show(url, message) %}
 <a href="{{ url }}" class="btn">
    <i class="icon-book"></i>
-    {{ message is empty ? 'sylius.backend.show'|trans : message|trans }}
+    {{ message is empty ? 'sylius.show'|trans : message }}
 </a>
 {% endmacro %}
 
 {% macro create(url, message) %}
 <a href="{{ url }}" class="btn btn-primary">
     <i class="icon-plus-sign"></i>
-    {{ message is empty ? 'sylius.backend.create'|trans : message|trans }}
+    {{ message is empty ? 'sylius.create'|trans : message }}
 </a>
 {% endmacro %}
 
 {% macro edit(url, message) %}
 <a href="{{ url }}" class="btn">
     <i class="icon-pencil"></i>
-    {{ message is empty ? 'sylius.backend.edit'|trans : message|trans }}
+    {{ message is empty ? 'sylius.edit'|trans : message }}
 </a>
 {% endmacro %}
 
@@ -24,7 +24,7 @@
     <input type="hidden" name="_method" value="DELETE">
     <button class="btn btn-danger">
         <i class="icon-trash"></i>
-        {{ message is empty ? 'sylius.backend.delete'|trans : message|trans }}
+        {{ message is empty ? 'sylius.delete'|trans : message }}
     </button>
 </form>
 {% endmacro %}
@@ -32,6 +32,6 @@
 {% macro manage(url, message) %}
 <a href="{{ url }}" class="btn btn-success">
     <i class="icon-pencil"></i>
-    {{ message is empty ? 'sylius.backend.manage'|trans : message|trans }}
+    {{ message is empty ? 'sylius.manage'|trans : message }}
 </a>
 {% endmacro %}

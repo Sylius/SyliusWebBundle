@@ -14,6 +14,7 @@ namespace Sylius\Bundle\WebBundle\Menu;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use JMS\TranslationBundle\Annotation\Ignore;
 
 /**
  * Abstract menu builder.
@@ -66,6 +67,6 @@ abstract class MenuBuilder
      */
     protected function translate($label)
     {
-        return $this->translator->trans($label);
+        return $this->translator->trans(/** @Ignore */ $label, array(), 'menu');
     }
 }

@@ -4,15 +4,15 @@
 
 {% block content %}
 <div class="page-header">
-<h1>{{ 'sylius.backend.taxon.update_header'|trans|raw }}</h1>
+<h1>{{ 'sylius.taxon.update_header'|trans|raw }}</h1>
 </div>
 
 <form action="{{ path('sylius_backend_taxon_update', {'taxonomyId': taxonomy.id, 'id': taxon.id}) }}" method="post" class="form-horizontal" novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Taxon:_form.html.twig' %}
     <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.backend.save_changes'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_taxonomy_show', {'id': taxonomy.id}) }}" class="btn btn-large">{{ 'sylius.backend.cancel'|trans }}</a>
+        <input type="submit" value="{{ 'sylius.save_changes'|trans }}" class="btn btn-primary btn-large" />
+        <a href="{{ path('sylius_backend_taxonomy_show', {'id': taxonomy.id}) }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
     </div>
 </form>
 {% endblock %}

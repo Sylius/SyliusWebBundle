@@ -6,11 +6,11 @@
 
 {% block content %}
 <div class="page-header">
-    <h1>{{ 'sylius.backend.zone.index_header'|trans|raw }}</h1>
+    <h1>{{ 'sylius.zone.index_header'|trans|raw }}</h1>
 </div>
 
 <div class="well well-small">
-    {{ buttons.create(path('sylius_backend_zone_create'), 'sylius.backend.zone.create') }}
+    {{ buttons.create(path('sylius_backend_zone_create'), 'sylius.zone.create'|trans) }}
 </div>
 
 {{ pagination(zones) }}

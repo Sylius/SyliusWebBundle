@@ -28,7 +28,7 @@
             <td>{{ tax_rate.amountAsPercentage }}%</td>
             <td>
                 <span class="label label-{{ tax_rate.includedInPrice ? 'success' : 'important'}}">
-                    {{ tax_rate.includedInPrice ? 'sylius.backend.yes'|trans : 'sylius.backend.no'|trans }}
+                    {{ tax_rate.includedInPrice ? 'sylius.yes'|trans : 'sylius.no'|trans }}
                 </span>
             </td>
             <td><span class="label label info">{{ tax_rate.calculator }}</span></td>
@@ -45,7 +45,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.tax_rate.no_results') }}
+{{ alerts.info('sylius.tax_rate.no_results') }}
 {% endif %}
 
 {% endmacro %}
