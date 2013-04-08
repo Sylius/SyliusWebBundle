@@ -7,11 +7,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th>{{ sylius_resource_sort('id', 'sylius.backend.payment.id'|trans) }}</th>
-            <th>{{ sylius_resource_sort('method', 'sylius.backend.payment.method'|trans) }}</th>
-            <th>{{ sylius_resource_sort('amount', 'sylius.backend.payment.amount'|trans) }}</th>
-            <th>{{ sylius_resource_sort('createdAt', 'sylius.backend.payment.created_at'|trans) }}</th>
-            <th>{{ sylius_resource_sort('updatedAt', 'sylius.backend.payment.updated_at'|trans) }}</th>
+            <th>{{ sylius_resource_sort('id', 'sylius.payment.id'|trans) }}</th>
+            <th>{{ sylius_resource_sort('method', 'sylius.payment.method'|trans) }}</th>
+            <th>{{ sylius_resource_sort('amount', 'sylius.payment.amount'|trans) }}</th>
+            <th>{{ sylius_resource_sort('createdAt', 'sylius.payment.created_at'|trans) }}</th>
+            <th>{{ sylius_resource_sort('updatedAt', 'sylius.payment.updated_at'|trans) }}</th>
             <th></th>
         </tr>
     </thead>
@@ -36,7 +36,7 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.payment.no_results') }}
+{{ alerts.info('sylius.payment.no_results') }}
 {% endif %}
 
 {% endmacro %}

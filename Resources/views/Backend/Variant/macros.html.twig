@@ -38,9 +38,9 @@
             </td>
             <td>
                 {% if variant.availableOnDemand %}
-                    <span class="badge badge-success">{{ 'sylius.backend.yes'|trans }}</span>
+                    <span class="badge badge-success">{{ 'sylius.yes'|trans }}</span>
                 {% else %}
-                    <span class="badge badge-warning">{{ 'sylius.backend.no'|trans }}</span>
+                    <span class="badge badge-warning">{{ 'sylius.no'|trans }}</span>
                 {% endif %}
             </td>
             <td><span class="badge badge-{{ variant.inStock ? 'success' : 'important' }}">{{ variant.onHand }}</span></td>
@@ -56,6 +56,6 @@
     </tbody>
 </table>
 {% else %}
-{{ alerts.info('sylius.backend.variant.no_results') }}
+{{ alerts.info('sylius.variant.no_results') }}
 {% endif %}
 {% endmacro %}

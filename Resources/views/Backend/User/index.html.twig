@@ -5,14 +5,14 @@
 
 {% block content %}
 <div class="page-header">
-    <h1>{{ 'sylius.backend.user.index_header'|trans|raw }}</h1>
+    <h1>{{ 'sylius.user.index_header'|trans|raw }}</h1>
 </div>
 
 {{ pagination(users) }}
 
 <ul class="nav nav-tabs">
-    <li><a href="{{ path('sylius_backend_user_index') }}">{{ 'sylius.backend.user.filter.all'|trans }}</a></li>
-    <li><a href="{{ path('sylius_backend_user_index', {'criteria': {'enabled': false}}) }}"><span class="label label-important"><i class="icon-info-sign"></i></span> {{ 'sylius.backend.user.filter.unconfirmed'|trans }}</a></li>
+    <li><a href="{{ path('sylius_backend_user_index') }}">{{ 'sylius.user.filter.all'|trans }}</a></li>
+    <li><a href="{{ path('sylius_backend_user_index', {'criteria': {'enabled': false}}) }}"><span class="label label-important"><i class="icon-info-sign"></i></span> {{ 'sylius.user.filter.unconfirmed'|trans }}</a></li>
 </ul>
 
 {{ list(users)  }}

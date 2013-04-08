@@ -5,20 +5,20 @@
 
 {% block content %}
 <div class="page-header">
-    <h1>{{ 'sylius.backend.promotion.show_header'|trans|raw }}</h1>
+    <h1>{{ 'sylius.promotion.show_header'|trans|raw }}</h1>
 </div>
 
 <div class="well">
     <a href="{{ path('sylius_backend_promotion_index') }}" class="btn btn-primary">
-        <i class="icon-list-alt"></i> {{ 'sylius.backend.promotion.manage'|trans }}
+        <i class="icon-list-alt"></i> {{ 'sylius.promotion.manage'|trans }}
     </a>
     <a href="{{ path('sylius_backend_promotion_update', {'id': promotion.id}) }}" class="btn">
-        <i class="icon-pencil"></i> {{ 'sylius.backend.edit'|trans }}
+        <i class="icon-pencil"></i> {{ 'sylius.edit'|trans }}
     </a>
     <form action="{{ path('sylius_backend_promotion_delete', {'id': promotion.id}) }}" method="post" style="display: inline;">
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn btn-danger">
-            <i class="icon-trash"></i> {{ 'sylius.backend.delete'|trans }}
+            <i class="icon-trash"></i> {{ 'sylius.delete'|trans }}
         </button>
     </form>
 </div>
@@ -26,14 +26,14 @@
 <table class="table table-bordered table-consensed">
     <thead>
         <tr>
-            <th>{{ 'sylius.backend.promotion.name'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.description'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.usage_limit'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.used'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.starts_at'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.ends_at'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.created_at'|trans }}</th>
-            <th>{{ 'sylius.backend.promotion.updated_at'|trans }}</th>
+            <th>{{ 'sylius.promotion.name'|trans }}</th>
+            <th>{{ 'sylius.promotion.description'|trans }}</th>
+            <th>{{ 'sylius.promotion.usage_limit'|trans }}</th>
+            <th>{{ 'sylius.promotion.used'|trans }}</th>
+            <th>{{ 'sylius.promotion.starts_at'|trans }}</th>
+            <th>{{ 'sylius.promotion.ends_at'|trans }}</th>
+            <th>{{ 'sylius.promotion.created_at'|trans }}</th>
+            <th>{{ 'sylius.promotion.updated_at'|trans }}</th>
         </tr>
     </thead>
     <tbody>
@@ -54,9 +54,9 @@
     <table id="coupons" class="table table-bordered table-consensed">
         <thead>
             <tr>
-                <th>{{ 'sylius.backend.promotion_coupon.code'|trans }}</th>
-                <th>{{ 'sylius.backend.promotion_coupon.usage_limit'|trans }}</th>
-                <th>{{ 'sylius.backend.promotion_coupon.used'|trans }}</th>
+                <th>{{ 'sylius.promotion_coupon.code'|trans }}</th>
+                <th>{{ 'sylius.promotion_coupon.usage_limit'|trans }}</th>
+                <th>{{ 'sylius.promotion_coupon.used'|trans }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -81,8 +81,8 @@
     <table id="rules" class="table table-bordered table-consensed">
         <thead>
             <tr>
-                <th>{{ 'sylius.backend.promotion_rule.type'|trans }}</th>
-                <th>{{ 'sylius.backend.promotion_rule.configuration'|trans }}</th>
+                <th>{{ 'sylius.promotion_rule.type'|trans }}</th>
+                <th>{{ 'sylius.promotion_rule.configuration'|trans }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -106,8 +106,8 @@
     <table id="actions" class="table table-bordered table-consensed">
         <thead>
             <tr>
-                <th>{{ 'sylius.backend.promotion_action.type'|trans }}</th>
-                <th>{{ 'sylius.backend.promotion_action.configuration'|trans }}</th>
+                <th>{{ 'sylius.promotion_action.type'|trans }}</th>
+                <th>{{ 'sylius.promotion_action.configuration'|trans }}</th>
                 <th></th>
             </tr>
         </thead>
