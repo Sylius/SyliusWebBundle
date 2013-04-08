@@ -9,7 +9,7 @@
 </div>
 
 <div class="well well-small">
-    {{ buttons.create(path('sylius_backend_taxon_create', {'taxonomyId': taxonomy.id}), 'sylius.taxon.create') }}
+    {{ buttons.create(path('sylius_backend_taxon_create', {'taxonomyId': taxonomy.id}), 'sylius.taxon.create'|trans) }}
 </div>
 
 {{ list(taxonomy, taxonomy.taxons) }}

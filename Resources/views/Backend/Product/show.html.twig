@@ -10,7 +10,7 @@
 </div>
 
 <div class="well well-small">
-    {{ buttons.manage(path('sylius_backend_product_index'), 'sylius.product.manage') }}
+    {{ buttons.manage(path('sylius_backend_product_index'), 'sylius.product.manage'|trans) }}
     {{ buttons.edit(path('sylius_backend_product_update', {'id': product.id})) }}
     {{ buttons.delete(path('sylius_backend_product_delete', {'id': product.id})) }}
 </div>
@@ -101,8 +101,8 @@
 {% if product.hasOptions %}
 <hr>
 <div class="well well-small">
-    {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.variant.create') }}
-    {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.product.generate_variants') }}
+    {{ buttons.create(path('sylius_backend_variant_create', {'productId': product.id}), 'sylius.variant.create'|trans) }}
+    {{ buttons.manage(path('sylius_backend_variant_generate', {'productId': product.id}), 'sylius.product.generate_variants'|trans) }}
     <div class="pull-right">
     <strong>{{ 'sylius.product.variant_selection_method'|trans }}</strong>: {{ product.variantSelectionMethodLabel }}
     </div>

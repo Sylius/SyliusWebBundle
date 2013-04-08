@@ -19,7 +19,7 @@ input[type="text"] {
 </div>
 
 <div class="well well-small">
-    {{ buttons.create(path('sylius_backend_order_create'), 'sylius.order.create') }}
+    {{ buttons.create(path('sylius_backend_order_create'), 'sylius.order.create'|trans) }}
 </div>
 <div class="row-fluid">
     {{ pagination(orders) }}
