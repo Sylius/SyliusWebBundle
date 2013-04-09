@@ -54,6 +54,10 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.taxonomies" />
         </service>
+        <service id="sylius.menu.frontend.social" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createSocialMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.social" />
+        </service>
 
         <service id="sylius.menu.backend.main" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createMainMenu" scope="request">
             <argument type="service" id="request" />

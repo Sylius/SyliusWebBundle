@@ -9,6 +9,13 @@ sylius:
                 logout: Logout
                 register: Register
                 administration: Administration
+                cart: View cart
+            social:
+                github: GitHub
+                twitter: Twitter
+                facebook: Facebook
+                google: Google+
+                linkedin: LinkedIn
     backend:
         menu:
             main:

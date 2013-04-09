@@ -90,14 +90,14 @@ class FrontendMenuBuilder extends MenuBuilder
 
         $menu->setCurrent($request->getRequestUri());
 
-        // if ($this->cartProvider->hasCart()) {
-            $cart = $this->cartProvider->getCart();
+        $cart = $this->cartProvider->getCart();
+        if (!$cart->isEmpty()) {
             $menu->addChild('cart', array(
                 'route' => 'sylius_cart_summary',
                 'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.cart')),
                 'labelAttributes' => array('icon' => 'icon-shopping-cart icon-large')
             ))->setLabel(sprintf('(%s) %s', $cart->getTotalItems(), $this->moneyExtension->formatMoney($cart->getTotal())));
-        // }
+        }
 
         if ($this->securityContext->isGranted('ROLE_USER')) {
             $menu->addChild('logout', array(
@@ -157,19 +157,57 @@ class FrontendMenuBuilder extends MenuBuilder
             $child = $menu->addChild($taxonomy->getName(), $childOptions);
 
             foreach ($taxonomy->getTaxons() as $taxon) {
-                $leaf = $child->addChild($taxon->getName(), array(
+                $child->addChild($taxon->getName(), array(
                     'route'           => 'sylius_product_index_by_taxon',
                     'routeParameters' => array('permalink' => $taxon->getPermalink()),
-                  ));
-
-                foreach ($taxon->getChildren() as $childTaxon) {
-                    $leaf->addChild($childTaxon->getName(), array(
-                        'route'           => 'sylius_product_index_by_taxon',
-                        'routeParameters' => array('permalink' => $childTaxon->getPermalink()),
-                    ));
-                }
+                    'labelAttributes' => array('icon' => 'icon-angle-right')
+                ));
             }
         }
+
+        return $menu;
+    }
+
+    /**
+     * Builds frontend social menu.
+     *
+     * @param Request $request
+     *
+     * @return ItemInterface
+     */
+    public function createSocialMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root', array(
+            'childrenAttributes' => array(
+                'class' => 'nav nav-pills pull-right'
+            )
+        ));
+
+        $menu->addChild('github', array(
+            'uri' => 'https://github.com/Sylius',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.github')),
+            'labelAttributes' => array('icon' => 'icon-github-sign icon-large', 'iconOnly' => true)
+        ));
+        $menu->addChild('twitter', array(
+            'uri' => 'https://twitter.com/Sylius',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.twitter')),
+            'labelAttributes' => array('icon' => 'icon-twitter-sign icon-large', 'iconOnly' => true)
+        ));
+        $menu->addChild('facebook', array(
+            'uri' => 'http://facebook.com/SyliusEcommerce',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.facebook')),
+            'labelAttributes' => array('icon' => 'icon-facebook-sign icon-large', 'iconOnly' => true)
+        ));
+        $menu->addChild('google', array(
+            'uri' => '#',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.google')),
+            'labelAttributes' => array('icon' => 'icon-google-plus-sign icon-large', 'iconOnly' => true)
+        ));
+        $menu->addChild('linkedin', array(
+            'uri' => 'http://www.linkedin.com/groups/Sylius-Community-4903257',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.linkedin')),
+            'labelAttributes' => array('icon' => 'icon-linkedin-sign icon-large', 'iconOnly' => true)
+        ));
 
         return $menu;
     }

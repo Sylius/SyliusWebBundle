@@ -81,3 +81,12 @@ th {
     font-size: 15px;
     text-align: left;
 }
+
+div.footer p {
+    float: left;
+    margin-top: 8px;
+}
+
+div.footer ul li a {
+    color: #999999;
+}
