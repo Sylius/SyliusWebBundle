@@ -34,8 +34,8 @@
 {{ form_widget(form._token) }}
 
 <div class="form-actions">
-    <a href="{{ path('sylius_cart_summary') }}" class="btn btn-large">{{ 'sylius.checkout.back'|trans }}</a> &nbsp;
-    <input type="submit" class="btn btn-primary btn-large" value="{{ 'sylius.checkout.forward'|trans }}" />
+    <a href="{{ path('sylius_cart_summary') }}" class="btn btn-large"><i class="icon-chevron-left"></i> {{ 'sylius.checkout.back'|trans }}</a> &nbsp;
+    <button type="submit" class="btn btn-primary btn-large">{{ 'sylius.checkout.forward'|trans }} <i class="icon-chevron-right"></i></button>
 </div>
 
 </form>

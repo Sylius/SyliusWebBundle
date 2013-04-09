@@ -1,9 +1,8 @@
-<div class="well" style="height: 375px;">
-<a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail" style="width: 200px; height: 200px; margin: auto;">
-    <img src="{{ product.image.path|default('http://placehold.it/200x200')|imagine_filter('sylius_200x200') }}" alt="{{ product.name }}" />
-</a>
-
-<a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">{{ product.name }}</a>
-<p>{{ product.shortDescription|truncate(160)|default('sylius.product.no_description'|trans)|raw }}</p>
-<a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-info">{{ 'sylius.product.show'|trans }}</a>
+<div class="product-box">
+    <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}"><h3>{{ product.name|truncate(20) }}</h3></a>
+    <a class="thumbnail" href="{{ path('sylius_product_show', {'slug': product.slug}) }}">
+        <img  src="{{ product.image.path|default('http://placehold.it/250x250')|imagine_filter('sylius_262x255') }}" alt="{{ product.name }}" />
+        <span class="label">{{ product.price|sylius_money }}</span>
+        <button class="btn btn-success"><i class="icon-shopping-cart icon-white"></i> {{ 'sylius.add_to_cart'|trans }}</button>
+    </a>
 </div>
