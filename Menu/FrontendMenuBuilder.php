@@ -119,10 +119,17 @@ class FrontendMenuBuilder extends MenuBuilder
             $child = $menu->addChild($taxonomy->getName(), $childOptions);
 
             foreach ($taxonomy->getTaxons() as $taxon) {
-                $child->addChild($taxon->getName(), array(
+                $leaf = $child->addChild($taxon->getName(), array(
                     'route'           => 'sylius_product_index_by_taxon',
                     'routeParameters' => array('permalink' => $taxon->getPermalink()),
-                ));
+                  ));
+
+                foreach ($taxon->getChildren() as $childTaxon) {
+                    $leaf->addChild($childTaxon->getName(), array(
+                        'route'           => 'sylius_product_index_by_taxon',
+                        'routeParameters' => array('permalink' => $childTaxon->getPermalink()),
+                    ));
+                }
             }
         }
 
