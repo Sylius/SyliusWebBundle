@@ -24,6 +24,7 @@ sylius:
                 taxonomies: Categorization
                 assortment: Assortment
                 products: Products
+                stockables: Inventory levels
                 options: Manage product options
                 properties: Configure properties
                 prototypes: Product prototypes
@@ -52,7 +53,7 @@ sylius:
                 assortment: Assortment
                 products: Products
                 stockables: Inventory levels
-                options: Manage product options
+                options: Manage options
                 properties: Configure properties
                 prototypes: Product prototypes
                 sales: Orders
