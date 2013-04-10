@@ -1,5 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% from 'SyliusWebBundle:Backend/Macros:actions.html.twig' import create %}
+
 {% block javascripts %}
 {{ parent() }}
 {% javascripts
@@ -16,9 +18,6 @@
 
 <form action="{{ path('sylius_backend_property_create') }}" method="post" class="form-horizontal" novalidate>
     {% include 'SyliusWebBundle:Backend/Property:_form.html.twig' %}
-    <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.create'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_property_index') }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
-    </div>
+    {{ create() }}
 </form>
 {% endblock %}

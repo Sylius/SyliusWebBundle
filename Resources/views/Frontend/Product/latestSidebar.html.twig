@@ -2,7 +2,11 @@
 
 <ul>
     {% for product in products %}
-    <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">{{ product.name }}</a>
-    <p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
+        <li>
+            <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link">
+                <img class="thumbnail" src="{{ product.image.path|default('http://placehold.it/50x40')|imagine_filter('sylius_50x40') }}" alt="{{ product.name }}" />
+                <h4>{{ product.name }}</h4>
+            </a>
+        </li>
     {% endfor %}
 </ul>

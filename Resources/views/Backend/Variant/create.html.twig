@@ -1,17 +1,14 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% set product = variant.product %}
+{% from 'SyliusWebBundle:Backend/Macros:actions.html.twig' import create %}
 
 {% block content %}
 <div class="page-header">
 <h1>{{ 'sylius.variant.create_header'|trans|raw }}</h1>
 </div>
 
-<form action="{{ path('sylius_backend_variant_create', {'productId': product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+<form action="{{ path('sylius_backend_variant_create', {'productId': variant.product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
     {% include 'SyliusWebBundle:Backend/Variant:_form.html.twig' %}
-    <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.create'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
-    </div>
+    {{ create() }}
 </form>
 {% endblock %}
