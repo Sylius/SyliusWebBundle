@@ -22,7 +22,7 @@
         {% block stylesheets %}
         {% stylesheets output='assets/compiled/frontend.css'
             '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.no-icons.min.css'
-            '//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css'
+            '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css'
             '@SyliusWebBundle/Resources/assets/css/frontend.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
@@ -32,10 +32,10 @@
     <body>
         <div class="container">
         {% block header %}
-            <div class="masthead">
-                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle::menu.html.twig'}) }}
-                <h3><a href="{{ path('sylius_homepage') }}" class="muted">{{ 'sylius.logo'|trans }}</a></h3>
+            <div class="masthead pull-right">
+                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
             </div>
+            <h1 class="logo"><a href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}"><img src="/assets/img/logo.png" alt="Sylius" style=""><span>{{ 'sylius.logo'|trans }}</span></a></h1>
         {% endblock %}
 
         {% for name, value in app.session.flashes if name in ['success', 'error'] %}
@@ -46,14 +46,11 @@
         {% endfor %}
 
         <hr>
-        <div class="row-fluid">
+        <div id="sidebar_left" class="row-fluid">
             <div class="row-fluid">
                 <div class="span3">
-                    {% include 'SyliusWebBundle:Frontend/Cart:_widget.html.twig' %}
-
                     <h4>{{ 'sylius.shop_by'|trans }}</h4>
-                    {{ knp_menu_render('sylius.frontend.taxonomies') }}
-
+                    {{ knp_menu_render('sylius.frontend.taxonomies', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
                     {{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
                 </div>
                 <div class="span9">
@@ -69,6 +66,7 @@
                 <p class="muted">
                     &copy; Sylius, 2011 - {{ 'now'|date('Y') }}.
                 </p>
+                {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
             </div>
         {% endblock %}
         </div>

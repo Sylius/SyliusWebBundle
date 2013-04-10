@@ -1,18 +1,15 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
-{% set product = variant.product %}
+{% from 'SyliusWebBundle:Backend/Macros:actions.html.twig' import update %}
 
 {% block content %}
 <div class="page-header">
 <h1>{{ 'sylius.variant.update_header'|trans|raw }}</h1>
 </div>
 
-<form action="{{ path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+<form action="{{ path('sylius_backend_variant_update', {'productId': variant.product.id, 'id': variant.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Variant:_form.html.twig' %}
-    <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.save_changes'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
-    </div>
+    {{ update() }}
 </form>
 {% endblock %}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-04-08T15:21:41Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2013-04-09T10:16:49Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -123,16 +123,6 @@
         <source>sylius.cancel</source>
         <target>Cancel</target>
       </trans-unit>
-      <trans-unit id="7d1919becc3590481613446f0d414077d904e247" resname="sylius.cart.header">
-        <jms:reference-file line="3">Frontend/Cart/_widget.html.twig</jms:reference-file>
-        <source>sylius.cart.header</source>
-        <target>Cart</target>
-      </trans-unit>
-      <trans-unit id="104fde9f035c8bc9ddd540b47e9d99b5494ad234" resname="sylius.cart.link">
-        <jms:reference-file line="9">Frontend/Cart/_widget.html.twig</jms:reference-file>
-        <source>sylius.cart.link</source>
-        <target>View cart</target>
-      </trans-unit>
       <trans-unit id="f9fa92f34b580abb11f99334897e47ef088b09e2" resname="sylius.cart.summary.checkout">
         <jms:reference-file line="50">Frontend/Cart/summary.html.twig</jms:reference-file>
         <source>sylius.cart.summary.checkout</source>
@@ -180,18 +170,17 @@
       </trans-unit>
       <trans-unit id="15f8b7cd47b4f10e3ce1efdb5453ba47fdbe4919" resname="sylius.cart.total_items">
         <jms:reference-file line="14">Frontend/Cart/summary.html.twig</jms:reference-file>
-        <jms:reference-file line="6">Frontend/Cart/_widget.html.twig</jms:reference-file>
         <source>sylius.cart.total_items</source>
         <target>1 item|%count% items</target>
       </trans-unit>
       <trans-unit id="f8271b9cffb4a325e06294b1f05ed7a8ef2262a3" resname="sylius.checkout.addressing.header">
-        <jms:reference-file line="5">Checkout/Step/addressing.html.twig</jms:reference-file>
+        <jms:reference-file line="12">Checkout/Step/addressing.html.twig</jms:reference-file>
         <source>sylius.checkout.addressing.header</source>
         <target>Addressing step</target>
       </trans-unit>
       <trans-unit id="c9d1f8c14df112c2713a9a5789decc780f147900" resname="sylius.checkout.back">
         <jms:reference-file line="24">Checkout/Step/shipping.html.twig</jms:reference-file>
-        <jms:reference-file line="30">Checkout/Step/addressing.html.twig</jms:reference-file>
+        <jms:reference-file line="37">Checkout/Step/addressing.html.twig</jms:reference-file>
         <jms:reference-file line="24">Checkout/Step/payment.html.twig</jms:reference-file>
         <jms:reference-file line="171">Checkout/Step/finalize.html.twig</jms:reference-file>
         <source>sylius.checkout.back</source>
@@ -326,7 +315,7 @@
       </trans-unit>
       <trans-unit id="2a9f87f9b3285665821aec47fb8fc966cba5d889" resname="sylius.checkout.forward">
         <jms:reference-file line="25">Checkout/Step/shipping.html.twig</jms:reference-file>
-        <jms:reference-file line="31">Checkout/Step/addressing.html.twig</jms:reference-file>
+        <jms:reference-file line="38">Checkout/Step/addressing.html.twig</jms:reference-file>
         <jms:reference-file line="25">Checkout/Step/payment.html.twig</jms:reference-file>
         <source>sylius.checkout.forward</source>
         <target>Continue</target>
@@ -511,11 +500,6 @@
         <source>sylius.homepage.splash.headline</source>
         <target>Welcome to Sylius</target>
       </trans-unit>
-      <trans-unit id="8684566f3fc517798ba64c33e76f59fdccd7590f" resname="sylius.homepage.splash.link">
-        <jms:reference-file line="7">Frontend/Homepage/main.html.twig</jms:reference-file>
-        <source>sylius.homepage.splash.link</source>
-        <target>Sylius.org</target>
-      </trans-unit>
       <trans-unit id="a2f3965a6e43daf2ac84d378bff3a81315cf661b" resname="sylius.homepage.splash.subheadline">
         <jms:reference-file line="6">Frontend/Homepage/main.html.twig</jms:reference-file>
         <source>sylius.homepage.splash.subheadline</source>
@@ -563,7 +547,7 @@
       </trans-unit>
       <trans-unit id="064de2e2ca3d64d524ed0a838f49986f3c9e5a8b" resname="sylius.logo">
         <jms:reference-file line="38">views/Backend/layout.html.twig</jms:reference-file>
-        <jms:reference-file line="37">views/Frontend/layout.html.twig</jms:reference-file>
+        <jms:reference-file line="38">views/Frontend/layout.html.twig</jms:reference-file>
         <source>sylius.logo</source>
         <target>Sylius</target>
       </trans-unit>
@@ -975,7 +959,6 @@
       </trans-unit>
       <trans-unit id="76dd9e7fcd42128be82e867be41df1b412493a7b" resname="sylius.product.no_description">
         <jms:reference-file line="9">Frontend/Product/_single.html.twig</jms:reference-file>
-        <jms:reference-file line="6">Frontend/Product/latestSidebar.html.twig</jms:reference-file>
         <jms:reference-file line="7">Frontend/Product/_singleBox.html.twig</jms:reference-file>
         <source>sylius.product.no_description</source>
         <target><![CDATA[<i>No description...</i>]]></target>
@@ -1028,7 +1011,7 @@
       </trans-unit>
       <trans-unit id="d617e94472e1f929e2792109323ffa9d351391cd" resname="sylius.product.show">
         <jms:reference-file line="27">Frontend/Product/_single.html.twig</jms:reference-file>
-        <jms:reference-file line="9">Frontend/Product/_singleBox.html.twig</jms:reference-file>
+        <jms:reference-file line="8">Frontend/Product/_singleBox.html.twig</jms:reference-file>
         <source>sylius.product.show</source>
         <target>View more</target>
       </trans-unit>
@@ -1435,7 +1418,7 @@
         <target>Zone</target>
       </trans-unit>
       <trans-unit id="473b157f4496db9cbb7f8c0e4296c0d1f84ebdaa" resname="sylius.shop_by">
-        <jms:reference-file line="54">views/Frontend/layout.html.twig</jms:reference-file>
+        <jms:reference-file line="52">views/Frontend/layout.html.twig</jms:reference-file>
         <source>sylius.shop_by</source>
         <target>Shop by</target>
       </trans-unit>

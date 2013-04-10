@@ -1,5 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
+{% from 'SyliusWebBundle:Backend/Macros:actions.html.twig' import update %}
+
 {% block javascripts %}
 {{ parent() }}
 {% javascripts
@@ -18,9 +20,6 @@
 <form action="{{ path('sylius_backend_shipping_method_update', {'id': shipping_method.id}) }}" method="post" class="form-horizontal" novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/ShippingMethod:_form.html.twig' %}
-    <div class="form-actions">
-        <input type="submit" value="{{ 'sylius.save_changes'|trans }}" class="btn btn-primary btn-large" />
-        <a href="{{ path('sylius_backend_shipping_method_index') }}" class="btn btn-large">{{ 'sylius.cancel'|trans }}</a>
-    </div>
+    {{ update() }}
 </form>
 {% endblock %}

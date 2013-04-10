@@ -37,6 +37,8 @@
             <argument type="service" id="security.context" />
             <argument type="service" id="translator" />
             <argument type="service" id="sylius.repository.taxonomy" />
+            <argument type="service" id="sylius.cart_provider" />
+            <argument type="service" id="sylius.twig.money" />
         </service>
         <service id="sylius.menu_builder.backend" class="%sylius.menu_builder.backend.class%">
             <argument type="service" id="knp_menu.factory" />
@@ -52,6 +54,10 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.taxonomies" />
         </service>
+        <service id="sylius.menu.frontend.social" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createSocialMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.social" />
+        </service>
 
         <service id="sylius.menu.backend.main" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createMainMenu" scope="request">
             <argument type="service" id="request" />
@@ -60,6 +66,10 @@
         <service id="sylius.menu.backend.sidebar" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createSidebarMenu" scope="request">
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.backend.sidebar" />
+        </service>
+
+        <service id="sylius.twig.text_extension" class="Twig_Extensions_Extension_Text">
+            <tag name="twig.extension" />
         </service>
     </services>
 

@@ -19,7 +19,7 @@
                     {% set form = sylius_cart_form({'product': product}) %}
                     {{ form_widget(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
                     {{ form_widget(form._token) }}
-                    <input type="submit" class="btn btn-success" style="margin-bottom: 10px;" value="{{ 'sylius.add_to_cart'|trans }}">
+                    <button type="submit" class="btn btn-success"><i class="icon-shopping-cart icon-white"></i> {{ 'sylius.add_to_cart'|trans }}</button>
                 </form>
             {% endif %}
             </div>
