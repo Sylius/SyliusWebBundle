@@ -243,6 +243,11 @@ class BackendMenuBuilder extends MenuBuilder
             'labelAttributes' => array('icon' => 'icon-truck'),
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.shipping_methods', $section)));
 
+        $child->addChild('shipments', array(
+            'route' => 'sylius_backend_shipment_index',
+            'labelAttributes' => array('icon' => 'icon-plane'),
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.shipments', $section)));
+
         $child->addChild('countries', array(
             'route' => 'sylius_backend_country_index',
             'labelAttributes' => array('icon' => 'icon-flag'),
