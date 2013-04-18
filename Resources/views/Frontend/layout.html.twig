@@ -38,11 +38,13 @@
             <h1 class="logo"><a href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}"><img src="/assets/img/logo.png" alt="Sylius" style=""><span>{{ 'sylius.logo'|trans }}</span></a></h1>
         {% endblock %}
 
-        {% for name, value in app.session.flashes if name in ['success', 'error'] %}
-        <div class="alert alert-{{ name }}">
-            <a class="close" data-dismiss="alert" href="#">×</a>
-            {{ value|trans }}
-        </div>
+        {% for name, flashes in app.session.flashbag.all if name in ['success', 'error'] %}
+            {% for flash in flashes %}
+                <div class="alert alert-{{ name }}">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    {{ flash|trans }}
+                </div>
+            {% endfor %}
         {% endfor %}
 
         <hr>
