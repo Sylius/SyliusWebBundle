@@ -35,7 +35,7 @@
     <div class="span6">
         <div class="well">
             <h3>{{ 'sylius.checkout.security.new_customer'|trans }}</h3>
-                <form action="{{ path('sylius_checkout_forward', {'stepName': context.currentStep.name}) }}" method="post" novalidate>
+                <form action="{{ path('fos_user_registration_register') }}" method="post" novalidate>
                 <fieldset>
                     {{ form_widget(registration_form) }}
                 </fieldset>
