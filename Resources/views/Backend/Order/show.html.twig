@@ -41,6 +41,10 @@
                 <td>{{ order.shippingTotal|sylius_money }}</td>
             </tr>
             <tr>
+                <td><strong>{{ 'sylius.order.promotion_total'|trans }}</strong></td>
+                <td>{{ order.promotionTotal|sylius_money }}</td>
+            </tr>
+            <tr>
                 <td><strong>{{ 'sylius.order.user'|trans }}</strong></td>
                 <td>
                     <strong>
