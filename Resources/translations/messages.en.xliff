@@ -220,6 +220,11 @@
         <source>sylius.checkout.finalize.order.no_items</source>
         <target>This order does not contain any items</target>
       </trans-unit>
+      <trans-unit id="0bf37e62a6bfa9005ba8dd56b844ca456ff7be8a" resname="sylius.checkout.finalize.order.no_promotion">
+        <jms:reference-file line="312">Backend/Order/show.html.twig</jms:reference-file>
+        <source>sylius.checkout.finalize.order.no_promotion</source>
+        <target state="new">No promotion applied</target>
+      </trans-unit>
       <trans-unit id="640ca3adb7c0fc0dab40fcb4324fa47c5b4cc258" resname="sylius.checkout.finalize.order.no_shipping_charges">
         <jms:reference-file line="149">Checkout/Step/finalize.html.twig</jms:reference-file>
         <source>sylius.checkout.finalize.order.no_shipping_charges</source>
@@ -234,6 +239,16 @@
         <jms:reference-file line="15">Checkout/Step/finalize.html.twig</jms:reference-file>
         <source>sylius.checkout.finalize.order.shipping_address</source>
         <target>Shipping address</target>
+      </trans-unit>
+      <trans-unit id="134085436d809e7774cec40a987b0df75d4af063" resname="sylius.checkout.finalize.order.promotion_discount">
+        <jms:reference-file line="307">Backend/Order/show.html.twig</jms:reference-file>
+        <source>sylius.checkout.finalize.order.promotion_discount</source>
+        <target state="new">Promotion discounts</target>
+      </trans-unit>
+      <trans-unit id="42df986d0c66f72d191fab8ffa96602227b21852" resname="sylius.checkout.finalize.order.promotion_total">
+        <jms:reference-file line="318">Backend/Order/show.html.twig</jms:reference-file>
+        <source>sylius.checkout.finalize.order.promotion_total</source>
+        <target state="new">Promotion total</target>
       </trans-unit>
       <trans-unit id="394588d6931c0935e83f2e75581e24458ab487b1" resname="sylius.checkout.finalize.order.shipping_charges">
         <jms:reference-file line="144">Checkout/Step/finalize.html.twig</jms:reference-file>
@@ -684,6 +699,11 @@
         <jms:reference-file line="28">Backend/Order/macros.html.twig</jms:reference-file>
         <source>sylius.order.payment_states.balance_due</source>
         <target>Balance due</target>
+      </trans-unit>
+      <trans-unit id="524dbd179e0a304aaed2d68323041812245c127f" resname="sylius.order.promotion_total">
+        <jms:reference-file line="44">Backend/Order/show.html.twig</jms:reference-file>
+        <source>sylius.order.promotion_total</source>
+        <target state="new">Promotion total</target>
       </trans-unit>
       <trans-unit id="9754c0c33f49df82a9da45714512f0cdaf7ea8ed" resname="sylius.order.shipment_state">
         <jms:reference-file line="13">Backend/Order/macros.html.twig</jms:reference-file>

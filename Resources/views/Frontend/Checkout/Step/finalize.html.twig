@@ -156,6 +156,23 @@
                 </span>
             </td>
         </tr>
+        {% if order.promotionAdjustments|length > 0 %}
+            <tr>
+                <td colspan="4">
+                <p><strong>{{ 'sylius.checkout.finalize.order.promotion_discount'|trans }}</strong></p>
+                <ul>
+                {% for adjustment in order.promotionAdjustments %}
+                    <li>{{ adjustment.description }} {{ adjustment.amount|sylius_money }} </li>
+                {% endfor %}
+                </ul>
+                </td>
+                <td colspan="2">
+                    <span class="pull-right">
+                    <strong>{{ 'sylius.checkout.finalize.order.promotion_total'|trans }}</strong>: {{ order.promotionTotal|sylius_money }}
+                    </span>
+                </td>
+            </tr>
+        {% endif %}
         <tr style="background-color: #f1f1f1;">
             <td colspan="6">
                 <span class="pull-right">
