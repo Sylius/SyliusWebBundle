@@ -471,6 +471,11 @@
         <source>sylius.form.login.username</source>
         <target>Username</target>
       </trans-unit>
+      <trans-unit id="f0e1b2a26a1119a45d1dad814f2b9daa4e21aae2" resname="sylius.form.checkout.addressing.different_billing_address">
+        <jms:reference-file line="17">Checkout/Step/shipping.html.twig</jms:reference-file>
+        <source>sylius.form.checkout.addressing.different_billing_address</source>
+        <target>Use different address for billing?</target>
+      </trans-unit>
       <trans-unit id="5db225fa287cd19e6b0e6b96b6284205b8ef4b7f" resname="sylius.homepage.splash.headline">
         <jms:reference-file line="5">Frontend/Homepage/main.html.twig</jms:reference-file>
         <source>sylius.homepage.splash.headline</source>
@@ -1129,7 +1134,7 @@
       <trans-unit id="c8917f163e87e520597aa645eda54ffe7f4569af" resname="sylius.promotion.no_results">
         <jms:reference-file line="38">Backend/Promotion/macros.html.twig</jms:reference-file>
         <source>sylius.promotion.no_results</source>
-        <target>there are no promotions to display.</target>
+        <target>There are no promotions to display.</target>
       </trans-unit>
       <trans-unit id="9019177e741c36e683c1f9eb2a91f6fc0ce02f2b" resname="sylius.promotion.rules">
         <jms:reference-file line="80">Backend/Promotion/show.html.twig</jms:reference-file>
@@ -1231,7 +1236,7 @@
       <trans-unit id="7b367e608866831fc55fd1de9d6f90332cd63307" resname="sylius.property.no_results">
         <jms:reference-file line="37">Backend/Property/macros.html.twig</jms:reference-file>
         <source>sylius.property.no_results</source>
-        <target>there are no properties to display.</target>
+        <target>There are no properties to display.</target>
       </trans-unit>
       <trans-unit id="36ee1b4446ec8a32a1c5ae5f2d33d99cab22e7cd" resname="sylius.property.update_header">
         <jms:reference-file line="16">Backend/Property/update.html.twig</jms:reference-file>
@@ -1266,7 +1271,7 @@
       <trans-unit id="f2233f66e1d318bc1484d4c96dcef7d6da04ef15" resname="sylius.prototype.no_results">
         <jms:reference-file line="50">Backend/Prototype/macros.html.twig</jms:reference-file>
         <source>sylius.prototype.no_results</source>
-        <target>There are no prototypes to display.</target>
+        <target>There are no prototypes defined.</target>
       </trans-unit>
       <trans-unit id="c0181e32ca9437726bb5ee7faa57c172a21d1863" resname="sylius.prototype.update_header">
         <jms:reference-file line="7">Backend/Prototype/update.html.twig</jms:reference-file>
@@ -1416,7 +1421,7 @@
       <trans-unit id="e4c5ddb8dcb51747c7d24d60f5fcd3f963360373" resname="sylius.shipping_category.no_results">
         <jms:reference-file line="33">Backend/ShippingCategory/macros.html.twig</jms:reference-file>
         <source>sylius.shipping_category.no_results</source>
-        <target>There are no shipping categories to display.</target>
+        <target>There are no shipping categories configured.</target>
       </trans-unit>
       <trans-unit id="d267236dc321a3b9479039a00bcf4c3724389fb0" resname="sylius.shipping_category.update_header">
         <jms:reference-file line="7">Backend/ShippingCategory/update.html.twig</jms:reference-file>
@@ -1481,7 +1486,7 @@
       <trans-unit id="be9d576a7eaba402bb5fc37e700cb4a8b5f31894" resname="sylius.shipping_method.no_results">
         <jms:reference-file line="46">Backend/ShippingMethod/macros.html.twig</jms:reference-file>
         <source>sylius.shipping_method.no_results</source>
-        <target>There are no shipping methods to display.</target>
+        <target>There are no shipping methods configured.</target>
       </trans-unit>
       <trans-unit id="2ce5587f02417b6b06b6c1509988ee0710ae7f4f" resname="sylius.shipping_method.show_header">
         <jms:reference-file line="5">Backend/ShippingMethod/show.html.twig</jms:reference-file>
@@ -1621,7 +1626,7 @@
       <trans-unit id="119121a69dffb485ce46f769220c7ae2700922ea" resname="sylius.tax_rate.no_results">
         <jms:reference-file line="48">Backend/TaxRate/macros.html.twig</jms:reference-file>
         <source>sylius.tax_rate.no_results</source>
-        <target>There are no tax rates to display.</target>
+        <target>There are no tax rates configured.</target>
       </trans-unit>
       <trans-unit id="f91394e9240df1197b27170d72a639cc9b0fbe5f" resname="sylius.tax_rate.show_header">
         <jms:reference-file line="5">Backend/TaxRate/show.html.twig</jms:reference-file>
@@ -1687,7 +1692,7 @@
       <trans-unit id="6f6b2e66e766a20e07b0540a47ea8b336d2701f8" resname="sylius.taxonomy.no_results">
         <jms:reference-file line="31">Backend/Taxonomy/macros.html.twig</jms:reference-file>
         <source>sylius.taxonomy.no_results</source>
-        <target>There are no taxonomies to display.</target>
+        <target>There are no taxonomies defined.</target>
       </trans-unit>
       <trans-unit id="08fb6369072161b325c4222fff1b76047bbc1b0a" resname="sylius.taxonomy.show_header">
         <jms:reference-file line="8">Backend/Taxonomy/show.html.twig</jms:reference-file>
@@ -1866,7 +1871,7 @@
       <trans-unit id="cf477f8c4af3ceab3fc447773ad1d10c3381b599" resname="sylius.zone.no_results">
         <jms:reference-file line="34">Backend/Zone/macros.html.twig</jms:reference-file>
         <source>sylius.zone.no_results</source>
-        <target>There are no zones to display.</target>
+        <target>There are no zones configured.</target>
       </trans-unit>
       <trans-unit id="e8c55f7a2cdaa7f6852897c9424ca8e0d5915d7d" resname="sylius.zone.show_header">
         <jms:reference-file line="7">Backend/Zone/show.html.twig</jms:reference-file>
