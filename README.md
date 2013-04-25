@@ -34,12 +34,6 @@ Sylius on twitter
 
 If you want to keep up with the updates, [follow the official Sylius account on twitter](http://twitter.com/_Sylius).
 
-Bug tracking
-------------
-
-This bundle uses [GitHub issues](https://github.com/Sylius/SyliusWebBundle/issues).
-If you have found bug, please create an issue.
-
 Versioning
 ----------
 
