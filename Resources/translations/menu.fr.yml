@@ -1,0 +1,76 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    frontend:
+        menu:
+            main:
+                login: Connexion
+                logout: Déconnexion
+                register: Enregistrement
+                administration: Administration
+                cart: Voir le panier (%items%) %total%
+            social:
+                github: GitHub
+                twitter: Twitter
+                facebook: Facebook
+                google: Google+
+                linkedin: LinkedIn
+    backend:
+        menu:
+            main:
+                dashboard: Tableau de bord
+                homepage: La boutique
+                taxonomies: Catégorisation
+                assortment: Catalogue
+                products: Produits
+                stockables: Inventaire
+                options: Gérer les options produits
+                properties: Configurer les propriétés
+                prototypes: Prototypes de produit
+                sales: Commandes
+                orders: Commandes actuelles
+                new_order: Nouvelle commande
+                promotions: Promotions
+                new_promotion: Nouvelle promotion
+                configuration: Configuration
+                general_settings: Configuration Générale
+                taxation_settings: Configuration des taxes
+                tax_categories: Catégories des taxes
+                tax_rates: Valeurs Taxes
+                shipping_categories: Catégories transports
+                shipping_methods: Transporteurs
+                shipments: Expéditons
+                payment_methods: Méthodes de paiements
+                payments: Paiements
+                countries: Pays
+                zones: Zones
+            sidebar:
+                dashboard: Tableau de bord
+                homepage: Retour accueil
+                taxonomies: Catégorisation
+                customer: Clients
+                users: Utilisateurs
+                assortment: Catalogue
+                products: Produits
+                stockables: Inventaire
+                options: Gérer les options
+                properties: Configurer les propriétés
+                prototypes: Prototypes produit
+                sales: Commandes
+                orders: Commandes actuelles
+                new_order: Nouvelle commande
+                promotions: Promotions
+                new_promotion: Nouvelle promotion
+                configuration: Configuration
+                general_settings: Configuration Générale
+                taxation_settings: Configuration des taxes
+                tax_categories: Catégories des taxes
+                tax_rates: Valeurs Taxes
+                shipping_categories: Catégories transports
+                shipping_methods: Transporteurs
+                shipments: Expéditons
+                payment_methods: Méthodes de paiements
+                payments: Paiements
+                countries: Pays
+                zones: Zones
