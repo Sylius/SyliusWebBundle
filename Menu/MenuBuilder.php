@@ -53,6 +53,13 @@ abstract class MenuBuilder
     protected $request;
 
     /**
+     * Root element class
+     *
+     * @var string
+     */
+    protected $rootElementClass;
+
+    /**
      * Constructor.
      *
      * @param FactoryInterface         $factory
@@ -74,6 +81,15 @@ abstract class MenuBuilder
     public function setRequest(Request $request = null)
     {
         $this->request = $request;
+    }
+
+    /**
+     * Sets the root element class
+     *
+     * @param string $rootElementClass
+     */
+    public function setRootElementClass($rootElementClass) {
+        $this->rootElementClass = $rootElementClass;
     }
 
     /**
