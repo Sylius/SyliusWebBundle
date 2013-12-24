@@ -53,11 +53,11 @@ abstract class MenuBuilder
     protected $request;
 
     /**
-     * Root element class
+     * Element classes
      *
      * @var string
      */
-    protected $rootElementClass;
+    protected $elementClasses;
 
     /**
      * Constructor.
@@ -84,12 +84,12 @@ abstract class MenuBuilder
     }
 
     /**
-     * Sets the root element class
+     * Sets the element classes
      *
-     * @param string $rootElementClass
+     * @param $elementClasses
      */
-    public function setRootElementClass($rootElementClass) {
-        $this->rootElementClass = $rootElementClass;
+    public function setElementClasses($elementClasses) {
+        $this->elementClasses = $elementClasses;
     }
 
     /**
