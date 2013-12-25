@@ -23,7 +23,7 @@
         "php":                       ">=5.3.3",
 
         "symfony/framework-bundle":  "~2.3",
-        "sylius/core-bundle":        "1.0.*@dev",
+        "sylius/core-bundle":        "*",
         "knplabs/knp-menu":          "2.0.*@dev",
         "knplabs/knp-menu-bundle":   "2.0.*@dev",
         "liip/imagine-bundle":       "~0.9",
@@ -35,10 +35,5 @@
     "autoload": {
         "psr-0": { "Sylius\\Bundle\\WebBundle\\": "" }
     },
-    "target-dir": "Sylius/Bundle/WebBundle",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
-    }
+    "target-dir": "Sylius/Bundle/WebBundle"
 }
