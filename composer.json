@@ -35,5 +35,10 @@
     "autoload": {
         "psr-0": { "Sylius\\Bundle\\WebBundle\\": "" }
     },
-    "target-dir": "Sylius/Bundle/WebBundle"
+    "target-dir": "Sylius/Bundle/WebBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }
