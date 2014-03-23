@@ -1,12 +1,13 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
 {% from 'SyliusResourceBundle:Macros:actions.html.twig' import create %}
+{% set product = product_variant.product %}
 
 {% block topbar %}
 <ol class="breadcrumb">
     <li>{{ 'sylius.breadcrumb.assortment'|trans }}</li>
     <li><a href="{{ path('sylius_backend_product_index') }}">{{ 'sylius.breadcrumb.product.index'|trans }}</a></li>
-    <li><a href="{{ path('sylius_backend_product_show', {'id': variant.product.id}) }}">{{ variant.product.name }}</a></li>
+    <li><a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}">{{ product.name }}</a></li>
     <li>{{ 'sylius.breadcrumb.new'|trans }}</li>
 </ol>
 {% endblock %}
@@ -18,8 +19,8 @@
 
 {{ form_errors(form) }}
 
-<form action="{{ path('sylius_backend_variant_create', {'productId': variant.product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
-    {% include 'SyliusWebBundle:Backend/Variant:_form.html.twig' %}
+<form action="{{ path('sylius_backend_product_variant_create', {'productId': product.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+    {% include 'SyliusWebBundle:Backend/ProductVariant:_form.html.twig' %}
     {{ create() }}
 </form>
 {% endblock %}

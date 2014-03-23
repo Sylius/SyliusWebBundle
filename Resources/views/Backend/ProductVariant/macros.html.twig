@@ -48,8 +48,8 @@
             <td>
                 <div class="pull-right">
                 {% if not variant.deleted %}
-                {{ buttons.edit(path('sylius_backend_variant_update', {'productId': product.id, 'id': variant.id})) }}
-                {{ buttons.delete(path('sylius_backend_variant_delete', {'productId': product.id, 'id': variant.id})) }}
+                {{ buttons.edit(path('sylius_backend_product_variant_update', {'productId': product.id, 'id': variant.id})) }}
+                {{ buttons.delete(path('sylius_backend_product_variant_delete', {'productId': product.id, 'id': variant.id})) }}
                 {% endif %}
                 </div>
             </td>

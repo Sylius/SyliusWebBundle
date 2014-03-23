@@ -1,12 +1,13 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
 {% from 'SyliusResourceBundle:Macros:actions.html.twig' import update %}
+{% set product = product_variant.product %}
 
 {% block topbar %}
 <ol class="breadcrumb">
     <li>{{ 'sylius.breadcrumb.assortment'|trans }}</li>
     <li><a href="{{ path('sylius_backend_product_index') }}">{{ 'sylius.breadcrumb.product.index'|trans }}</a></li>
-    <li><a href="{{ path('sylius_backend_product_show', {'id': variant.product.id}) }}">{{ variant.product.name }}</a></li>
+    <li><a href="{{ path('sylius_backend_product_show', {'id': product.id}) }}">{{ product.name }}</a></li>
     <li>{{ 'sylius.breadcrumb.edit'|trans }}</li>
 </ol>
 {% endblock %}
@@ -18,9 +19,9 @@
 
 {{ form_errors(form) }}
 
-<form action="{{ path('sylius_backend_variant_update', {'productId': variant.product.id, 'id': variant.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
+<form action="{{ path('sylius_backend_product_variant_update', {'productId': product.id, 'id': product_variant.id}) }}" method="post" class="form-horizontal" {{ form_enctype(form) }} novalidate>
     <input type="hidden" name="_method" value="PUT">
-    {% include 'SyliusWebBundle:Backend/Variant:_form.html.twig' %}
+    {% include 'SyliusWebBundle:Backend/ProductVariant:_form.html.twig' %}
     {{ update() }}
 </form>
 {% endblock %}

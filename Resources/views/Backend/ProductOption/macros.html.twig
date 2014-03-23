@@ -8,10 +8,10 @@
         <thead>
             <tr>
                 <th>{{ sylius_resource_sort('id', '#id') }}</th>
-                <th>{{ sylius_resource_sort('name', 'sylius.option.name'|trans) }}</th>
-                <th>{{ sylius_resource_sort('presentation', 'sylius.option.presentation'|trans) }}</th>
+                <th>{{ sylius_resource_sort('name', 'sylius.product_option.name'|trans) }}</th>
+                <th>{{ sylius_resource_sort('presentation', 'sylius.product_option.presentation'|trans) }}</th>
                 <th>{{ 'sylius.option.values'|trans }}</th>
-                <th>{{ sylius_resource_sort('updatedAt', 'sylius.option.updated_at'|trans) }}</th>
+                <th>{{ sylius_resource_sort('updatedAt', 'sylius.product_option.updated_at'|trans) }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -31,8 +31,8 @@
                 <td>{{ option.updatedAt|date }}</td>
                 <td>
                     <div class="pull-right">
-                    {{ buttons.edit(path('sylius_backend_option_update', {'id': option.id})) }}
-                    {{ buttons.delete(path('sylius_backend_option_delete', {'id': option.id})) }}
+                    {{ buttons.edit(path('sylius_backend_product_option_update', {'id': option.id})) }}
+                    {{ buttons.delete(path('sylius_backend_product_option_delete', {'id': option.id})) }}
                    </div>
                 </td>
             </tr>
@@ -40,7 +40,7 @@
         </tbody>
     </table>
 {% else %}
-{{ alerts.info('sylius.option.no_results'|trans) }}
+{{ alerts.info('sylius.product_option.no_results'|trans) }}
 {% endif %}
 
 {% endmacro %}
