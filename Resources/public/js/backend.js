@@ -16,4 +16,9 @@
         });
         $('.datepicker').datepicker({});
     });
+    
+    $('#content').on('click', '.alert .close', function(){
+        $(this).parent('.alert').hide('1000');
+    });
+    
 })( jQuery );
