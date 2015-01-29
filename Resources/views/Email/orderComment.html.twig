@@ -4,9 +4,7 @@
     {% endautoescape %}
 {% endblock %}
 
-{% block body_text %}{% endblock %}
-
-{% block body_html %}
+{% block body %}
     <h1>{{ 'email.order_comment.header'|trans }}</h1>
     {% if comment %}
         <h3>{{ comment.comment }}</h3>
