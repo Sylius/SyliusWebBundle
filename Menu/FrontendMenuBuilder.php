@@ -184,19 +184,26 @@ class FrontendMenuBuilder extends MenuBuilder
     }
 
     /**
-     * Builds frontend currency menu.
+     * Builds frontend currency menu if we have more then 1 currency to display.
      *
      * @return ItemInterface
      */
     public function createCurrencyMenu()
     {
+        $currencies = $this->currencyProvider->getAvailableCurrencies();
+
         $menu = $this->factory->createItem('root', array(
             'childrenAttributes' => array(
                 'class' => 'nav nav-pills'
             )
         ));
 
-        foreach ($this->currencyProvider->getAvailableCurrencies() as $currency) {
+        if (count($currencies) <= 1) {
+            $menu->isDisplayed(false);
+            return $menu;
+        }
+
+        foreach ($currencies as $currency) {
             $code = $currency->getCode();
 
             $menu->addChild($code, array(
