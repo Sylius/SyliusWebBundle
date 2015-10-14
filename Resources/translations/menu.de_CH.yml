@@ -5,9 +5,6 @@ sylius:
   backend:
     menu:
       main:
-        groups: Kelompok
-        roles: Peran
+        roles: Rollen
       sidebar:
-        groups: Kelompok
-        routes: Rute
-        roles: Peran
+        roles: Rollen
