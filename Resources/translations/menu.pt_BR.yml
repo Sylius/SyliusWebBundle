@@ -5,63 +5,86 @@ sylius:
   backend:
     menu:
       main:
+        assortment: Sortimento
+        blocks: Blocos
         configuration: Configuração
         countries: Países
         content: Conteúdo
-        dashboard: Painel de Instrumentos
-        general_settings: Configurações gerais
-        homepage: Sua loja
-        new_order: Adicionar nova encomenda
-        new_promotion: Adicionar nova promoção
-        orders: Encomendas atuais
-        pages: Páginas
-        payment_methods: Métodos de pagamento
-        payments: Pagamentos
-        products: Produtos
-        promotions: Promoções
-        sales: Encomendas
-        shipments: Envios
-        shipping_categories: Categorias de envio
-        shipping_methods: Métodos de envio
-        stockables: Níveis de stock
-        tax_categories: Categorias de tributação
-        tax_rates: Impostos
-        taxonomies: Categorização
-        zones: Zonas
-      sidebar:
-        configuration: Configuração
-        content: Conteúdo
-        countries: Países
-        dashboard: Painel de Instrumentos
+        dashboard: Painel
         general_settings: Configurações gerais
         groups: Grupos
-        homepage: Voltar para o frontend
-        new_order: Adicionar nova encomenda
+        homepage: Sua loja
+        locales: Localidades
+        new_order: Adicionar novo pedido
         new_promotion: Adicionar nova promoção
-        options: Gerir opções
-        orders: Encomendas atuais
+        options: Gerenciar opções de produto
+        orders: Pedidos atuais
         pages: Páginas
-        payment_methods: Métodos de pagamento
+        payment_methods: Meios de pagamentos
         payments: Pagamentos
         products: Produtos
         promotions: Promoções
-        sales: Encomendas
+        sales: Pedidos
         shipments: Envios
         shipping_categories: Categorias de envio
         shipping_methods: Métodos de envio
-        stockables: Níveis de stock
+        stockables: Níveis de estoque
         tax_categories: Categorias de tributação
         tax_rates: Impostos
+        taxation_settings: Configurações de taxas
         taxonomies: Categorização
-        zones: Zonas
+        zones: Regiões
+        roles: Papéis
+      sidebar:
+        assortment: Sortimento
+        blocks: Blocos
+        configuration: Configuração
+        content: Conteúdo
+        countries: Países
+        dashboard: Painel
+        general_settings: Configurações gerais
+        groups: Grupos
+        homepage: Volta para loja
+        locales: Localidades
+        new_order: Adicionar novo pedido
+        new_promotion: Adicionar nova promoção
+        options: Gerenciar opções
+        orders: Pedidos atuais
+        pages: Páginas
+        routes: Rotas
+        payment_methods: Meios de pagamentos
+        payments: Pagamentos
+        products: Produtos
+        promotions: Promoções
+        sales: Pedidos
+        shipments: Envios
+        shipping_categories: Categorias de envio
+        shipping_methods: Métodos de envio
+        slideshow: Apresentação de slides
+        stockables: Níveis de estoque
+        tax_categories: Categorias de tributação
+        tax_rates: Impostos
+        taxation_settings: Configurações de taxas
+        taxonomies: Categorização
+        zones: Regiões
+        roles: Papéis
   frontend:
     menu:
       account:
+        addresses: Meu livro de endereços
         homepage: Home
+        orders: Meus pedidos / minhas faturas
+        password: Minha senha
+        profile: Minhas informações pessoais
+        shop: Voltar para a loja
+      currency: 'Mostrar preços em %currency%'
       main:
-        cart: 'Ver carrinho (%items%) %total%'
+        account: Minha conta
+        administration: Administração
+        cart: 'Ver carrinho (%items%)  %total%'
         login: Login
         logout: Sair
+        register: Registre-se
       social:
         facebook: Facebook
         github: GitHub
