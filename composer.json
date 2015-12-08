@@ -26,7 +26,6 @@
         "knplabs/knp-menu-bundle": "1.1.*",
         "knplabs/knp-snappy-bundle": "*@dev",
         "liip/imagine-bundle": "~1.0",
-        "sylius/core-bundle": "0.16.*",
         "symfony/framework-bundle": "^2.7.5"
     },
     "config": {
